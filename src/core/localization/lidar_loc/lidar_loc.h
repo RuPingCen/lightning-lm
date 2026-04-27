@@ -5,7 +5,7 @@
 #include <deque>
 #include <fstream>
 #include <iostream>
-#include <sensor_msgs/msg/point_cloud2.hpp>
+// #include <sensor_msgs/msg/point_cloud2.hpp>
 #include <thread>
 
 #include "common/nav_state.h"

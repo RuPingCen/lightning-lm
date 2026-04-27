@@ -13,7 +13,7 @@
 #include <opencv2/imgproc.hpp>
 
 #include "ui/pangolin_window.h"
-#include "wrapper/ros_utils.h"
+// #include "wrapper/ros_utils.h"
 
 namespace lightning {
 

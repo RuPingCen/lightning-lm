@@ -176,60 +176,60 @@ void SlamSystem::SaveMap(const std::string& path) {
     // pcl::io::savePCDFileBinaryCompressed(save_path + "/global_no_loop.pcd", *global_map_no_loop);
     // pcl::io::savePCDFileBinaryCompressed(save_path + "/global_raw.pcd", *global_map_raw);
 
-    if (options_.with_gridmap_) {
-        /// 存为ROS兼容的模式
-        auto map = g2p5_->GetNewestMap()->ToROS();
-        const int width = map.info.width;
-        const int height = map.info.height;
+    // if (options_.with_gridmap_) {
+    //     /// 存为ROS兼容的模式
+    //     auto map = g2p5_->GetNewestMap()->ToROS();
+    //     const int width = map.info.width;
+    //     const int height = map.info.height;
 
-        cv::Mat nav_image(height, width, CV_8UC1);
-        for (int y = 0; y < height; ++y) {
-            const int rowStartIndex = y * width;
-            for (int x = 0; x < width; ++x) {
-                const int index = rowStartIndex + x;
-                int8_t data = map.data[index];
-                if (data == 0) {                                   // Free
-                    nav_image.at<uchar>(height - 1 - y, x) = 255;  // White
-                } else if (data == 100) {                          // Occupied
-                    nav_image.at<uchar>(height - 1 - y, x) = 0;    // Black
-                } else {                                           // Unknown
-                    nav_image.at<uchar>(height - 1 - y, x) = 128;  // Gray
-                }
-            }
-        }
+    //     cv::Mat nav_image(height, width, CV_8UC1);
+    //     for (int y = 0; y < height; ++y) {
+    //         const int rowStartIndex = y * width;
+    //         for (int x = 0; x < width; ++x) {
+    //             const int index = rowStartIndex + x;
+    //             int8_t data = map.data[index];
+    //             if (data == 0) {                                   // Free
+    //                 nav_image.at<uchar>(height - 1 - y, x) = 255;  // White
+    //             } else if (data == 100) {                          // Occupied
+    //                 nav_image.at<uchar>(height - 1 - y, x) = 0;    // Black
+    //             } else {                                           // Unknown
+    //                 nav_image.at<uchar>(height - 1 - y, x) = 128;  // Gray
+    //             }
+    //         }
+    //     }
 
-        cv::imwrite(save_path + "/map.pgm", nav_image);
+    //     cv::imwrite(save_path + "/map.pgm", nav_image);
 
-        /// yaml
-        std::ofstream yamlFile(save_path + "/map.yaml");
-        if (!yamlFile.is_open()) {
-            LOG(ERROR) << "failed to write map.yaml";
-            return;  // 文件打开失败
-        }
+    //     /// yaml
+    //     std::ofstream yamlFile(save_path + "/map.yaml");
+    //     if (!yamlFile.is_open()) {
+    //         LOG(ERROR) << "failed to write map.yaml";
+    //         return;  // 文件打开失败
+    //     }
 
-        try {
-            YAML::Emitter emitter;
-            emitter << YAML::BeginMap;
-            emitter << YAML::Key << "image" << YAML::Value << "map.pgm";
-            emitter << YAML::Key << "mode" << YAML::Value << "trinary";
-            emitter << YAML::Key << "width" << YAML::Value << map.info.width;
-            emitter << YAML::Key << "height" << YAML::Value << map.info.height;
-            emitter << YAML::Key << "resolution" << YAML::Value << float(0.05);
-            std::vector<double> orig{map.info.origin.position.x, map.info.origin.position.y, 0};
-            emitter << YAML::Key << "origin" << YAML::Value << orig;
-            emitter << YAML::Key << "negate" << YAML::Value << 0;
-            emitter << YAML::Key << "occupied_thresh" << YAML::Value << 0.65;
-            emitter << YAML::Key << "free_thresh" << YAML::Value << 0.25;
+    //     try {
+    //         YAML::Emitter emitter;
+    //         emitter << YAML::BeginMap;
+    //         emitter << YAML::Key << "image" << YAML::Value << "map.pgm";
+    //         emitter << YAML::Key << "mode" << YAML::Value << "trinary";
+    //         emitter << YAML::Key << "width" << YAML::Value << map.info.width;
+    //         emitter << YAML::Key << "height" << YAML::Value << map.info.height;
+    //         emitter << YAML::Key << "resolution" << YAML::Value << float(0.05);
+    //         std::vector<double> orig{map.info.origin.position.x, map.info.origin.position.y, 0};
+    //         emitter << YAML::Key << "origin" << YAML::Value << orig;
+    //         emitter << YAML::Key << "negate" << YAML::Value << 0;
+    //         emitter << YAML::Key << "occupied_thresh" << YAML::Value << 0.65;
+    //         emitter << YAML::Key << "free_thresh" << YAML::Value << 0.25;
 
-            emitter << YAML::EndMap;
+    //         emitter << YAML::EndMap;
 
-            yamlFile << emitter.c_str();
-            yamlFile.close();
-        } catch (...) {
-            yamlFile.close();
-            return;
-        }
-    }
+    //         yamlFile << emitter.c_str();
+    //         yamlFile.close();
+    //     } catch (...) {
+    //         yamlFile.close();
+    //         return;
+    //     }
+    // }
 
     LOG(INFO) << "map saved";
 }

@@ -242,68 +242,68 @@ void G2P5Map::ReleaseResources() {
     malloc_trim(0);
 }
 
-nav_msgs::msg::OccupancyGrid G2P5Map::ToROS() {
-    nav_msgs::msg::OccupancyGrid occu_map;
-    int image_width = grid_size_x_ * sub_grid_width_;
-    int image_height = grid_size_y_ * sub_grid_width_;
-    occu_map.info.resolution = static_cast<nav_msgs::msg::MapMetaData::_resolution_type>(options_.resolution_);
-    occu_map.info.width = static_cast<nav_msgs::msg::MapMetaData::_width_type>(image_width);
-    occu_map.info.height = static_cast<nav_msgs::msg::MapMetaData::_width_type>(image_height);
-    occu_map.info.origin.position.x = min_x_;
-    occu_map.info.origin.position.y = min_y_;
+// nav_msgs::msg::OccupancyGrid G2P5Map::ToROS() {
+//     nav_msgs::msg::OccupancyGrid occu_map;
+//     int image_width = grid_size_x_ * sub_grid_width_;
+//     int image_height = grid_size_y_ * sub_grid_width_;
+//     occu_map.info.resolution = static_cast<nav_msgs::msg::MapMetaData::_resolution_type>(options_.resolution_);
+//     occu_map.info.width = static_cast<nav_msgs::msg::MapMetaData::_width_type>(image_width);
+//     occu_map.info.height = static_cast<nav_msgs::msg::MapMetaData::_width_type>(image_height);
+//     occu_map.info.origin.position.x = min_x_;
+//     occu_map.info.origin.position.y = min_y_;
 
-    int grid_map_size = occu_map.info.width * occu_map.info.height;
-    int grid_map_size_1 = grid_map_size - 1;
-    occu_map.data.resize(grid_map_size);
+//     int grid_map_size = occu_map.info.width * occu_map.info.height;
+//     int grid_map_size_1 = grid_map_size - 1;
+//     occu_map.data.resize(grid_map_size);
 
-    std::fill(occu_map.data.begin(), occu_map.data.end(), -1);
-    int tmp_area = 0;
-    int index_min, index_max;
+//     std::fill(occu_map.data.begin(), occu_map.data.end(), -1);
+//     int tmp_area = 0;
+//     int index_min, index_max;
 
-    for (int bxi = 0; bxi < grid_size_x_; ++bxi) {
-        for (int byi = 0; byi < grid_size_y_; ++byi) {
-            if (grids_[bxi][byi].IsEmpty()) {
-                continue;
-            }
+//     for (int bxi = 0; bxi < grid_size_x_; ++bxi) {
+//         for (int byi = 0; byi < grid_size_y_; ++byi) {
+//             if (grids_[bxi][byi].IsEmpty()) {
+//                 continue;
+//             }
 
-            for (int sxi = 0; sxi < sub_grid_width_; ++sxi) {
-                for (int syi = 0; syi < sub_grid_width_; ++syi) {
-                    int x = (bxi << SUB_GRID_SIZE) + sxi;
-                    int y = (byi << SUB_GRID_SIZE) + syi;
+//             for (int sxi = 0; sxi < sub_grid_width_; ++sxi) {
+//                 for (int syi = 0; syi < sub_grid_width_; ++syi) {
+//                     int x = (bxi << SUB_GRID_SIZE) + sxi;
+//                     int y = (byi << SUB_GRID_SIZE) + syi;
 
-                    if (x >= 0 && x < image_width && y >= 0 && y < image_height) {
-                        unsigned int hit_cnt = 0, visit_cnt = 0;
-                        grids_[bxi][byi].GetHitAndVisit(sxi, syi, hit_cnt, visit_cnt);
+//                     if (x >= 0 && x < image_width && y >= 0 && y < image_height) {
+//                         unsigned int hit_cnt = 0, visit_cnt = 0;
+//                         grids_[bxi][byi].GetHitAndVisit(sxi, syi, hit_cnt, visit_cnt);
 
-                        float occ = (visit_cnt > 3) ? (float)hit_cnt / (float)visit_cnt : -1;
+//                         float occ = (visit_cnt > 3) ? (float)hit_cnt / (float)visit_cnt : -1;
 
-                        /// 注意这里有转置符号
-                        if (occ < 0) {
-                            continue;
-                        } else if (occ > options_.occupancy_ratio_) {
-                            tmp_area++;
-                            occu_map.data[MapIdx(image_width, x, y)] = 100;
-                        } else {
-                            int index = MapIdx(image_width, x, y);
-                            index_min = std::max(0, index - 1);
-                            index_max = std::min(grid_map_size_1, index + 1);
+//                         /// 注意这里有转置符号
+//                         if (occ < 0) {
+//                             continue;
+//                         } else if (occ > options_.occupancy_ratio_) {
+//                             tmp_area++;
+//                             occu_map.data[MapIdx(image_width, x, y)] = 100;
+//                         } else {
+//                             int index = MapIdx(image_width, x, y);
+//                             index_min = std::max(0, index - 1);
+//                             index_max = std::min(grid_map_size_1, index + 1);
 
-                            for (auto extend = index_min; extend <= index_max; extend++) {
-                                if (occu_map.data[extend] < 0) {  //-1
-                                    tmp_area++;
-                                    occu_map.data[extend] = 0;
-                                }
-                            }
-                        }
-                    } else {
-                        continue;
-                    }
-                }
-            }
-        }
-    }
-    return occu_map;
-}
+//                             for (auto extend = index_min; extend <= index_max; extend++) {
+//                                 if (occu_map.data[extend] < 0) {  //-1
+//                                     tmp_area++;
+//                                     occu_map.data[extend] = 0;
+//                                 }
+//                             }
+//                         }
+//                     } else {
+//                         continue;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return occu_map;
+// }
 
 cv::Mat G2P5Map::ToCV() {
     int image_width = grid_size_x_ * sub_grid_width_;

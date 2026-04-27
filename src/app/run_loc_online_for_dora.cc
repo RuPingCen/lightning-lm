@@ -13,7 +13,7 @@ extern "C" {
 #include "common/point_def.h"
 #include "core/system/loc_system.h"
 #include "utils/timer.h"
-#include "wrapper/ros_utils.h"
+// #include "wrapper/ros_utils.h"
 
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -96,6 +96,7 @@ class DoraLocNode {
                     HandleImu(event);
                 } else if (input_id == "pointcloud") {
                     HandleLidar(event);
+                    PublishPose(dora_context, pose_, timestamp_);  // 发布状态
                 } else if (input_id == "init_pose") {
                     HandleInitPose(event);
                 }
@@ -219,18 +220,66 @@ class DoraLocNode {
         if (data_ptr == nullptr || data_len == 0) return;
 
         const uint8_t* data = reinterpret_cast<const uint8_t*>(data_ptr);
-        double timestamp = 0;
+        // double timestamp = 0;  // 点云的时间戳
         pcl::PointCloud<PointType>::Ptr cloud(new pcl::PointCloud<PointType>());
-        if (ParsePointCloud(data, data_len, timestamp, cloud)) {
+        if (ParsePointCloud(data, data_len, timestamp_, cloud)) {
             if (loc_system_) {
                 loc_system_->ProcessLidar(cloud);
-                // printf
+
                 std::shared_ptr<lightning::loc::Localization> loc_value = loc_system_->GetLoc();
-                Sophus::SE3d pose = loc_value->GetLocalizationResult()->pose_;
-                //  std::cout << "loc pose x:" << pose.translation().x << "  y:" << pose.translation().y
-                //            << "  z:" << pose.translation().z << std::endl;
+                if (!loc_value || !loc_value->GetLocalizationResult()) {
+                    return;  // 或者根据业务逻辑返回错误码
+                }
+
+                pose_ = loc_value->GetLocalizationResult()->pose_;
+
+                //  printf
+                //  std::shared_ptr<lightning::loc::Localization> loc_value = loc_system_->GetLoc();
+                //  Sophus::SE3d pose = loc_value->GetLocalizationResult()->pose_;
+                //   std::cout << "loc pose x:" << pose.translation().x << "  y:" << pose.translation().y
+                //             << "  z:" << pose.translation().z << std::endl;
             }
         }
+    }
+    /**
+     * @brief 将 Sophus 位姿转换为 JSON 并通过 DORA 发布
+     * @param dora_context DORA 上下文指针
+     * @return int 0 成功, 1 失败
+     */
+    int PublishPose(void* dora_context, Sophus::SE3d pose, double timestamp_sec) {
+        // 1. 获取位姿数据 (你的原始逻辑)
+
+        // 2. 提取平移和旋转（四元数）
+        auto translation = pose.translation();
+        auto q = pose.unit_quaternion();
+
+        // 3. 构造符合 ROS 2 geometry_msgs/msg/Pose 结构的 JSON
+        json ros_pose;
+        ros_pose["position"] = {{"x", translation.x()}, {"y", translation.y()}, {"z", translation.z()}};
+        ros_pose["orientation"] = {{"x", q.x()}, {"y", q.y()}, {"z", q.z()}, {"w", q.w()}};
+
+        json ros_pose_stamped;
+        int32_t sec = static_cast<int32_t>(timestamp_sec);
+        int32_t nanosec = static_cast<int32_t>((timestamp_sec - sec) * 1e9);
+        ros_pose_stamped["header"] = {{"frame_id", "map"}, {"stamp", {{"sec", sec}, {"nanosec", nanosec}}}};
+        ros_pose_stamped["pose"] = ros_pose;
+
+        // 4. 序列化为 JSON 字符串
+        std::string payload = ros_pose_stamped.dump();
+
+        // 5. 调用你提供的 DORA C API 发送数据
+        std::string out_id = "pose";  // 必须与 dataflow.yml 中的 output id 一致
+        char* output_data = const_cast<char*>(payload.data());
+        size_t output_data_len = payload.size();
+
+        int result = dora_send_output(dora_context, &out_id[0], out_id.length(), output_data, output_data_len);
+
+        if (result != 0) {
+            std::cerr << "failed to send pose output" << std::endl;
+            return 1;
+        }
+
+        return 0;
     }
 
     void HandleInitPose(void* input_event) {
@@ -260,6 +309,8 @@ class DoraLocNode {
     std::string yaml_path_;
     std::shared_ptr<LocSystem> loc_system_;
     std::shared_ptr<PointCloudPreprocessPCL> preprocess_pcl_;
+    Sophus::SE3d pose_;
+    double timestamp_;
 };
 
 int main(int argc, char** argv) {

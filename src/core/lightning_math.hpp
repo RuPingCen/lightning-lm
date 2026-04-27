@@ -14,9 +14,9 @@
 #include <cmath>
 #include <numeric>
 
-#include <tf2/LinearMath/Matrix3x3.h>
-#include <tf2/LinearMath/Quaternion.h>
-#include <rclcpp/time.hpp>
+// #include <tf2/LinearMath/Matrix3x3.h>
+// #include <tf2/LinearMath/Quaternion.h>
+// #include <rclcpp/time.hpp>
 
 #include "common/eigen_types.h"
 #include "common/options.h"
@@ -567,12 +567,12 @@ inline void KeepAngleIn2PI(double& angle) {
     }
 }
 
-inline builtin_interfaces::msg::Time FromSec(double t) {
-    builtin_interfaces::msg::Time ret;
-    ret.sec = int32_t(t);
-    ret.nanosec = int32_t((t - ret.sec) * 1e9);
-    return ret;
-}
+// inline builtin_interfaces::msg::Time FromSec(double t) {
+//     builtin_interfaces::msg::Time ret;
+//     ret.sec = int32_t(t);
+//     ret.nanosec = int32_t((t - ret.sec) * 1e9);
+//     return ret;
+// }
 
 /// 从pose中取出yaw pitch roll
 /// 使用的顺序是：roll pitch yaw ，最左是roll
@@ -582,14 +582,24 @@ inline builtin_interfaces::msg::Time FromSec(double t) {
 /// 2020.11 change back to tf to keep consist
 inline PoseRPYD SE3ToRollPitchYaw(const SE3& pose) {
     auto rot = pose.rotationMatrix();
-    tf2::Matrix3x3 temp_tf_matrix(rot(0, 0), rot(0, 1), rot(0, 2), rot(1, 0), rot(1, 1), rot(1, 2), rot(2, 0),
-                                  rot(2, 1), rot(2, 2));
+    // tf2::Matrix3x3 temp_tf_matrix(rot(0, 0), rot(0, 1), rot(0, 2), rot(1, 0), rot(1, 1), rot(1, 2), rot(2, 0),
+    //                               rot(2, 1), rot(2, 2));
     PoseRPYD output;
     output.x = pose.translation()[0];
     output.y = pose.translation()[1];
     output.z = pose.translation()[2];
 
-    temp_tf_matrix.getRPY(output.roll, output.pitch, output.yaw);
+    // temp_tf_matrix.getRPY(output.roll, output.pitch, output.yaw);
+
+    /* * 3. 提取 RPY (欧拉角)  crp 修改
+     * Eigen 的 eulerAngles(2, 1, 0) 表示按照 Z-Y-X 的顺序分解。
+     * 返回值的向量顺序与参数顺序一致：即 [0] 是 Yaw, [1] 是 Pitch, [2] 是 Roll。
+     */
+    Eigen::Vector3d euler = rot.eulerAngles(2, 1, 0);
+
+    output.roll = euler[2];
+    output.pitch = euler[1];
+    output.yaw = euler[0];
     return output;
 }
 

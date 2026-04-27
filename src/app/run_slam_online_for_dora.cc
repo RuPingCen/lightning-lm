@@ -1,8 +1,7 @@
-extern "C"
-{
+extern "C" {
 #include "node_api.h"
-    // #include "operator_api.h"
-    // #include "operator_types.h"
+// #include "operator_api.h"
+// #include "operator_types.h"
 }
 
 #include <yaml-cpp/yaml.h>
@@ -16,7 +15,7 @@ extern "C"
 #include "common/point_def.h"
 #include "core/system/slam.h"
 #include "utils/timer.h"
-#include "wrapper/ros_utils.h"
+// #include "wrapper/ros_utils.h"
 
 // IMU 仍然可能需要 ROS 格式，除非用户也要求去掉
 // #include <sensor_msgs/msg/imu.hpp>
@@ -35,16 +34,14 @@ std::atomic<bool> to_exit_process{false};
 /**
  * 模仿 PointCloudPreprocess 的 PCL -> PCL 预处理器
  */
-class PointCloudPreprocessPCL
-{
+class PointCloudPreprocessPCL {
    public:
     PointCloudPreprocessPCL() = default;
 
     /// 模仿原 PointCloudPreprocess 的参数名称
     double& Blind() { return blind_; }
     int& PointFilterNum() { return point_filter_num_; }
-    void SetHeightROI(float height_max, float height_min)
-    {
+    void SetHeightROI(float height_max, float height_min) {
         height_max_ = height_max;
         height_min_ = height_min;
     }
@@ -55,25 +52,21 @@ class PointCloudPreprocessPCL
     float height_min_ = -1.0;
 };
 
-class DoraSlamNode
-{
+class DoraSlamNode {
    public:
-    DoraSlamNode(const std::string& yaml_path) : yaml_path_(yaml_path)
-    {
+    DoraSlamNode(const std::string& yaml_path) : yaml_path_(yaml_path) {
         // 初始化 SLAM 系统
         SlamSystem::Options options;
         options.online_mode_ = true;
         slam_ = std::make_shared<SlamSystem>(options);
-        if (!slam_->Init(yaml_path_))
-        {
+        if (!slam_->Init(yaml_path_)) {
             LOG(ERROR) << "failed to init slam";
             return;
         }
 
         // 初始化 PCL 预处理器
         preprocess_pcl_ = std::make_shared<PointCloudPreprocessPCL>();
-        if (!InitPreprocess())
-        {
+        if (!InitPreprocess()) {
             LOG(ERROR) << "failed to init pointcloud preprocess";
             return;
         }
@@ -82,68 +75,55 @@ class DoraSlamNode
         LOG(INFO) << "DORA SLAM Node (PCL Preprocess) initialized and started.";
     }
 
-    void Run(void* dora_context)
-    {
+    void Run(void* dora_context) {
         LOG(INFO) << "DORA event loop started.";
 
-        while (!to_exit_process)
-        {
+        while (!to_exit_process) {
             void* event = dora_next_event(dora_context);
-            if (event == NULL)
-            {
+            if (event == NULL) {
                 printf("[c node] ERROR: unexpected end of event\n");
                 continue;
             }
 
             enum DoraEventType ty = read_dora_event_type(event);
 
-            if (ty == DoraEventType_Input)
-            {
+            if (ty == DoraEventType_Input) {
                 char* id_ptr = nullptr;
                 size_t id_len = 0;
                 read_dora_input_id(event, &id_ptr, &id_len);
                 std::string input_id(id_ptr, id_len);
 
-                if (id_ptr == nullptr || id_len == 0)
-                {
+                if (id_ptr == nullptr || id_len == 0) {
                     continue;
                 }
 
-                if (input_id == "imu")
-                {
+                if (input_id == "imu") {
                     // printf("[lightning-lm node] received imu event\n");
                     HandleImu(event);
-                }
-                else if (input_id == "pointcloud")
-                {
+                } else if (input_id == "pointcloud") {
                     // printf("[lightning-lm node] received pointcloud event\n");
                     HandleLidar(event);
-                }
-                else if (input_id == "save_map")
-                {
+                } else if (input_id == "save_map") {
                     printf("[lightning-lm node] received save_map event\n");
                     HandleSaveMap();
                 }
-            }
-            else if (ty == DoraEventType_Stop)
-            {
+            } else if (ty == DoraEventType_Stop) {
                 printf("[c node] received stop event\n");
                 to_exit_process = true;
-            }
-            else
-            {
+            } else {
                 printf("[c node] received unexpected event: %d\n", ty);
             }
 
             free_dora_event(event);
         }
+
+        // 退出时保存地图
+        HandleSaveMap();
     }
 
    private:
-    bool InitPreprocess()
-    {
-        try
-        {
+    bool InitPreprocess() {
+        try {
             auto yaml = YAML::LoadFile(yaml_path_);
             preprocess_pcl_->Blind() = yaml["fasterlio"]["blind"].as<double>();
             preprocess_pcl_->PointFilterNum() = yaml["fasterlio"]["point_filter_num"].as<int>();
@@ -151,17 +131,14 @@ class DoraSlamNode
             float height_max = yaml["roi"]["height_max"].as<float>();
             float height_min = yaml["roi"]["height_min"].as<float>();
             preprocess_pcl_->SetHeightROI(height_max, height_min);
-        }
-        catch (...)
-        {
+        } catch (...) {
             LOG(ERROR) << "Exception during preprocess init from YAML.";
             return false;
         }
         return true;
     }
 
-    void HandleImu(void* input_event)
-    {
+    void HandleImu(void* input_event) {
         char* data_ptr = nullptr;
         size_t data_len = 0;
         read_dora_input_data(input_event, &data_ptr, &data_len);
@@ -171,8 +148,7 @@ class DoraSlamNode
         // 建议：直接构造 string_view 可以减少一次拷贝（C++17）
         std::string_view json_view(data_ptr, data_len);
 
-        try
-        {
+        try {
             auto data = json::parse(json_view);
 
             IMUPtr imu = std::make_shared<IMU>();
@@ -192,15 +168,12 @@ class DoraSlamNode
             imu->angular_velocity =
                 Vec3d(data["angular_velocity"]["x"], data["angular_velocity"]["y"], data["angular_velocity"]["z"]);
 
-            if (slam_)
-            {
+            if (slam_) {
                 slam_->ProcessIMU(imu);
             }
 
             // std::printf("[IMU] ts: %.6f, acc_z: %.3f\n", imu->timestamp, imu->linear_acceleration.z());
-        }
-        catch (const json::exception& e)
-        {
+        } catch (const json::exception& e) {
             std::cerr << "IMU JSON Error: " << e.what() << " | Raw: " << json_view << std::endl;
         }
     }
@@ -208,11 +181,9 @@ class DoraSlamNode
     // ---------------------------------------------------------------------------
     // ParsePointCloud
     // ---------------------------------------------------------------------------
-    bool ParsePointCloud(const uint8_t* data, size_t len, double& timestamp, pcl::PointCloud<PointType>::Ptr& cloud)
-    {
+    bool ParsePointCloud(const uint8_t* data, size_t len, double& timestamp, pcl::PointCloud<PointType>::Ptr& cloud) {
         // Minimum: 16-byte header
-        if (len < 16)
-        {
+        if (len < 16) {
             std::cerr << "[" << "lightning-lm" << "] ParsePointCloud: buffer too small (" << len << " bytes)\n";
             return false;
         }
@@ -223,8 +194,7 @@ class DoraSlamNode
         std::memcpy(&timestamp, data + 8, sizeof(double));
 
         const size_t point_bytes = len - 16;
-        if (point_bytes % 16 != 0)
-        {
+        if (point_bytes % 16 != 0) {
             std::cerr << "[" << "lightning-lm" << "] ParsePointCloud: unexpected payload size\n";
             return false;
         }
@@ -235,8 +205,7 @@ class DoraSlamNode
 
         size_t count = 0;
 
-        for (size_t i = 0; i < points_num; ++i)
-        {
+        for (size_t i = 0; i < points_num; ++i) {
             count++;
             // 1. PointFilterNum 采样过滤
             if (count % preprocess_pcl_->point_filter_num_ != 0) continue;
@@ -277,14 +246,12 @@ class DoraSlamNode
         cloud->header.stamp = timestamp * 1e9;
         return true;
     }
-    void HandleLidar(void* input_event)
-    {
+    void HandleLidar(void* input_event) {
         char* data_ptr = nullptr;
         size_t data_len = 0;
         read_dora_input_data(input_event, &data_ptr, &data_len);
 
-        if (data_ptr == nullptr || data_len == 0)
-        {
+        if (data_ptr == nullptr || data_len == 0) {
             std::cerr << "Warn: Received input event but ID pointer is null" << std::endl;
             return;
         }
@@ -292,8 +259,7 @@ class DoraSlamNode
 
         double timestamp = 0;
         pcl::PointCloud<PointType>::Ptr cloud(new pcl::PointCloud<PointType>());
-        if (ParsePointCloud(data, data_len, timestamp, cloud))
-        {
+        if (ParsePointCloud(data, data_len, timestamp, cloud)) {
             // std::printf("[pointcould] ts: %.6f, points: %d\n", timestamp, cloud->points.size());
         }
 
@@ -321,8 +287,7 @@ class DoraSlamNode
         //     "Proc Lidar DORA (PCL Preprocess)", true);
     }
 
-    void HandleSaveMap(void)
-    {
+    void HandleSaveMap(void) {
         std::string map_id = "map";
         std::string save_path = "./data/" + map_id + "/";
         slam_->SaveMap(save_path);
@@ -333,16 +298,14 @@ class DoraSlamNode
     std::shared_ptr<PointCloudPreprocessPCL> preprocess_pcl_;
 };
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     //
     std::cout << "lightning node for dora " << std::endl;
 
     auto dora_context = init_dora_context_from_env();
 
     const char* FLAGS_config = std::getenv("FLAGS_config");
-    if (FLAGS_config == nullptr)
-    {
+    if (FLAGS_config == nullptr) {
         std::cerr << "ERROR: Environment variable FLAGS_config is not set!" << std::endl;
         return -1;
     }

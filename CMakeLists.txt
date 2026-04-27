@@ -31,18 +31,18 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 # set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/libs)
 # set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/libs)
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-include(cmake/packages.cmake)
-
+ 
 
 if(BUILD_FRAMEWORK STREQUAL "DORA")
-
+    list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+    include(cmake/dora_packages.cmake)
 	 
     add_subdirectory(src)
 
 elseif(BUILD_FRAMEWORK STREQUAL "ROS2")
 
-
+    list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+    include(cmake/packages.cmake)
     # msg 和 srv
     set(MY_SRV_FILES "")
     set(SRC_DIR ${PROJECT_SOURCE_DIR}/srv)

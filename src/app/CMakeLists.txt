@@ -6,6 +6,7 @@ if(BUILD_FRAMEWORK STREQUAL "DORA")
         target_link_libraries(run_slam_online_for_dora
                 ${PROJECT_NAME}.libs
                 ${third_party_libs}
+                ${YAML_CPP_LIBRARIES}
                 $ENV{HOME}/dora/target/release/libdora_node_api_c.a
         )
 
@@ -16,6 +17,7 @@ if(BUILD_FRAMEWORK STREQUAL "DORA")
         target_link_libraries(run_loc_online_for_dora
                 ${PROJECT_NAME}.libs
                 ${third_party_libs}
+                ${YAML_CPP_LIBRARIES}
                 $ENV{HOME}/dora/target/release/libdora_node_api_c.a
         )
 
