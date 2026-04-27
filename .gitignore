@@ -6,6 +6,6 @@
 **data
 **/.vscode/
 bin
-
+out
 **cmake-build-debug**
 **cmake-build-release**
