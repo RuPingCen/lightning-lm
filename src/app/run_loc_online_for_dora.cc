@@ -19,6 +19,9 @@ extern "C" {
 #include <nlohmann/json.hpp>
 #include <string>
 
+#include "core/localization/localization.h"
+#include "core/system/loc_system.h"
+
 using json = nlohmann::json;
 using namespace lightning;
 
@@ -147,7 +150,7 @@ class DoraLocNode {
                 Vec3d(data["angular_velocity"]["x"], data["angular_velocity"]["y"], data["angular_velocity"]["z"]);
 
             if (loc_system_) {
-                loc_system_->ProcessIMUMsg(imu);
+                loc_system_->ProcessIMU(imu);
             }
         } catch (const json::exception& e) {
             std::cerr << "IMU JSON Error: " << e.what() << " | Raw: " << json_view << std::endl;
@@ -220,10 +223,12 @@ class DoraLocNode {
         pcl::PointCloud<PointType>::Ptr cloud(new pcl::PointCloud<PointType>());
         if (ParsePointCloud(data, data_len, timestamp, cloud)) {
             if (loc_system_) {
-                loc_system_->ProcessLidarMsg(cloud);
-
+                loc_system_->ProcessLidar(cloud);
+                // printf
                 std::shared_ptr<lightning::loc::Localization> loc_value = loc_system_->GetLoc();
-                Sophus::SE3d pose = loc_value->GetLocalizationResult.pose_;
+                Sophus::SE3d pose = loc_value->GetLocalizationResult()->pose_;
+                //  std::cout << "loc pose x:" << pose.translation().x << "  y:" << pose.translation().y
+                //            << "  z:" << pose.translation().z << std::endl;
             }
         }
     }

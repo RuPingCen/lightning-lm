@@ -1,0 +1,28 @@
+nodes:
+  - id: pointcloud_imu_pub_dora_node
+    path: /home/mickrobot/dora_project/dora_tutorial/rosbag2dora/src/pointcloud_imu_pub_dora_node.py
+    inputs:
+      tick: dora/timer/millis/5   # 5ms   200Hz
+    outputs:
+      - pointcloud
+      - imu
+    env:
+      BAG_PATH: /home/mickrobot/dataset/lightning-LM-dataset/NCLT/20130110   #ros2 bag path
+  
+  # lightning_lm slam
+  - id: lightning_slam
+    path: bin/run_slam_online_for_dora
+    inputs:
+      pointcloud: pointcloud_imu_pub_dora_node/pointcloud
+      imu: pointcloud_imu_pub_dora_node/imu
+    env:
+      FLAGS_config: ./config/default_nclt.yaml
+   # outputs:
+   #   - pointcloud_rs
+ 
+  # - id: lidar2rerun
+  #   path: /home/mickrobot/dora_project/dora_tutorial/rosbag2dora/visualization/lidar2rerun.py
+  #   inputs:
+  #     pointcloud: 
+  #       source: pointcloud_imu_pub_dora_node/pointcloud
+

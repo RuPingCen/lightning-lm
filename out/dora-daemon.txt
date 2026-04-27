@@ -1,0 +1,7 @@
+{"timestamp":"2026-04-27T11:24:59.429006Z","level":"INFO","fields":{"message":"Connected to dora-coordinator at 127.0.0.1:53290"},"target":"dora_daemon::coordinator"}
+{"timestamp":"2026-04-27T11:24:59.435013Z","level":"INFO","fields":{"message":"Using ZID: 4b198c0d9fb2eb01361b414710e2a1de"},"target":"zenoh::net::runtime"}
+{"timestamp":"2026-04-27T11:24:59.446357Z","level":"INFO","fields":{"message":"Zenoh can be reached at: tcp/[fe80::a8a2:e829:42bd:4bed]:38535"},"target":"zenoh::net::runtime::orchestrator"}
+{"timestamp":"2026-04-27T11:24:59.446383Z","level":"INFO","fields":{"message":"Zenoh can be reached at: tcp/[fe80::2f54:b30c:f087:fb79]:38535"},"target":"zenoh::net::runtime::orchestrator"}
+{"timestamp":"2026-04-27T11:24:59.446385Z","level":"INFO","fields":{"message":"Zenoh can be reached at: tcp/192.168.3.52:38535"},"target":"zenoh::net::runtime::orchestrator"}
+{"timestamp":"2026-04-27T11:24:59.446387Z","level":"INFO","fields":{"message":"Zenoh can be reached at: tcp/192.168.3.51:38535"},"target":"zenoh::net::runtime::orchestrator"}
+{"timestamp":"2026-04-27T11:24:59.446913Z","level":"INFO","fields":{"message":"zenohd listening scout messages on 224.0.0.224:7446"},"target":"zenoh::net::runtime::orchestrator"}

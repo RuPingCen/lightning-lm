@@ -11,6 +11,10 @@
 
 4、 在 run_loc_online.cc 增加了TF发布、轨迹、odom发布
 
+
+5、 注释 core/lio/laser_mapping.h 中 preprocess_，以及处理处理ROS2和livox的点云函数 ProcessPointCloud2()
+
+
 5、 添加ROS2和DORA编译脚本。编译时若需要编译为DORA环境下的节点，修改Lightning-LM/CMakeLists.txt 中的第3行代码，将 BUILD_FRAMEWORK 设置为DORA，反之设置为ROS2
 
 TODO:
@@ -21,7 +25,7 @@ cmake/packages.cmake 下还有ROS2的依赖库没有处理掉
 ```
 ros2 run lightning run_slam_online --config src/lightning-lm/config/default_nclt.yaml 
 ros2 bag  play 20120115/
-Save the map ```ros2 service call /lightning/save_map lightning/srv/SaveMap "{map_id: new_map}"```
+ros2 service call /lightning/save_map lightning/srv/SaveMap "{map_id: new_map}"
 pcl_viewer ./data/new_map/global.pcd
 ```
 ### 定位

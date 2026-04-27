@@ -1,0 +1,1308 @@
+lightning localization node for dora
+FLAGS_config: ./config/default_nclt.yaml
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0427 19:35:23.876451  8998 laser_mapping.cc:21] init laser mapping from ./config/default_nclt.yaml
+I0427 19:35:23.878727  8998 laser_mapping.cc:94] lidar_type 2
+I0427 19:35:23.880607  8998 lidar_loc.cc:46] match name is NDT_OMP, MaximumIterations is: 20
+I0427 19:35:24.340858  8998 lidar_loc.cc:85] min init confidence: 1.8
+E0427 19:35:24.340926  8998 tiled_map.cc:86] cannot load map index from: ./data/new_map/
+I0427 19:35:24.341143  9039 lidar_loc.cc:414] UpdateMapThread thread is running
+I0427 19:35:24.343348  8998 pgo.cc:15] smoother factor: 0.01
+I0427 19:35:24.343591  8998 loc_system.cc:72] online loc node has been created.
+I0427 19:35:24.344516  8998 loc_system.cc:81] set init pose: 0 0 0, 0 0 0 1
+I0427 19:35:24.344563  8998 lidar_loc.cc:437] Set initial pose is: 0 0 0
+I0427 19:35:24.344573  8998 run_loc_online_for_dora.cc:70] DORA Localization Node (PCL Preprocess) initialized.
+I0427 19:35:24.344578  8998 run_loc_online_for_dora.cc:74] DORA event loop started.
+I0427 19:35:24.346537  9040 laser_mapping.cc:483] lidar or imu is empty
+W0427 19:35:24.346550  9040 laser_mapping.cc:173] sync package failed
+I0427 19:35:24.414286  9040 imu_processing.hpp:350] waiting for imu init ... 6
+W0427 19:35:24.414320  9040 laser_mapping.cc:181] No point, skip this scan!
+I0427 19:35:24.514381  9040 imu_processing.hpp:350] waiting for imu init ... 15
+W0427 19:35:24.514416  9040 laser_mapping.cc:181] No point, skip this scan!
+I0427 19:35:24.614744  9040 imu_processing.hpp:346] imu init done, bg:  -0.0127708  0.00250685 -0.00343746, grav:   0.133617 0.00135603   -9.80909, acc scale: 1, mean:   -0.133543 -0.00135528     9.80363,  -0.0127708  0.00250685 -0.00343746
+W0427 19:35:24.614851  9040 laser_mapping.cc:181] No point, skip this scan!
+I0427 19:35:24.715306  9040 laser_mapping.cc:187] first scan pts: 2355
+I0427 19:35:24.815176  9040 laser_mapping.cc:217] =============================
+I0427 19:35:24.815207  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.1554, end: 1357847238.2554
+I0427 19:35:24.821877  9040 laser_mapping.cc:280] [ mapping ]: In num: 3017 down 1351 Map grid num: 931 effect num : 505, 512
+I0427 19:35:24.821905  9040 laser_mapping.cc:283] delta trans:   0.0499484  -0.0237903 -0.00448873, ang: 0.494112
+I0427 19:35:24.821943  9040 laser_mapping.cc:379] LIO: create kf 0, state: -0.0499484  0.0237903 0.00448873, kf opt pose: -0.0499484  0.0237903 0.00448873, lio pose: -0.0499484  0.0237903 0.00448873, time: 1357847238.2554
+I0427 19:35:24.823024  9040 laser_mapping.cc:327] LIO state: -0.0499484  0.0237903 0.00448873, yaw -0.493561, vel: -0.00921146  0.00605995 0.000875024, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:24.823253  9041 lidar_loc.cc:448] current time: 1357847238.255417585373
+W0427 19:35:24.823304  9041 lidar_loc.cc:456] assign DR pose failed
+I0427 19:35:24.823310  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:24.823325  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:24.823351  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:24.823357  9041 lidar_loc.cc:329] init failed, score: 0
+I0427 19:35:24.823379  9041 lidar_loc.cc:507] fp tried pose: 1, dr pose set: 0
+I0427 19:35:24.823391  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:24.915819  9040 laser_mapping.cc:217] =============================
+I0427 19:35:24.915858  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.2555, end: 1357847238.3555
+I0427 19:35:24.920818  9040 laser_mapping.cc:280] [ mapping ]: In num: 2687 down 1360 Map grid num: 1743 effect num : 752, 917
+I0427 19:35:24.920842  9040 laser_mapping.cc:283] delta trans:   0.0225251 -0.00187154 -0.00933501, ang: 0.103456
+I0427 19:35:24.920924  9040 laser_mapping.cc:327] LIO state: -0.0733954  0.0262683  0.0139113, yaw -0.469088, vel: -0.195501   0.10554 0.0966715, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.015589  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.015619  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.3556, end: 1357847238.4556
+I0427 19:35:25.020411  9040 laser_mapping.cc:280] [ mapping ]: In num: 3049 down 1426 Map grid num: 1743 effect num : 793, 967
+I0427 19:35:25.020437  9040 laser_mapping.cc:283] delta trans: -0.0251017  0.0384908  0.0173299, ang: 0.130177
+I0427 19:35:25.020538  9040 laser_mapping.cc:327] LIO state:  -0.0678622 -0.00165866  0.00625761, yaw -0.369998, vel:  -0.406742  -0.785097 -0.0412853, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.115257  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.115288  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.4557, end: 1357847238.5557
+I0427 19:35:25.119678  9040 laser_mapping.cc:280] [ mapping ]: In num: 2655 down 1146 Map grid num: 1743 effect num : 798, 893
+I0427 19:35:25.119699  9040 laser_mapping.cc:283] delta trans: -0.0582692 -0.0929628 0.00169308, ang: 0.3881
+I0427 19:35:25.119753  9040 laser_mapping.cc:327] LIO state:  -0.0502973   0.0127363 0.000432944, yaw -0.0342448, vel: -0.173919 -0.388084 -0.050098, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.220467  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.220499  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.5558, end: 1357847238.6558
+I0427 19:35:25.224558  9040 laser_mapping.cc:280] [ mapping ]: In num: 2797 down 1211 Map grid num: 1743 effect num : 779, 878
+I0427 19:35:25.224573  9040 laser_mapping.cc:283] delta trans:  -0.0822735   -0.131423 -0.00582496, ang: 0.13802
+I0427 19:35:25.224609  9040 laser_mapping.cc:327] LIO state:  0.0145671   0.105312 0.00124315, yaw 0.0112112, vel:  0.0642147 0.00948602 -0.0237625, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.320067  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.320091  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.6603, end: 1357847238.7603
+I0427 19:35:25.323753  9040 laser_mapping.cc:280] [ mapping ]: In num: 2912 down 1410 Map grid num: 1743 effect num : 801, 984
+I0427 19:35:25.323768  9040 laser_mapping.cc:283] delta trans:  0.0255919   0.165545 0.00037826, ang: 0.577892
+I0427 19:35:25.323793  9040 laser_mapping.cc:327] LIO state: -0.00431326  -0.0592415 -0.00161868, yaw -0.554658, vel: -0.0107136  -0.441582 -0.0177239, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.420660  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.420691  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.7604, end: 1357847238.8604
+I0427 19:35:25.425405  9040 laser_mapping.cc:280] [ mapping ]: In num: 2777 down 1346 Map grid num: 1743 effect num : 715, 902
+I0427 19:35:25.425426  9040 laser_mapping.cc:283] delta trans:   0.0286976  0.00909855 -0.00498072, ang: 0.185687
+I0427 19:35:25.425525  9040 laser_mapping.cc:327] LIO state: -0.0340831  -0.112532 0.00158829, yaw -0.504467, vel:  -0.137374  -0.520603 0.00645542, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.519853  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.519891  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.8605, end: 1357847238.9605
+I0427 19:35:25.524153  9040 laser_mapping.cc:280] [ mapping ]: In num: 3163 down 1481 Map grid num: 1743 effect num : 832, 988
+I0427 19:35:25.524170  9040 laser_mapping.cc:283] delta trans:  0.0176918  0.0344921 0.00274526, ang: 0.255083
+I0427 19:35:25.524195  9040 laser_mapping.cc:327] LIO state:  -0.0655238   -0.199128 -0.00051089, yaw -0.222498, vel:   -0.188464   -0.624139 -0.00584125, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.620441  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.620474  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847238.9606, end: 1357847239.0605
+I0427 19:35:25.624040  9040 laser_mapping.cc:280] [ mapping ]: In num: 2303 down 831 Map grid num: 1743 effect num : 616, 626
+I0427 19:35:25.624066  9040 laser_mapping.cc:283] delta trans: -0.00616464 -0.00779965  0.00223254, ang: 1.15836
+I0427 19:35:25.624155  9040 laser_mapping.cc:327] LIO state:  -0.0782205   -0.253792 -0.00332802, yaw 0.929195, vel:  -0.174634   -0.60592 -0.0178331, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.720187  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.720217  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.064, end: 1357847239.164
+I0427 19:35:25.724454  9040 laser_mapping.cc:280] [ mapping ]: In num: 3193 down 1494 Map grid num: 1743 effect num : 841, 1016
+I0427 19:35:25.724472  9040 laser_mapping.cc:283] delta trans: -0.0453205 -0.0601567 0.00374125, ang: 1.20593
+I0427 19:35:25.724514  9040 laser_mapping.cc:327] LIO state:  -0.050961  -0.256301 -0.0089136, yaw -0.270708, vel: -0.0896142  -0.491535 -0.0368791, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.825826  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.825867  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.1641, end: 1357847239.264
+E0427 19:35:25.827255  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.506464, drot_deg: 1.15072, dvel: 0.822749
+I0427 19:35:25.827293  9040 laser_mapping.cc:280] [ mapping ]: In num: 2687 down 1372 Map grid num: 1743 effect num : 726, 895
+I0427 19:35:25.827301  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:25.827381  9040 laser_mapping.cc:327] LIO state: -0.0599294  -0.305493 -0.0126044, yaw -0.280151, vel: -0.0896142  -0.491535 -0.0368791, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:25.924894  9040 laser_mapping.cc:217] =============================
+I0427 19:35:25.924926  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.2642, end: 1357847239.3641
+E0427 19:35:25.929419  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.951476, drot_deg: 2.34559, dvel: 1.33586
+I0427 19:35:25.929459  9040 laser_mapping.cc:280] [ mapping ]: In num: 3144 down 1458 Map grid num: 1743 effect num : 818, 1001
+I0427 19:35:25.929467  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:25.929533  9040 laser_mapping.cc:327] LIO state: -0.0688994  -0.354693 -0.0162958, yaw -0.290015, vel: -0.0896142  -0.491535 -0.0368791, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.025079  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.025110  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.3642, end: 1357847239.4642
+I0427 19:35:26.029698  9040 laser_mapping.cc:280] [ mapping ]: In num: 2321 down 912 Map grid num: 1743 effect num : 696, 734
+I0427 19:35:26.029724  9040 laser_mapping.cc:283] delta trans: 0.00747214  0.0104944 -0.0118444, ang: 0.362352
+I0427 19:35:26.029836  9040 laser_mapping.cc:327] LIO state:  -0.0853407   -0.414383 -0.00814257, yaw 0.0623669, vel:  -0.0992267   -0.507191 0.000681662, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.125603  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.125634  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.4643, end: 1357847239.5643
+I0427 19:35:26.130446  9040 laser_mapping.cc:280] [ mapping ]: In num: 3063 down 1413 Map grid num: 1743 effect num : 810, 952
+I0427 19:35:26.130474  9040 laser_mapping.cc:283] delta trans:    -0.18466   -0.254951 -0.00166287, ang: 0.793073
+I0427 19:35:26.130532  9040 laser_mapping.cc:327] LIO state:   0.0893878   -0.210199 -0.00641147, yaw -0.722923, vel:  0.0990506  -0.224991 -0.0132724, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.225126  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.225157  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.5644, end: 1357847239.6644
+I0427 19:35:26.229601  9040 laser_mapping.cc:280] [ mapping ]: In num: 2669 down 1322 Map grid num: 1743 effect num : 700, 866
+I0427 19:35:26.229624  9040 laser_mapping.cc:283] delta trans: -0.0695571  -0.524578 -0.0175337, ang: 1.29262
+I0427 19:35:26.229712  9040 laser_mapping.cc:327] LIO state:   0.168859    0.29186 0.00979384, yaw 0.542983, vel:  0.0803211   0.396489 0.00379449, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.325287  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.325316  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.6645, end: 1357847239.7645
+I0427 19:35:26.330852  9040 laser_mapping.cc:280] [ mapping ]: In num: 3026 down 1424 Map grid num: 1743 effect num : 782, 950
+I0427 19:35:26.330883  9040 laser_mapping.cc:283] delta trans:    0.112282   0.0972433 -0.00120916, ang: 0.248315
+I0427 19:35:26.330933  9040 laser_mapping.cc:327] LIO state: 0.0646157  0.234301 0.0113828, yaw 0.33293, vel: -0.0340471   0.327547  0.0191695, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.425184  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.425215  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.7646, end: 1357847239.8645
+I0427 19:35:26.429479  9040 laser_mapping.cc:280] [ mapping ]: In num: 2637 down 1132 Map grid num: 1743 effect num : 722, 813
+I0427 19:35:26.429504  9040 laser_mapping.cc:283] delta trans: -0.0280493 -0.0326425 0.00871905, ang: 0.276155
+I0427 19:35:26.429584  9040 laser_mapping.cc:327] LIO state: 0.0892586  0.299714 0.0045816, yaw 0.350524, vel: -0.0149835   0.358556  -0.027868, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.525190  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.525221  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.8647, end: 1357847239.9646
+I0427 19:35:26.529579  9040 laser_mapping.cc:280] [ mapping ]: In num: 2890 down 1218 Map grid num: 1743 effect num : 671, 785
+I0427 19:35:26.529613  9040 laser_mapping.cc:283] delta trans:   -0.121402   -0.130497 -0.00597606, ang: 1.05811
+I0427 19:35:26.529696  9040 laser_mapping.cc:327] LIO state:    0.20916   0.466105 0.00776787, yaw 1.37441, vel:    0.0983339     0.478029 -0.000948713, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.625824  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.625852  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847239.9648, end: 1357847240.0647
+I0427 19:35:26.630266  9040 laser_mapping.cc:280] [ mapping ]: In num: 2806 down 1379 Map grid num: 1743 effect num : 682, 856
+I0427 19:35:26.630290  9040 laser_mapping.cc:283] delta trans: 0.0626012  0.382714  -0.00146, ang: 0.873932
+I0427 19:35:26.630383  9040 laser_mapping.cc:327] LIO state:   0.156402   0.131242 0.00913291, yaw 0.568108, vel:  0.276413 -0.153099  0.022016, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.725587  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.725622  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.0648, end: 1357847240.1648
+I0427 19:35:26.730247  9040 laser_mapping.cc:280] [ mapping ]: In num: 2894 down 1369 Map grid num: 1743 effect num : 666, 834
+I0427 19:35:26.730278  9040 laser_mapping.cc:283] delta trans: -0.00590485  0.00630149  0.00303882, ang: 0.22862
+I0427 19:35:26.730368  9040 laser_mapping.cc:327] LIO state:   0.189974   0.109617 0.00829773, yaw 0.576497, vel:   0.302453  -0.164221 0.00851567, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.824733  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.824761  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.1649, end: 1357847240.2649
+I0427 19:35:26.829259  9040 laser_mapping.cc:280] [ mapping ]: In num: 2950 down 1334 Map grid num: 1743 effect num : 766, 876
+I0427 19:35:26.829283  9040 laser_mapping.cc:283] delta trans: -0.00440964   0.0146131  0.00714745, ang: 0.145099
+I0427 19:35:26.829316  9040 laser_mapping.cc:379] LIO: create kf 1, state:   0.224657  0.0785668 0.00200262, kf opt pose:   0.224657  0.0785668 0.00200262, lio pose:   0.224657  0.0785668 0.00200262, time: 1357847240.2649
+I0427 19:35:26.830384  9040 laser_mapping.cc:327] LIO state:   0.224657  0.0785668 0.00200262, yaw 0.412832, vel:   0.326511  -0.200161 -0.0230304, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:26.830633  9041 lidar_loc.cc:448] current time: 1357847240.264921903610
+I0427 19:35:26.830684  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:26.830701  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:26.830729  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:26.830739  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:26.830775  9041 lidar_loc.cc:503] skip trying init, please move to another place.
+I0427 19:35:26.925721  9040 laser_mapping.cc:217] =============================
+I0427 19:35:26.925753  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.265, end: 1357847240.365
+I0427 19:35:26.930830  9040 laser_mapping.cc:280] [ mapping ]: In num: 2534 down 1001 Map grid num: 2371 effect num : 753, 830
+I0427 19:35:26.930863  9040 laser_mapping.cc:283] delta trans:  0.00539176  0.00547708 -0.00714932, ang: 0.838514
+I0427 19:35:26.930965  9040 laser_mapping.cc:327] LIO state:   0.251938  0.0530601 0.00684735, yaw -0.386057, vel:   0.31672  -0.21114 0.0109904, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.025040  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.025074  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.3651, end: 1357847240.4651
+I0427 19:35:27.030093  9040 laser_mapping.cc:280] [ mapping ]: In num: 2930 down 1416 Map grid num: 2371 effect num : 859, 1108
+I0427 19:35:27.030118  9040 laser_mapping.cc:283] delta trans:    0.032743   -0.202662 -0.00447218, ang: 0.830825
+I0427 19:35:27.030207  9040 laser_mapping.cc:327] LIO state:  0.250906  0.234582 0.0124199, yaw 0.398195, vel:  0.124866  0.258662 0.0229648, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.125156  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.125188  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.4652, end: 1357847240.5652
+I0427 19:35:27.129701  9040 laser_mapping.cc:280] [ mapping ]: In num: 2700 down 1285 Map grid num: 2371 effect num : 769, 1008
+I0427 19:35:27.129727  9040 laser_mapping.cc:283] delta trans: -0.0150607 -0.0579772  0.0030642, ang: 0.339893
+I0427 19:35:27.129774  9040 laser_mapping.cc:327] LIO state:   0.27846  0.318439 0.0116534, yaw 0.636513, vel:   0.115708   0.381137 0.00506711, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.225549  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.225579  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.5653, end: 1357847240.6653
+I0427 19:35:27.230444  9040 laser_mapping.cc:280] [ mapping ]: In num: 3194 down 1471 Map grid num: 2371 effect num : 906, 1160
+I0427 19:35:27.230470  9040 laser_mapping.cc:283] delta trans: -0.000373682 -0.000912631  0.000530423, ang: 0.14815
+I0427 19:35:27.230552  9040 laser_mapping.cc:327] LIO state:  0.290415  0.357502 0.0116302, yaw 0.59006, vel: 0.116191 0.382078 0.002382, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:27.232908  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.000368834
+I0427 19:35:27.325170  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.325205  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.6654, end: 1357847240.7654
+I0427 19:35:27.329015  9040 laser_mapping.cc:280] [ mapping ]: In num: 2131 down 773 Map grid num: 2371 effect num : 660, 670
+I0427 19:35:27.329038  9040 laser_mapping.cc:283] delta trans: -0.00517548 -0.00475392  0.00596145, ang: 0.963479
+I0427 19:35:27.329129  9040 laser_mapping.cc:327] LIO state:   0.307223   0.400507 0.00590723, yaw -0.301831, vel:  0.122786  0.388204 -0.028791, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.425186  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.425217  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.766, end: 1357847240.866
+I0427 19:35:27.429690  9040 laser_mapping.cc:280] [ mapping ]: In num: 3225 down 1512 Map grid num: 2371 effect num : 887, 1166
+I0427 19:35:27.429709  9040 laser_mapping.cc:283] delta trans:   -0.209007  -0.0786072 -0.00904627, ang: 1.80161
+I0427 19:35:27.429760  9040 laser_mapping.cc:327] LIO state:  0.528586  0.518176 0.0120565, yaw 1.42987, vel:   0.449673   0.313674 0.00984574, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.526242  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.526274  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.8661, end: 1357847240.9661
+I0427 19:35:27.530560  9040 laser_mapping.cc:280] [ mapping ]: In num: 2697 down 1339 Map grid num: 2371 effect num : 620, 885
+I0427 19:35:27.530584  9040 laser_mapping.cc:283] delta trans:  -0.00480418    0.0370612 -0.000849712, ang: 0.357248
+I0427 19:35:27.530666  9040 laser_mapping.cc:327] LIO state:  0.578393  0.512508 0.0138915, yaw 1.82227, vel: 0.496294 0.226535 0.016293, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.625247  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.625280  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847240.9662, end: 1357847241.0662
+I0427 19:35:27.630210  9040 laser_mapping.cc:280] [ mapping ]: In num: 3155 down 1466 Map grid num: 2371 effect num : 777, 1030
+I0427 19:35:27.630237  9040 laser_mapping.cc:283] delta trans:    0.063807   0.0551092 -0.00112388, ang: 0.179055
+I0427 19:35:27.630373  9040 laser_mapping.cc:327] LIO state:  0.564275  0.480079 0.0166467, yaw 1.76793, vel:  0.430765  0.188117 0.0250468, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.725415  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.725447  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.0663, end: 1357847241.1663
+I0427 19:35:27.729125  9040 laser_mapping.cc:280] [ mapping ]: In num: 2349 down 882 Map grid num: 2371 effect num : 589, 630
+I0427 19:35:27.729151  9040 laser_mapping.cc:283] delta trans: -0.00151161 -0.00158749  0.00195334, ang: 0.667407
+I0427 19:35:27.729207  9040 laser_mapping.cc:327] LIO state:  0.608886  0.500488 0.0171993, yaw 1.1938, vel:  0.432604  0.189979 0.0155013, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.824319  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.824339  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.1664, end: 1357847241.2664
+I0427 19:35:27.828023  9040 laser_mapping.cc:280] [ mapping ]: In num: 3134 down 1401 Map grid num: 2371 effect num : 775, 986
+I0427 19:35:27.828042  9040 laser_mapping.cc:283] delta trans:   0.0185722   0.0215242 -0.00381744, ang: 0.611653
+I0427 19:35:27.828076  9040 laser_mapping.cc:327] LIO state:  0.633623  0.497984 0.0225687, yaw 1.86298, vel:  0.420895   0.17106 0.0345017, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:27.925441  9040 laser_mapping.cc:217] =============================
+I0427 19:35:27.925462  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.2665, end: 1357847241.3665
+I0427 19:35:27.928812  9040 laser_mapping.cc:280] [ mapping ]: In num: 2773 down 1363 Map grid num: 2371 effect num : 686, 940
+I0427 19:35:27.928833  9040 laser_mapping.cc:283] delta trans:  0.236451  0.357502 0.0159086, ang: 0.672394
+I0427 19:35:27.928864  9040 laser_mapping.cc:327] LIO state:  0.439298  0.157602 0.0101132, yaw 1.25265, vel:    0.35055  -0.175321 -0.0133688, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.025502  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.025535  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.3666, end: 1357847241.4666
+I0427 19:35:28.030339  9040 laser_mapping.cc:280] [ mapping ]: In num: 3048 down 1454 Map grid num: 2371 effect num : 726, 959
+I0427 19:35:28.030367  9040 laser_mapping.cc:283] delta trans:   -0.089463   -0.113646 -0.00560914, ang: 0.32941
+I0427 19:35:28.030449  9040 laser_mapping.cc:327] LIO state:  0.563848  0.253699 0.0143842, yaw 1.58251, vel:   0.389437 -0.0689155 0.00532236, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.125224  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.125255  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.4666, end: 1357847241.5666
+I0427 19:35:28.129468  9040 laser_mapping.cc:280] [ mapping ]: In num: 2496 down 998 Map grid num: 2371 effect num : 707, 806
+I0427 19:35:28.129495  9040 laser_mapping.cc:283] delta trans: 0.0427735 0.0390894 0.0112823, ang: 0.553535
+I0427 19:35:28.129587  9040 laser_mapping.cc:327] LIO state:  0.560041  0.207714 0.0036344, yaw 1.14574, vel:   0.356229 -0.0929248  -0.047505, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.224507  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.224531  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.5667, end: 1357847241.6667
+I0427 19:35:28.228128  9040 laser_mapping.cc:280] [ mapping ]: In num: 2893 down 1184 Map grid num: 2371 effect num : 686, 820
+I0427 19:35:28.228144  9040 laser_mapping.cc:283] delta trans:   0.0237336   0.0217414 -0.00189939, ang: 0.139237
+I0427 19:35:28.228183  9040 laser_mapping.cc:327] LIO state:     0.57197     0.17667 0.000778066, yaw 1.12904, vel:   0.340429  -0.106382 -0.0379681, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.325634  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.325666  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.6668, end: 1357847241.7668
+I0427 19:35:28.330102  9040 laser_mapping.cc:280] [ mapping ]: In num: 2748 down 1355 Map grid num: 2371 effect num : 724, 965
+I0427 19:35:28.330125  9040 laser_mapping.cc:283] delta trans:   0.0119812  0.00940403 -0.00234598, ang: 0.180754
+I0427 19:35:28.330196  9040 laser_mapping.cc:327] LIO state:      0.59406     0.156619 -0.000675951, yaw 1.33171, vel:   0.330961  -0.109925 -0.0266425, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.425582  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.425614  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.7669, end: 1357847241.8669
+I0427 19:35:28.430097  9040 laser_mapping.cc:280] [ mapping ]: In num: 2938 down 1375 Map grid num: 2371 effect num : 576, 827
+I0427 19:35:28.430125  9040 laser_mapping.cc:283] delta trans:  -0.215754  -0.238408 -0.0203947, ang: 1.11823
+I0427 19:35:28.430215  9040 laser_mapping.cc:327] LIO state:  0.842939  0.384025 0.0170522, yaw 2.45858, vel:  0.436271 0.0652676 0.0577981, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.525851  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.525883  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.867, end: 1357847241.967
+I0427 19:35:28.530366  9040 laser_mapping.cc:280] [ mapping ]: In num: 2929 down 1316 Map grid num: 2371 effect num : 678, 859
+I0427 19:35:28.530391  9040 laser_mapping.cc:283] delta trans: -0.0504084 -0.0454762 0.00737219, ang: 0.310903
+I0427 19:35:28.530488  9040 laser_mapping.cc:327] LIO state: 0.937014 0.436033 0.015465, yaw 2.47033, vel:  0.465394 0.0887518 0.0243539, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.624523  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.624547  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847241.9671, end: 1357847242.0671
+I0427 19:35:28.627604  9040 laser_mapping.cc:280] [ mapping ]: In num: 2592 down 1007 Map grid num: 2371 effect num : 449, 522
+I0427 19:35:28.627668  9040 laser_mapping.cc:283] delta trans:  -0.236577  -0.209445 -0.0181177, ang: 0.805995
+I0427 19:35:28.627712  9040 laser_mapping.cc:327] LIO state:   1.22017  0.654362 0.0360202, yaw 3.42205, vel:  0.598528  0.196461 0.0994293, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.724685  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.724705  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.0672, end: 1357847242.1671
+I0427 19:35:28.727873  9040 laser_mapping.cc:280] [ mapping ]: In num: 2959 down 1469 Map grid num: 2371 effect num : 697, 960
+I0427 19:35:28.727887  9040 laser_mapping.cc:283] delta trans: 0.930296 0.702202 0.032527, ang: 2.86353
+I0427 19:35:28.727917  9040 laser_mapping.cc:327] LIO state:   0.349775 -0.0281779  0.0134442, yaw 0.677137, vel:  0.0242657 -0.0326817 -0.0181871, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.825119  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.825150  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.1673, end: 1357847242.2672
+I0427 19:35:28.829362  9040 laser_mapping.cc:280] [ mapping ]: In num: 2818 down 1379 Map grid num: 2371 effect num : 540, 802
+I0427 19:35:28.829387  9040 laser_mapping.cc:283] delta trans:   -0.315195   -0.343204 -0.00840229, ang: 1.48571
+I0427 19:35:28.829422  9040 laser_mapping.cc:379] LIO: create kf 2, state:    0.6674  0.311755 0.0200259, kf opt pose:    0.6674  0.311755 0.0200259, lio pose:    0.6674  0.311755 0.0200259, time: 1357847242.2672
+I0427 19:35:28.830448  9040 laser_mapping.cc:327] LIO state:    0.6674  0.311755 0.0200259, yaw 2.17075, vel:   0.147204   0.195097 0.00539144, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:28.830899  9041 lidar_loc.cc:448] current time: 1357847242.267245292664
+I0427 19:35:28.830960  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:28.830971  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:28.830993  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:28.831000  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:28.831015  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:28.831022  9041 lidar_loc.cc:525] record fp failed time: 1357847242.27, pose:   0.352204288917 -0.0314493432754  0.0116236998551
+W0427 19:35:28.833976  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.010283
+W0427 19:35:28.844156  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00026989
+I0427 19:35:28.924932  9040 laser_mapping.cc:217] =============================
+I0427 19:35:28.924962  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.2674, end: 1357847242.3673
+I0427 19:35:28.930012  9040 laser_mapping.cc:280] [ mapping ]: In num: 3181 down 1543 Map grid num: 3274 effect num : 874, 1245
+I0427 19:35:28.930028  9040 laser_mapping.cc:283] delta trans: -0.000546596 -0.000478816  0.000351598, ang: 0.209561
+I0427 19:35:28.930055  9040 laser_mapping.cc:327] LIO state:  0.682679   0.33176 0.0202139, yaw 2.02957, vel:   0.147871   0.195787 0.00378387, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.031401  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.031432  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.3674, end: 1357847242.4674
+I0427 19:35:29.035270  9040 laser_mapping.cc:280] [ mapping ]: In num: 2237 down 826 Map grid num: 3274 effect num : 607, 630
+I0427 19:35:29.035295  9040 laser_mapping.cc:283] delta trans:   0.0150505   0.0125128 -0.00020397, ang: 0.854196
+I0427 19:35:29.035390  9040 laser_mapping.cc:327] LIO state:  0.682426   0.33884 0.0207966, yaw 1.26208, vel:   0.136007   0.187593 0.00558286, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.130136  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.130168  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.4692, end: 1357847242.5692
+I0427 19:35:29.135548  9040 laser_mapping.cc:280] [ mapping ]: In num: 3249 down 1495 Map grid num: 3274 effect num : 858, 1235
+I0427 19:35:29.135572  9040 laser_mapping.cc:283] delta trans:  0.0303944   0.022823 0.00725831, ang: 0.580831
+I0427 19:35:29.135658  9040 laser_mapping.cc:327] LIO state:  0.665873  0.335109 0.0141064, yaw 1.77482, vel:   0.114612   0.178872 -0.0240186, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.231003  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.231035  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.5693, end: 1357847242.6693
+I0427 19:35:29.235764  9040 laser_mapping.cc:280] [ mapping ]: In num: 2756 down 1346 Map grid num: 3274 effect num : 735, 1073
+I0427 19:35:29.235787  9040 laser_mapping.cc:283] delta trans:   0.0476712  0.00357314 -0.00320361, ang: 0.0669397
+I0427 19:35:29.235890  9040 laser_mapping.cc:327] LIO state:  0.629674   0.34944 0.0149059, yaw 1.82916, vel:    0.052037    0.203923 -0.00636577, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.330569  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.330601  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.6694, end: 1357847242.7694
+I0427 19:35:29.335814  9040 laser_mapping.cc:280] [ mapping ]: In num: 3154 down 1441 Map grid num: 3274 effect num : 830, 1192
+I0427 19:35:29.335840  9040 laser_mapping.cc:283] delta trans:  0.0247096  0.0195576 0.00258939, ang: 0.16079
+I0427 19:35:29.335925  9040 laser_mapping.cc:327] LIO state:  0.610173  0.350291 0.0116794, yaw 1.714, vel:  0.0287078   0.191493 -0.0149882, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.430365  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.430397  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.7695, end: 1357847242.8694
+I0427 19:35:29.432315  9040 laser_mapping.cc:280] [ mapping ]: In num: 2392 down 879 Map grid num: 3274 effect num : 637, 709
+I0427 19:35:29.432340  9040 laser_mapping.cc:283] delta trans: 0.00164113  0.0018018 -5.299e-05, ang: 0.211297
+I0427 19:35:29.432443  9040 laser_mapping.cc:327] LIO state:  0.611405  0.367657 0.0102322, yaw 1.57944, vel:  0.0275649     0.1898 -0.0143732, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.530254  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.530284  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.8695, end: 1357847242.9695
+I0427 19:35:29.535454  9040 laser_mapping.cc:280] [ mapping ]: In num: 3118 down 1402 Map grid num: 3274 effect num : 837, 1141
+I0427 19:35:29.535476  9040 laser_mapping.cc:283] delta trans:   0.0921936   0.0866153 -0.00474121, ang: 0.101778
+I0427 19:35:29.535557  9040 laser_mapping.cc:327] LIO state:   0.52197  0.300039 0.0135348, yaw 1.48334, vel: -0.066305  0.118552 0.0239627, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.629742  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.629772  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847242.9696, end: 1357847243.0696
+I0427 19:35:29.634481  9040 laser_mapping.cc:280] [ mapping ]: In num: 2734 down 1365 Map grid num: 3274 effect num : 761, 1112
+I0427 19:35:29.634503  9040 laser_mapping.cc:283] delta trans:   0.131009   0.195749 0.00645693, ang: 0.443434
+I0427 19:35:29.634599  9040 laser_mapping.cc:327] LIO state:   0.384326   0.116153 0.00947568, yaw 1.03606, vel: -0.096826 -0.064913 0.0297969, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:29.643491  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00955415
+W0427 19:35:29.653399  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-2.31266e-05
+I0427 19:35:29.730455  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.730487  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.0697, end: 1357847243.1697
+I0427 19:35:29.735538  9040 laser_mapping.cc:280] [ mapping ]: In num: 3042 down 1438 Map grid num: 3274 effect num : 822, 1192
+I0427 19:35:29.735563  9040 laser_mapping.cc:283] delta trans:  -0.00529636  -0.00815042 -0.000812611, ang: 0.12536
+I0427 19:35:29.735653  9040 laser_mapping.cc:327] LIO state:  0.379929  0.117805 0.0132713, yaw 0.962989, vel:  -0.094554 -0.0550026   0.032447, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.830083  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.830116  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.1698, end: 1357847243.2697
+I0427 19:35:29.833088  9040 laser_mapping.cc:280] [ mapping ]: In num: 2727 down 1181 Map grid num: 3274 effect num : 762, 941
+I0427 19:35:29.833112  9040 laser_mapping.cc:283] delta trans: 0.00903933 0.00657341 0.00660972, ang: 0.112059
+I0427 19:35:29.833202  9040 laser_mapping.cc:327] LIO state:   0.361433    0.10573 0.00990683, yaw 0.873465, vel:  -0.108279 -0.0590276 0.00200862, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:29.935793  9040 laser_mapping.cc:217] =============================
+I0427 19:35:29.935835  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.2699, end: 1357847243.3699
+I0427 19:35:29.940641  9040 laser_mapping.cc:280] [ mapping ]: In num: 2915 down 1203 Map grid num: 3274 effect num : 738, 959
+I0427 19:35:29.940666  9040 laser_mapping.cc:283] delta trans: -0.00143201 -0.00105108 0.000587389, ang: 0.0954473
+I0427 19:35:29.940757  9040 laser_mapping.cc:327] LIO state:   0.352022    0.10087 0.00952059, yaw 0.948125, vel:   -0.106414  -0.0583403 -0.00104704, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.035804  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.035833  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.3744, end: 1357847243.4744
+I0427 19:35:30.040572  9040 laser_mapping.cc:280] [ mapping ]: In num: 3011 down 1464 Map grid num: 3274 effect num : 816, 1201
+I0427 19:35:30.040596  9040 laser_mapping.cc:283] delta trans: -0.0788122 -0.0260517 0.00303429, ang: 0.345566
+I0427 19:35:30.040681  9040 laser_mapping.cc:327] LIO state:   0.419712   0.120825 0.00637686, yaw 1.24546, vel: 0.000131096  -0.0780517  -0.0227575, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.135157  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.135190  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.4745, end: 1357847243.5745
+I0427 19:35:30.140107  9040 laser_mapping.cc:280] [ mapping ]: In num: 2842 down 1368 Map grid num: 3274 effect num : 751, 1118
+I0427 19:35:30.140129  9040 laser_mapping.cc:283] delta trans:  -0.0133271  -0.0207518 -0.00304649, ang: 0.0857871
+I0427 19:35:30.140211  9040 laser_mapping.cc:327] LIO state:   0.433052   0.133763 0.00714516, yaw 1.20242, vel: 0.00914777 -0.0466184 -0.0117073, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.235149  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.235185  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.5746, end: 1357847243.6746
+I0427 19:35:30.240752  9040 laser_mapping.cc:280] [ mapping ]: In num: 3146 down 1466 Map grid num: 3274 effect num : 895, 1260
+I0427 19:35:30.240777  9040 laser_mapping.cc:283] delta trans: -0.00220407  -0.0567838 -6.9802e-05, ang: 0.169663
+I0427 19:35:30.240893  9040 laser_mapping.cc:327] LIO state:   0.436172   0.185881 0.00604332, yaw 1.09957, vel: -0.0345253  0.0866191 -0.0181346, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.335987  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.336023  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.6747, end: 1357847243.7746
+I0427 19:35:30.340282  9040 laser_mapping.cc:280] [ mapping ]: In num: 2312 down 833 Map grid num: 3274 effect num : 651, 694
+I0427 19:35:30.340338  9040 laser_mapping.cc:283] delta trans:    0.0166579    0.0152845 -0.000904647, ang: 0.341956
+I0427 19:35:30.340389  9040 laser_mapping.cc:327] LIO state:   0.416059   0.179264 0.00513335, yaw 0.801835, vel: -0.0502069  0.0721623 -0.0111327, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.435667  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.435711  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.7786, end: 1357847243.8786
+I0427 19:35:30.441807  9040 laser_mapping.cc:280] [ mapping ]: In num: 3197 down 1504 Map grid num: 3274 effect num : 944, 1307
+I0427 19:35:30.441838  9040 laser_mapping.cc:283] delta trans: 0.00626418 0.00553088 0.00329441, ang: 0.150084
+I0427 19:35:30.441931  9040 laser_mapping.cc:327] LIO state:    0.404574    0.181237 0.000681301, yaw 0.922193, vel: -0.0567638  0.0670984 -0.0254873, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.535686  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.535718  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.8787, end: 1357847243.9787
+I0427 19:35:30.540442  9040 laser_mapping.cc:280] [ mapping ]: In num: 2728 down 1377 Map grid num: 3274 effect num : 777, 1167
+I0427 19:35:30.540468  9040 laser_mapping.cc:283] delta trans:  -0.0746851  -0.0985463 -0.00416375, ang: 0.389209
+I0427 19:35:30.540558  9040 laser_mapping.cc:327] LIO state:   0.473578   0.286499 0.00229401, yaw 1.30618, vel: -0.0154609   0.177967 -0.0184069, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.635535  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.635566  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847243.9788, end: 1357847244.0788
+I0427 19:35:30.641037  9040 laser_mapping.cc:280] [ mapping ]: In num: 3152 down 1479 Map grid num: 3274 effect num : 868, 1250
+I0427 19:35:30.641063  9040 laser_mapping.cc:283] delta trans: -0.00424849 -0.00337179 -0.00202826, ang: 0.0154686
+I0427 19:35:30.641165  9040 laser_mapping.cc:327] LIO state:   0.476279   0.307683 0.00247995, yaw 1.29148, vel: -0.0116624   0.180233 -0.0089447, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.735303  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.735339  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.0789, end: 1357847244.1789
+I0427 19:35:30.739624  9040 laser_mapping.cc:280] [ mapping ]: In num: 2350 down 928 Map grid num: 3274 effect num : 667, 748
+I0427 19:35:30.739689  9040 laser_mapping.cc:283] delta trans:    0.0561372    0.0452267 -0.000510446, ang: 1.06685
+I0427 19:35:30.739735  9040 laser_mapping.cc:327] LIO state:   0.418974   0.280495 0.00209519, yaw 0.278814, vel:   -0.0553325     0.151806 -0.000643658, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.835415  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.835454  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.179, end: 1357847244.279
+I0427 19:35:30.841187  9040 laser_mapping.cc:280] [ mapping ]: In num: 3204 down 1470 Map grid num: 3274 effect num : 794, 1125
+I0427 19:35:30.841220  9040 laser_mapping.cc:283] delta trans:  0.0110284 0.00975337 -0.0111461, ang: 1.30171
+I0427 19:35:30.841257  9040 laser_mapping.cc:379] LIO: create kf 3, state:  0.402409  0.285934 0.0131768, kf opt pose:  0.402409  0.285934 0.0131768, lio pose:  0.402409  0.285934 0.0131768, time: 1357847244.279
+I0427 19:35:30.842483  9040 laser_mapping.cc:327] LIO state:  0.402409  0.285934 0.0131768, yaw 1.50199, vel:  -0.06274  0.144205 0.0536698, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:30.842911  9041 lidar_loc.cc:448] current time: 1357847244.278967857361
+I0427 19:35:30.843031  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:30.843048  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:30.843081  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:30.843092  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:30.843115  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:30.843127  9041 lidar_loc.cc:525] record fp failed time: 1357847244.28, pose:   0.413436450945   0.295688400436 0.00203076769781
+I0427 19:35:30.939898  9040 laser_mapping.cc:217] =============================
+I0427 19:35:30.939915  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.2791, end: 1357847244.379
+I0427 19:35:30.943253  9040 laser_mapping.cc:280] [ mapping ]: In num: 2834 down 1408 Map grid num: 3932 effect num : 763, 1169
+I0427 19:35:30.943269  9040 laser_mapping.cc:283] delta trans:   -0.414813   -0.279081 -0.00984371, ang: 1.45668
+I0427 19:35:30.943296  9040 laser_mapping.cc:327] LIO state:  0.810943  0.579446 0.0283919, yaw 3.04869, vel:  0.246173  0.266816 0.0550511, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.040701  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.040735  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.3792, end: 1357847244.4791
+I0427 19:35:31.046028  9040 laser_mapping.cc:280] [ mapping ]: In num: 3006 down 1477 Map grid num: 3932 effect num : 746, 1137
+I0427 19:35:31.046056  9040 laser_mapping.cc:283] delta trans:  0.0955734  0.0801264 0.00240782, ang: 0.336995
+I0427 19:35:31.046131  9040 laser_mapping.cc:327] LIO state:  0.740013  0.526031 0.0314952, yaw 2.87376, vel:  0.135058  0.204935 0.0557936, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.140058  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.140091  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.4793, end: 1357847244.5792
+I0427 19:35:31.143924  9040 laser_mapping.cc:280] [ mapping ]: In num: 2733 down 1158 Map grid num: 3932 effect num : 672, 854
+I0427 19:35:31.143949  9040 laser_mapping.cc:283] delta trans:  0.171474  0.241729 0.0103031, ang: 1.31076
+I0427 19:35:31.143998  9040 laser_mapping.cc:327] LIO state:  0.582056  0.304811 0.0267758, yaw 1.66896, vel:   0.0668054 -0.00993026    0.037432, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.241106  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.241143  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.5793, end: 1357847244.6793
+I0427 19:35:31.246869  9040 laser_mapping.cc:280] [ mapping ]: In num: 2914 down 1218 Map grid num: 3932 effect num : 834, 1054
+I0427 19:35:31.246909  9040 laser_mapping.cc:283] delta trans: -0.00331379 -0.00263528  0.00581138, ang: 0.356728
+I0427 19:35:31.246999  9040 laser_mapping.cc:327] LIO state:  0.592058  0.306452 0.0247118, yaw 2.01658, vel:   0.0728227 -0.00679105  0.00906253, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:31.253721  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00163054
+I0427 19:35:31.339133  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.339159  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.6833, end: 1357847244.7833
+I0427 19:35:31.343534  9040 laser_mapping.cc:280] [ mapping ]: In num: 2971 down 1444 Map grid num: 3932 effect num : 858, 1251
+I0427 19:35:31.343554  9040 laser_mapping.cc:283] delta trans: -0.00636513  -0.0110902   0.0112864, ang: 0.185618
+I0427 19:35:31.343591  9040 laser_mapping.cc:327] LIO state:  0.605993  0.316837 0.0143676, yaw 1.97068, vel:  0.0797957  0.0118506 -0.0481614, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.440430  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.440470  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.7834, end: 1357847244.8833
+I0427 19:35:31.446382  9040 laser_mapping.cc:280] [ mapping ]: In num: 2781 down 1353 Map grid num: 3932 effect num : 802, 1171
+I0427 19:35:31.446417  9040 laser_mapping.cc:283] delta trans:   0.0120554 -0.00545189 0.000847011, ang: 0.164897
+I0427 19:35:31.446514  9040 laser_mapping.cc:327] LIO state:    0.60192   0.323474 0.00870295, yaw 2.10014, vel:  0.0534785  0.0266823 -0.0522659, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.540380  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.540416  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.8835, end: 1357847244.9834
+I0427 19:35:31.547021  9040 laser_mapping.cc:280] [ mapping ]: In num: 3149 down 1463 Map grid num: 3932 effect num : 891, 1261
+I0427 19:35:31.547052  9040 laser_mapping.cc:283] delta trans:   0.0890983    0.021097 -0.00235381, ang: 0.548257
+I0427 19:35:31.547150  9040 laser_mapping.cc:327] LIO state:   0.518176   0.305048 0.00582387, yaw 1.65275, vel: -0.0931687  0.0602447 -0.0330196, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.645712  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.645751  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847244.9836, end: 1357847245.0836
+I0427 19:35:31.650097  9040 laser_mapping.cc:280] [ mapping ]: In num: 2309 down 842 Map grid num: 3932 effect num : 632, 705
+I0427 19:35:31.650130  9040 laser_mapping.cc:283] delta trans:   0.0215383   0.0196029 -0.00674664, ang: 0.186866
+I0427 19:35:31.650216  9040 laser_mapping.cc:327] LIO state:   0.487311   0.291476 0.00926498, yaw 1.48281, vel:  -0.117191  0.0379535 0.00447666, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.744735  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.744765  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.0875, end: 1357847245.1875
+I0427 19:35:31.749647  9040 laser_mapping.cc:280] [ mapping ]: In num: 3159 down 1479 Map grid num: 3932 effect num : 886, 1267
+I0427 19:35:31.749676  9040 laser_mapping.cc:283] delta trans:   0.302202   0.161452 0.00358719, ang: 1.12171
+I0427 19:35:31.749763  9040 laser_mapping.cc:327] LIO state:  0.172927   0.13397 0.0061431, yaw 0.370788, vel: -0.520566 0.0104667 0.0143631, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.846215  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.846254  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.1876, end: 1357847245.2876
+I0427 19:35:31.851009  9040 laser_mapping.cc:280] [ mapping ]: In num: 2731 down 1390 Map grid num: 3932 effect num : 820, 1207
+I0427 19:35:31.851040  9040 laser_mapping.cc:283] delta trans:  0.0339814  0.0372919 0.00152912, ang: 0.111981
+I0427 19:35:31.851128  9040 laser_mapping.cc:327] LIO state:  0.0868409  0.0977253 0.00605162, yaw 0.211802, vel:  -0.548958 -0.0342509   0.011375, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:31.945873  9040 laser_mapping.cc:217] =============================
+I0427 19:35:31.945906  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.2877, end: 1357847245.3877
+I0427 19:35:31.952215  9040 laser_mapping.cc:280] [ mapping ]: In num: 3178 down 1482 Map grid num: 3932 effect num : 920, 1308
+I0427 19:35:31.952246  9040 laser_mapping.cc:283] delta trans: 0.00743952 0.00637031 0.00653096, ang: 0.173943
+I0427 19:35:31.952309  9040 laser_mapping.cc:327] LIO state:   0.0244582   0.0879269 0.000659136, yaw -0.0126341, vel:  -0.557546 -0.0402712 -0.0205764, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.044682  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.044708  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.3878, end: 1357847245.4877
+I0427 19:35:32.048482  9040 laser_mapping.cc:280] [ mapping ]: In num: 2401 down 925 Map grid num: 3932 effect num : 666, 739
+I0427 19:35:32.048509  9040 laser_mapping.cc:283] delta trans: -0.0370442  -0.032174 0.00317933, ang: 0.566832
+I0427 19:35:32.048560  9040 laser_mapping.cc:327] LIO state:  0.00572603    0.116072 -0.00457864, yaw 0.379015, vel:  -0.524099 -0.0115228 -0.0397878, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:32.053546  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00408936
+I0427 19:35:32.145483  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.145520  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.4879, end: 1357847245.5879
+I0427 19:35:32.150206  9040 laser_mapping.cc:280] [ mapping ]: In num: 3219 down 1424 Map grid num: 3932 effect num : 790, 1126
+I0427 19:35:32.150233  9040 laser_mapping.cc:283] delta trans:  -0.0244676  -0.0215402 -0.00576995, ang: 0.269746
+I0427 19:35:32.150316  9040 laser_mapping.cc:327] LIO state:  -0.0222925    0.136458 -0.00279324, yaw 0.0206075, vel:    -0.5011 0.00762071 -0.0123576, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.245966  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.246004  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.588, end: 1357847245.688
+I0427 19:35:32.250519  9040 laser_mapping.cc:280] [ mapping ]: In num: 2792 down 1433 Map grid num: 3932 effect num : 731, 1097
+I0427 19:35:32.250540  9040 laser_mapping.cc:283] delta trans: -0.154674 0.0687687 0.0135524, ang: 0.385153
+I0427 19:35:32.250592  9040 laser_mapping.cc:327] LIO state:  0.0822275  0.0684525 -0.0175825, yaw 0.317811, vel:  -0.259781  -0.228479 -0.0766704, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.345749  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.345791  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.6881, end: 1357847245.788
+I0427 19:35:32.351475  9040 laser_mapping.cc:280] [ mapping ]: In num: 3061 down 1437 Map grid num: 3932 effect num : 749, 1143
+I0427 19:35:32.351508  9040 laser_mapping.cc:283] delta trans:  -0.143281 -0.0705918 -0.0268082, ang: 0.722929
+I0427 19:35:32.351580  9040 laser_mapping.cc:327] LIO state:   0.199517   0.116184 0.00155461, yaw 0.941113, vel: -0.112192 -0.240527 0.0398422, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.446442  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.446488  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.7881, end: 1357847245.8881
+I0427 19:35:32.451262  9040 laser_mapping.cc:280] [ mapping ]: In num: 2733 down 1163 Map grid num: 3932 effect num : 662, 830
+I0427 19:35:32.451295  9040 laser_mapping.cc:283] delta trans: 0.252369 0.210873 0.017033, ang: 0.721797
+I0427 19:35:32.451385  9040 laser_mapping.cc:327] LIO state: -0.0640864  -0.118773 -0.0114889, yaw 0.256302, vel: -0.299283 -0.400294 -0.018403, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.551569  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.551625  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.8882, end: 1357847245.9882
+I0427 19:35:32.557374  9040 laser_mapping.cc:280] [ mapping ]: In num: 2968 down 1281 Map grid num: 3932 effect num : 822, 1035
+I0427 19:35:32.557410  9040 laser_mapping.cc:283] delta trans: 0.00747481 0.00503356 -0.0035609, ang: 0.658034
+I0427 19:35:32.557539  9040 laser_mapping.cc:327] LIO state:   -0.101514   -0.163868 -0.00976978, yaw -0.427886, vel:   -0.305345   -0.402115 -0.00135893, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.650696  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.650734  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847245.9927, end: 1357847246.0927
+I0427 19:35:32.656152  9040 laser_mapping.cc:280] [ mapping ]: In num: 2921 down 1422 Map grid num: 3932 effect num : 850, 1231
+I0427 19:35:32.656181  9040 laser_mapping.cc:283] delta trans:  0.0107667 0.00715213  0.0121901, ang: 0.273542
+I0427 19:35:32.656275  9040 laser_mapping.cc:327] LIO state:  -0.144191  -0.213044 -0.0221019, yaw -0.627328, vel:  -0.313604  -0.406602 -0.0616324, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.750674  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.750716  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.0928, end: 1357847246.1928
+I0427 19:35:32.756083  9040 laser_mapping.cc:280] [ mapping ]: In num: 2844 down 1321 Map grid num: 3932 effect num : 699, 1073
+I0427 19:35:32.756112  9040 laser_mapping.cc:283] delta trans:   0.140123  0.0549971 0.00141249, ang: 0.673983
+I0427 19:35:32.756210  9040 laser_mapping.cc:327] LIO state:   -0.31571  -0.308747 -0.0296846, yaw -1.23986, vel:  -0.443431  -0.391997 -0.0610796, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.850944  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.850986  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.1929, end: 1357847246.2929
+I0427 19:35:32.856789  9040 laser_mapping.cc:280] [ mapping ]: In num: 3105 down 1408 Map grid num: 3932 effect num : 796, 1152
+I0427 19:35:32.856837  9040 laser_mapping.cc:283] delta trans:    0.120322   0.0695325 -0.00204286, ang: 0.467375
+I0427 19:35:32.856942  9040 laser_mapping.cc:379] LIO: create kf 4, state: -0.480407 -0.417507 -0.033754, kf opt pose: -0.480407 -0.417507 -0.033754, lio pose: -0.480407 -0.417507 -0.033754, time: 1357847246.2929
+I0427 19:35:32.858031  9040 laser_mapping.cc:327] LIO state: -0.480407 -0.417507 -0.033754, yaw -1.81069, vel:  -0.579948  -0.424304 -0.0407899, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:32.858366  9041 lidar_loc.cc:448] current time: 1357847246.292911291122
+I0427 19:35:32.858438  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:32.858449  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:32.858471  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:32.858479  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:32.858492  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:32.858500  9041 lidar_loc.cc:525] record fp failed time: 1357847246.29, pose:  -0.360086751442  -0.347976269599 -0.0357971236019
+W0427 19:35:32.863672  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.0045805
+I0427 19:35:32.955946  9040 laser_mapping.cc:217] =============================
+I0427 19:35:32.955981  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.293, end: 1357847246.393
+I0427 19:35:32.959878  9040 laser_mapping.cc:280] [ mapping ]: In num: 2254 down 811 Map grid num: 4555 effect num : 557, 611
+I0427 19:35:32.959908  9040 laser_mapping.cc:283] delta trans:  -0.0020517 -0.00270528 -0.00318634, ang: 0.388058
+I0427 19:35:32.960001  9040 laser_mapping.cc:327] LIO state:  -0.536405  -0.457272 -0.0346505, yaw -1.63936, vel:  -0.580831   -0.42161 -0.0253834, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.055619  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.055656  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.397, end: 1357847246.497
+I0427 19:35:33.061887  9040 laser_mapping.cc:280] [ mapping ]: In num: 3180 down 1497 Map grid num: 4555 effect num : 869, 1265
+I0427 19:35:33.061919  9040 laser_mapping.cc:283] delta trans: -0.00558525 -0.00517547 -0.00890464, ang: 0.178631
+I0427 19:35:33.062011  9040 laser_mapping.cc:327] LIO state:  -0.591198  -0.495924 -0.0283845, yaw -1.95175, vel: -0.579452 -0.420131 0.0142743, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.155148  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.155190  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.4971, end: 1357847246.5971
+I0427 19:35:33.160447  9040 laser_mapping.cc:280] [ mapping ]: In num: 2712 down 1385 Map grid num: 4555 effect num : 748, 1147
+I0427 19:35:33.160478  9040 laser_mapping.cc:283] delta trans:  0.00211884    0.125304 0.000432655, ang: 0.423149
+I0427 19:35:33.160537  9040 laser_mapping.cc:327] LIO state:  -0.651323  -0.663285 -0.0273883, yaw -2.48275, vel: -0.432413 -0.587359 0.0290804, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.255679  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.255714  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.5972, end: 1357847246.6971
+I0427 19:35:33.261396  9040 laser_mapping.cc:280] [ mapping ]: In num: 3157 down 1476 Map grid num: 4555 effect num : 749, 1147
+I0427 19:35:33.261427  9040 laser_mapping.cc:283] delta trans:  0.118974  0.182774 0.0105286, ang: 0.448684
+I0427 19:35:33.261528  9040 laser_mapping.cc:327] LIO state:  -0.813577  -0.904847 -0.0350062, yaw -3.0607, vel: -0.437437   -0.7774  0.010204, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.355887  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.355921  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.6972, end: 1357847246.7972
+I0427 19:35:33.360100  9040 laser_mapping.cc:280] [ mapping ]: In num: 2375 down 922 Map grid num: 4555 effect num : 542, 616
+I0427 19:35:33.360126  9040 laser_mapping.cc:283] delta trans: -0.0384981 -0.0366257  0.0157448, ang: 0.332918
+I0427 19:35:33.360212  9040 laser_mapping.cc:327] LIO state: -0.818847 -0.946004  -0.04973, yaw -3.02815, vel:  -0.407192  -0.748498 -0.0718735, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.455457  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.455492  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.7973, end: 1357847246.8973
+I0427 19:35:33.461246  9040 laser_mapping.cc:280] [ mapping ]: In num: 3147 down 1418 Map grid num: 4555 effect num : 792, 1127
+I0427 19:35:33.461282  9040 laser_mapping.cc:283] delta trans: -0.0537233 -0.0523515 0.00311271, ang: 0.114175
+I0427 19:35:33.461374  9040 laser_mapping.cc:327] LIO state:  -0.805884  -0.968578 -0.0600373, yaw -3.18571, vel:  -0.36771 -0.709167 -0.096271, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.555783  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.555866  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.8974, end: 1357847246.9974
+I0427 19:35:33.560637  9040 laser_mapping.cc:280] [ mapping ]: In num: 2759 down 1386 Map grid num: 4555 effect num : 714, 1106
+I0427 19:35:33.560667  9040 laser_mapping.cc:283] delta trans: -0.124519 -0.136709 -0.015461, ang: 0.399591
+I0427 19:35:33.560729  9040 laser_mapping.cc:327] LIO state:  -0.718167  -0.902845 -0.0542115, yaw -3.00104, vel:  -0.297827  -0.601206 -0.0462076, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.655498  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.655532  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847246.9975, end: 1357847247.0975
+I0427 19:35:33.660894  9040 laser_mapping.cc:280] [ mapping ]: In num: 3050 down 1428 Map grid num: 4555 effect num : 721, 1109
+I0427 19:35:33.660923  9040 laser_mapping.cc:283] delta trans:   0.0189165   0.0134451 -0.00798951, ang: 0.157963
+I0427 19:35:33.661010  9040 laser_mapping.cc:327] LIO state:  -0.766897  -0.976473 -0.0508475, yaw -3.04432, vel:   -0.316541   -0.606483 -0.00369327, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:33.663743  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00299835
+I0427 19:35:33.756074  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.756111  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.0976, end: 1357847247.1976
+I0427 19:35:33.760859  9040 laser_mapping.cc:280] [ mapping ]: In num: 2694 down 1137 Map grid num: 4555 effect num : 633, 804
+I0427 19:35:33.760891  9040 laser_mapping.cc:283] delta trans: -0.000908659 -0.000993032  0.000821823, ang: 0.0799469
+I0427 19:35:33.760962  9040 laser_mapping.cc:327] LIO state: -0.797673  -1.03619 -0.052039, yaw -3.12146, vel:   -0.316414     -0.6058 -0.00770692, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.860639  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.860680  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.1977, end: 1357847247.2977
+I0427 19:35:33.865006  9040 laser_mapping.cc:280] [ mapping ]: In num: 2943 down 1234 Map grid num: 4555 effect num : 644, 865
+I0427 19:35:33.865038  9040 laser_mapping.cc:283] delta trans: -0.00452864 -0.00486257   0.0016093, ang: 0.171935
+I0427 19:35:33.865123  9040 laser_mapping.cc:327] LIO state:  -0.824814   -1.09196 -0.0544197, yaw -3.37362, vel:  -0.313223  -0.602579 -0.0160743, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:33.960891  9040 laser_mapping.cc:217] =============================
+I0427 19:35:33.960932  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.3028, end: 1357847247.4027
+I0427 19:35:33.966714  9040 laser_mapping.cc:280] [ mapping ]: In num: 2872 down 1414 Map grid num: 4555 effect num : 726, 1113
+I0427 19:35:33.966743  9040 laser_mapping.cc:283] delta trans: -0.0811765  -0.129755 0.00129029, ang: 0.0653362
+I0427 19:35:33.966856  9040 laser_mapping.cc:327] LIO state:  -0.776548   -1.02552 -0.0573989, yaw -3.48599, vel: -0.303306 -0.476194 -0.040942, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.059671  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.059700  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.4028, end: 1357847247.5028
+E0427 19:35:34.063349  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.801258, drot_deg: 2.00874, dvel: 0.574685
+I0427 19:35:34.063380  9040 laser_mapping.cc:280] [ mapping ]: In num: 2750 down 1308 Map grid num: 4555 effect num : 700, 1120
+I0427 19:35:34.063385  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:34.063431  9040 laser_mapping.cc:327] LIO state:  -0.806897   -1.07317 -0.0614956, yaw -3.6149, vel: -0.303306 -0.476194 -0.040942, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.159273  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.159298  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.5029, end: 1357847247.6029
+I0427 19:35:34.163290  9040 laser_mapping.cc:280] [ mapping ]: In num: 3125 down 1443 Map grid num: 4555 effect num : 771, 1126
+I0427 19:35:34.163313  9040 laser_mapping.cc:283] delta trans:   0.19762  0.151754 0.0107378, ang: 0.778168
+I0427 19:35:34.163347  9040 laser_mapping.cc:327] LIO state:   -1.03487   -1.27258 -0.0763313, yaw -4.52882, vel:  -0.476038   -0.54461 -0.0554599, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.265595  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.265633  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.603, end: 1357847247.703
+I0427 19:35:34.269222  9040 laser_mapping.cc:280] [ mapping ]: In num: 2259 down 774 Map grid num: 4555 effect num : 457, 512
+I0427 19:35:34.269249  9040 laser_mapping.cc:283] delta trans:  -0.0429812  -0.0464872 -0.00546121, ang: 1.94568
+I0427 19:35:34.269300  9040 laser_mapping.cc:327] LIO state:   -1.03953    -1.2806 -0.0764202, yaw -2.77902, vel:  -0.451944  -0.510773 -0.0398176, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.365252  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.365288  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.7064, end: 1357847247.8064
+I0427 19:35:34.370609  9040 laser_mapping.cc:280] [ mapping ]: In num: 3180 down 1474 Map grid num: 4555 effect num : 727, 1126
+I0427 19:35:34.370637  9040 laser_mapping.cc:283] delta trans: -0.0196517  -0.022306 0.00320802, ang: 0.664552
+I0427 19:35:34.370723  9040 laser_mapping.cc:327] LIO state:   -1.06663   -1.31112 -0.0837468, yaw -3.43373, vel:  -0.438981  -0.491426 -0.0576446, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.465155  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.465185  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.8065, end: 1357847247.9065
+E0427 19:35:34.469175  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.574458, drot_deg: 1.52355, dvel: 0.427366
+I0427 19:35:34.469214  9040 laser_mapping.cc:280] [ mapping ]: In num: 2732 down 1345 Map grid num: 4555 effect num : 678, 1062
+I0427 19:35:34.469223  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:34.469296  9040 laser_mapping.cc:327] LIO state:   -1.11056    -1.3603 -0.0895153, yaw -3.51836, vel:  -0.438981  -0.491426 -0.0576446, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.565202  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.565238  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847247.9066, end: 1357847248.0066
+I0427 19:35:34.570672  9040 laser_mapping.cc:280] [ mapping ]: In num: 3180 down 1463 Map grid num: 4555 effect num : 691, 1058
+I0427 19:35:34.570701  9040 laser_mapping.cc:283] delta trans: -0.0689779 -0.0765946 -0.0180194, ang: 0.917339
+I0427 19:35:34.570784  9040 laser_mapping.cc:327] LIO state:  -1.08552   -1.3329 -0.077266, yaw -4.49535, vel:   -0.400963   -0.441106 -0.00164844, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.665894  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.665931  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.0067, end: 1357847248.1066
+I0427 19:35:34.669754  9040 laser_mapping.cc:280] [ mapping ]: In num: 2369 down 886 Map grid num: 4555 effect num : 467, 549
+I0427 19:35:34.669785  9040 laser_mapping.cc:283] delta trans: -0.0447788  -0.051643 0.00136338, ang: 1.47325
+I0427 19:35:34.669893  9040 laser_mapping.cc:327] LIO state:   -1.08086   -1.32538 -0.0787943, yaw -3.24431, vel:  -0.376556  -0.405988 -0.0176031, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.765647  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.765686  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.1068, end: 1357847248.2068
+I0427 19:35:34.771054  9040 laser_mapping.cc:280] [ mapping ]: In num: 3181 down 1402 Map grid num: 4555 effect num : 603, 963
+I0427 19:35:34.771087  9040 laser_mapping.cc:283] delta trans:  -0.0375449  -0.0501675 0.000287778, ang: 1.20525
+I0427 19:35:34.771174  9040 laser_mapping.cc:327] LIO state:  -1.08102  -1.31588 -0.080845, yaw -4.50926, vel:  -0.358038  -0.370319 -0.0283381, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.864986  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.865017  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.2069, end: 1357847248.3069
+I0427 19:35:34.869068  9040 laser_mapping.cc:280] [ mapping ]: In num: 2767 down 1399 Map grid num: 4555 effect num : 672, 1033
+I0427 19:35:34.869093  9040 laser_mapping.cc:283] delta trans:  -0.201183  -0.264534 -0.0179059, ang: 0.966049
+I0427 19:35:34.869122  9040 laser_mapping.cc:379] LIO: create kf 5, state:  -0.915674    -1.0884 -0.0657752, kf opt pose:  -0.915674    -1.0884 -0.0657752, lio pose:  -0.915674    -1.0884 -0.0657752, time: 1357847248.3069
+I0427 19:35:34.870253  9040 laser_mapping.cc:327] LIO state:  -0.915674    -1.0884 -0.0657752, yaw -3.68627, vel:    -0.26419   -0.195357 -0.00142614, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:34.870497  9041 lidar_loc.cc:448] current time: 1357847248.306844949722
+I0427 19:35:34.870571  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:34.870584  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:34.870604  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:34.870610  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:34.870625  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:34.870631  9041 lidar_loc.cc:525] record fp failed time: 1357847248.31, pose:   -1.11685394237   -1.35293434203 -0.0836808375012
+I0427 19:35:34.966238  9040 laser_mapping.cc:217] =============================
+I0427 19:35:34.966279  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.307, end: 1357847248.4069
+I0427 19:35:34.971626  9040 laser_mapping.cc:280] [ mapping ]: In num: 3067 down 1450 Map grid num: 5201 effect num : 725, 1150
+I0427 19:35:34.971655  9040 laser_mapping.cc:283] delta trans:   -0.0190206   -0.0356198 -0.000932473, ang: 0.0867081
+I0427 19:35:34.971740  9040 laser_mapping.cc:327] LIO state:  -0.923096   -1.07234 -0.0649855, yaw -3.87306, vel:    -0.26643   -0.148116 -0.00271813, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.064426  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.064456  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.407, end: 1357847248.507
+I0427 19:35:35.067903  9040 laser_mapping.cc:280] [ mapping ]: In num: 2714 down 1109 Map grid num: 5201 effect num : 637, 856
+I0427 19:35:35.067925  9040 laser_mapping.cc:283] delta trans: -0.0286595 -0.0247201 -0.0107126, ang: 0.270367
+I0427 19:35:35.067961  9040 laser_mapping.cc:327] LIO state:  -0.921101   -1.06244 -0.0545449, yaw -3.69175, vel: -0.239066 -0.132837 0.0424876, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.170360  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.170401  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.5071, end: 1357847248.6071
+I0427 19:35:35.175345  9040 laser_mapping.cc:280] [ mapping ]: In num: 2801 down 1138 Map grid num: 5201 effect num : 646, 923
+I0427 19:35:35.175377  9040 laser_mapping.cc:283] delta trans:  -0.076692   -0.06364 0.00648249, ang: 0.255616
+I0427 19:35:35.175467  9040 laser_mapping.cc:327] LIO state:  -0.868339    -1.0121 -0.0567744, yaw -3.78181, vel:    -0.16929  -0.0987371 -0.00236908, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.270749  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.270787  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.6116, end: 1357847248.7116
+I0427 19:35:35.276575  9040 laser_mapping.cc:280] [ mapping ]: In num: 2871 down 1390 Map grid num: 5201 effect num : 693, 1138
+I0427 19:35:35.276604  9040 laser_mapping.cc:283] delta trans:  0.0371523 0.00447471  0.0175652, ang: 0.49787
+I0427 19:35:35.276700  9040 laser_mapping.cc:327] LIO state:  -0.923183   -1.02689 -0.0745872, yaw -3.42255, vel:  -0.209797 -0.0590752   -0.08737, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:35.283113  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00329733
+I0427 19:35:35.370554  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.370594  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.7117, end: 1357847248.8117
+I0427 19:35:35.376158  9040 laser_mapping.cc:280] [ mapping ]: In num: 2785 down 1368 Map grid num: 5201 effect num : 659, 1099
+I0427 19:35:35.376189  9040 laser_mapping.cc:283] delta trans:   0.056531  0.0438913 -0.0107109, ang: 0.504889
+I0427 19:35:35.376268  9040 laser_mapping.cc:327] LIO state:   -1.00071   -1.07669 -0.0726223, yaw -3.9573, vel:  -0.278134 -0.0898444 -0.0244232, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.470094  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.470131  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.8118, end: 1357847248.9118
+I0427 19:35:35.475688  9040 laser_mapping.cc:280] [ mapping ]: In num: 3144 down 1428 Map grid num: 5201 effect num : 763, 1179
+I0427 19:35:35.475715  9040 laser_mapping.cc:283] delta trans:  0.0406551  0.0757973 0.00580222, ang: 0.227899
+I0427 19:35:35.475824  9040 laser_mapping.cc:327] LIO state:    -1.0692   -1.16148 -0.0808687, yaw -3.78124, vel:  -0.264601  -0.183931 -0.0368091, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.575405  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.575446  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847248.9119, end: 1357847249.0119
+I0427 19:35:35.579315  9040 laser_mapping.cc:280] [ mapping ]: In num: 2282 down 815 Map grid num: 5201 effect num : 506, 581
+I0427 19:35:35.579344  9040 laser_mapping.cc:283] delta trans:  -0.0439651  -0.0501869 -0.00448028, ang: 2.19542
+I0427 19:35:35.579438  9040 laser_mapping.cc:327] LIO state:   -1.05172   -1.12971 -0.0800725, yaw -1.64338, vel:  -0.232289  -0.140044 -0.0273719, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.675931  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.675967  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.0159, end: 1357847249.1158
+I0427 19:35:35.681461  9040 laser_mapping.cc:280] [ mapping ]: In num: 3221 down 1471 Map grid num: 5201 effect num : 758, 1214
+I0427 19:35:35.681494  9040 laser_mapping.cc:283] delta trans:  -0.206296  -0.275381 -0.0301339, ang: 0.286028
+I0427 19:35:35.681609  9040 laser_mapping.cc:327] LIO state: -0.869574 -0.868883 -0.052784, yaw -1.23943, vel: -0.135461  0.105673 0.0469943, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.775214  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.775259  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.1159, end: 1357847249.2159
+I0427 19:35:35.780849  9040 laser_mapping.cc:280] [ mapping ]: In num: 2802 down 1343 Map grid num: 5201 effect num : 753, 1170
+I0427 19:35:35.780879  9040 laser_mapping.cc:283] delta trans:   0.102916   0.153098 0.00362989, ang: 2.42572
+I0427 19:35:35.780952  9040 laser_mapping.cc:327] LIO state: -0.986046  -1.01141 -0.051711, yaw -3.55744, vel:   -0.16529 -0.0562806  0.0633741, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.875556  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.875594  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.216, end: 1357847249.3159
+I0427 19:35:35.881085  9040 laser_mapping.cc:280] [ mapping ]: In num: 3162 down 1446 Map grid num: 5201 effect num : 739, 1156
+I0427 19:35:35.881114  9040 laser_mapping.cc:283] delta trans:   -0.257793   -0.192516 -0.00206965, ang: 0.904662
+I0427 19:35:35.881201  9040 laser_mapping.cc:327] LIO state:  -0.744772  -0.824515 -0.0433075, yaw -2.72937, vel:    0.121962 -0.00283415    0.023619, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:35.975474  9040 laser_mapping.cc:217] =============================
+I0427 19:35:35.975515  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.3161, end: 1357847249.4161
+I0427 19:35:35.980101  9040 laser_mapping.cc:280] [ mapping ]: In num: 2431 down 905 Map grid num: 5201 effect num : 576, 670
+I0427 19:35:35.980144  9040 laser_mapping.cc:283] delta trans: -0.0303708 -0.0300759 0.00778175, ang: 0.475799
+I0427 19:35:35.980227  9040 laser_mapping.cc:327] LIO state:  -0.702177  -0.794723 -0.0487218, yaw -2.24508, vel:   0.143793  0.0157268 -0.0176432, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.075841  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.075879  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.4162, end: 1357847249.5162
+I0427 19:35:36.082734  9040 laser_mapping.cc:280] [ mapping ]: In num: 3180 down 1394 Map grid num: 5201 effect num : 781, 1160
+I0427 19:35:36.082762  9040 laser_mapping.cc:283] delta trans:   -0.0602031   -0.0540967 -0.000596544, ang: 0.0506615
+I0427 19:35:36.082823  9040 laser_mapping.cc:327] LIO state:  -0.627581  -0.739052 -0.0498912, yaw -2.18949, vel:   0.194098  0.0465665 -0.0262375, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.175622  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.175660  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.5163, end: 1357847249.6163
+I0427 19:35:36.181006  9040 laser_mapping.cc:280] [ mapping ]: In num: 2684 down 1313 Map grid num: 5201 effect num : 725, 1138
+I0427 19:35:36.181037  9040 laser_mapping.cc:283] delta trans:  -0.0927841    -0.13539 -0.00588164, ang: 0.225569
+I0427 19:35:36.181149  9040 laser_mapping.cc:327] LIO state:  -0.515371  -0.599002 -0.0466354, yaw -2.09088, vel:   0.219464   0.187364 -0.0217051, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.275090  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.275130  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.6164, end: 1357847249.7164
+I0427 19:35:36.280917  9040 laser_mapping.cc:280] [ mapping ]: In num: 3092 down 1440 Map grid num: 5201 effect num : 815, 1266
+I0427 19:35:36.280951  9040 laser_mapping.cc:283] delta trans:  -0.153782  -0.188866 -0.0163094, ang: 0.752216
+I0427 19:35:36.281036  9040 laser_mapping.cc:327] LIO state:  -0.339621  -0.391381 -0.0324987, yaw -1.28666, vel:  0.30112 0.352787 0.023767, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.375528  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.375560  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.7165, end: 1357847249.8165
+I0427 19:35:36.378615  9040 laser_mapping.cc:280] [ mapping ]: In num: 2645 down 1038 Map grid num: 5201 effect num : 677, 900
+I0427 19:35:36.378643  9040 laser_mapping.cc:283] delta trans:  -0.00073556 -0.000394786  -0.00254877, ang: 0.0545666
+I0427 19:35:36.378729  9040 laser_mapping.cc:327] LIO state:  -0.308749  -0.355679 -0.0275714, yaw -1.22439, vel: 0.301821 0.352406 0.035864, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.481019  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.481055  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.8166, end: 1357847249.9166
+I0427 19:35:36.486229  9040 laser_mapping.cc:280] [ mapping ]: In num: 2845 down 1114 Map grid num: 5201 effect num : 703, 966
+I0427 19:35:36.486258  9040 laser_mapping.cc:283] delta trans:  0.00368138  0.00269611 -0.00269793, ang: 0.385801
+I0427 19:35:36.486326  9040 laser_mapping.cc:327] LIO state:  -0.282218  -0.323099 -0.0212834, yaw -1.48676, vel:  0.297446  0.350468 0.0493223, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.580977  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.581017  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847249.9211, end: 1357847250.0211
+I0427 19:35:36.586711  9040 laser_mapping.cc:280] [ mapping ]: In num: 2864 down 1383 Map grid num: 5201 effect num : 769, 1201
+I0427 19:35:36.586745  9040 laser_mapping.cc:283] delta trans:   0.116275  0.0627708 0.00854972, ang: 0.0861089
+I0427 19:35:36.586858  9040 laser_mapping.cc:327] LIO state:    -0.3674  -0.349235 -0.0246774, yaw -1.47401, vel:  0.173514  0.357842 0.0271748, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.680559  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.680595  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.0212, end: 1357847250.1212
+I0427 19:35:36.685976  9040 laser_mapping.cc:280] [ mapping ]: In num: 2799 down 1351 Map grid num: 5201 effect num : 730, 1165
+I0427 19:35:36.686002  9040 laser_mapping.cc:283] delta trans:  0.0106743  0.0288779 0.00275932, ang: 0.188954
+I0427 19:35:36.686086  9040 laser_mapping.cc:327] LIO state:  -0.360711  -0.342303 -0.0247174, yaw -1.20906, vel:  0.182909   0.31472 0.0180688, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.780414  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.780450  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.1213, end: 1357847250.2212
+I0427 19:35:36.786087  9040 laser_mapping.cc:280] [ mapping ]: In num: 3145 down 1384 Map grid num: 5201 effect num : 816, 1211
+I0427 19:35:36.786114  9040 laser_mapping.cc:283] delta trans:  0.0171451 0.00186828 0.00239458, ang: 0.268862
+I0427 19:35:36.786209  9040 laser_mapping.cc:327] LIO state:  -0.359551  -0.312676 -0.0253037, yaw -1.36051, vel:     0.1499   0.332742 0.00886971, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.885638  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.885679  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.2214, end: 1357847250.3213
+I0427 19:35:36.890064  9040 laser_mapping.cc:280] [ mapping ]: In num: 2351 down 828 Map grid num: 5201 effect num : 613, 704
+I0427 19:35:36.890092  9040 laser_mapping.cc:283] delta trans:   0.0382571    0.039071 -0.00281227, ang: 0.680259
+I0427 19:35:36.890128  9040 laser_mapping.cc:379] LIO: create kf 6, state:  -0.382804   -0.31844 -0.0216036, kf opt pose:  -0.382804   -0.31844 -0.0216036, lio pose:  -0.382804   -0.31844 -0.0216036, time: 1357847250.3213
+I0427 19:35:36.890763  9040 laser_mapping.cc:327] LIO state:  -0.382804   -0.31844 -0.0216036, yaw -1.97015, vel:  0.121133  0.303875 0.0329367, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:36.891211  9041 lidar_loc.cc:448] current time: 1357847250.321329593658
+I0427 19:35:36.891268  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:36.891275  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:36.891285  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:36.891287  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:36.891294  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:36.891295  9041 lidar_loc.cc:525] record fp failed time: 1357847250.32, pose:  -0.344546675414  -0.279369793626 -0.0244158673212
+I0427 19:35:36.985718  9040 laser_mapping.cc:217] =============================
+I0427 19:35:36.985754  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.3259, end: 1357847250.4259
+I0427 19:35:36.991840  9040 laser_mapping.cc:280] [ mapping ]: In num: 3246 down 1505 Map grid num: 5436 effect num : 904, 1351
+I0427 19:35:36.991868  9040 laser_mapping.cc:283] delta trans:    0.113881    0.140936 0.000231878, ang: 0.336392
+I0427 19:35:36.991963  9040 laser_mapping.cc:327] LIO state:  -0.484024  -0.427614 -0.0183928, yaw -1.74477, vel: 0.0704958  0.178599  0.060065, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.085265  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.085300  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.426, end: 1357847250.526
+E0427 19:35:37.091066  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.602607, drot_deg: 1.43081, dvel: 0.42567
+I0427 19:35:37.091109  9040 laser_mapping.cc:280] [ mapping ]: In num: 2833 down 1395 Map grid num: 5436 effect num : 797, 1234
+I0427 19:35:37.091116  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:37.091194  9040 laser_mapping.cc:327] LIO state:  -0.476967  -0.409737 -0.0123805, yaw -1.74437, vel: 0.0704958  0.178599  0.060065, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.185657  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.185690  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.526, end: 1357847250.626
+I0427 19:35:37.191275  9040 laser_mapping.cc:280] [ mapping ]: In num: 3093 down 1461 Map grid num: 5436 effect num : 810, 1231
+I0427 19:35:37.191303  9040 laser_mapping.cc:283] delta trans:  -0.250561  -0.208632 0.00482742, ang: 0.785561
+I0427 19:35:37.191362  9040 laser_mapping.cc:327] LIO state:  -0.219351   -0.18323 -0.0111964, yaw -0.988339, vel:    0.273425     0.28141 0.000754908, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.285101  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.285135  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.6261, end: 1357847250.7261
+I0427 19:35:37.289243  9040 laser_mapping.cc:280] [ mapping ]: In num: 2351 down 892 Map grid num: 5436 effect num : 618, 729
+I0427 19:35:37.289271  9040 laser_mapping.cc:283] delta trans: -0.00684585 -0.00800495  0.00463632, ang: 0.580973
+I0427 19:35:37.289357  9040 laser_mapping.cc:327] LIO state:  -0.185147  -0.147068 -0.0157571, yaw -0.341041, vel:   0.276774   0.287884 -0.0230907, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.385569  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.385607  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.7262, end: 1357847250.8262
+I0427 19:35:37.390903  9040 laser_mapping.cc:280] [ mapping ]: In num: 3205 down 1435 Map grid num: 5436 effect num : 902, 1304
+I0427 19:35:37.390930  9040 laser_mapping.cc:283] delta trans:  0.000445663   0.00053515 -0.000670832, ang: 0.296277
+I0427 19:35:37.391007  9040 laser_mapping.cc:327] LIO state:  -0.157889  -0.118786 -0.0173976, yaw -0.467529, vel:   0.276279   0.286534 -0.0196278, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.485486  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.485522  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.8263, end: 1357847250.9263
+I0427 19:35:37.490761  9040 laser_mapping.cc:280] [ mapping ]: In num: 2504 down 1292 Map grid num: 5436 effect num : 728, 1145
+I0427 19:35:37.490793  9040 laser_mapping.cc:283] delta trans:   -0.103614   -0.176916 -0.00768791, ang: 0.31704
+I0427 19:35:37.490890  9040 laser_mapping.cc:327] LIO state: -0.0266202  0.0868105 -0.0116744, yaw -0.0614081, vel:    0.290557    0.459559 -0.00834536, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.586114  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.586154  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847250.9264, end: 1357847251.0264
+I0427 19:35:37.591506  9040 laser_mapping.cc:280] [ mapping ]: In num: 2863 down 1319 Map grid num: 5436 effect num : 739, 1140
+I0427 19:35:37.591535  9040 laser_mapping.cc:283] delta trans:   0.0439853   0.0426834 -0.00466802, ang: 0.202817
+I0427 19:35:37.591622  9040 laser_mapping.cc:327] LIO state:  -0.0415203   0.0901296 -0.00784173, yaw 0.0311083, vel:  0.248842  0.424491 0.0206628, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.685226  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.685263  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.0265, end: 1357847251.1265
+I0427 19:35:37.689746  9040 laser_mapping.cc:280] [ mapping ]: In num: 2464 down 1029 Map grid num: 5436 effect num : 603, 807
+I0427 19:35:37.689777  9040 laser_mapping.cc:283] delta trans: -0.0441895 -0.0524058 -0.0107301, ang: 0.673879
+I0427 19:35:37.689891  9040 laser_mapping.cc:327] LIO state:  0.0275699   0.185013 0.00495605, yaw -0.529784, vel:  0.285052  0.481334 0.0637667, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.785282  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.785317  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.1266, end: 1357847251.2266
+I0427 19:35:37.789444  9040 laser_mapping.cc:280] [ mapping ]: In num: 2753 down 1197 Map grid num: 5436 effect num : 701, 970
+I0427 19:35:37.789465  9040 laser_mapping.cc:283] delta trans:  0.00303654  0.00175371 -0.00534441, ang: 0.674163
+I0427 19:35:37.789511  9040 laser_mapping.cc:327] LIO state: 0.0530692  0.231444  0.016684, yaw 0.175086, vel:  0.278715  0.479313 0.0888513, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.885381  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.885419  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.2289, end: 1357847251.3289
+I0427 19:35:37.890291  9040 laser_mapping.cc:280] [ mapping ]: In num: 2667 down 1358 Map grid num: 5436 effect num : 689, 1114
+I0427 19:35:37.890329  9040 laser_mapping.cc:283] delta trans: 0.00976497 0.00639028 0.00431481, ang: 0.716336
+I0427 19:35:37.890384  9040 laser_mapping.cc:327] LIO state: 0.0718148  0.274084  0.021458, yaw 0.895707, vel:  0.265602   0.47131 0.0701226, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:37.985248  9040 laser_mapping.cc:217] =============================
+I0427 19:35:37.985291  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.329, end: 1357847251.4289
+I0427 19:35:37.990262  9040 laser_mapping.cc:280] [ mapping ]: In num: 2730 down 1287 Map grid num: 5436 effect num : 755, 1128
+I0427 19:35:37.990296  9040 laser_mapping.cc:283] delta trans: 0.00668394 0.00911212  0.0186379, ang: 0.0943648
+I0427 19:35:37.990350  9040 laser_mapping.cc:327] LIO state:  0.0917126   0.312141 0.00983813, yaw 1.10032, vel:   0.259096   0.458276 -0.0123042, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.090107  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.090142  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.4291, end: 1357847251.529
+I0427 19:35:38.095902  9040 laser_mapping.cc:280] [ mapping ]: In num: 2784 down 1279 Map grid num: 5436 effect num : 826, 1148
+I0427 19:35:38.095935  9040 laser_mapping.cc:283] delta trans: 0.0106418 0.0116477 0.0116886, ang: 0.73913
+I0427 19:35:38.096030  9040 laser_mapping.cc:327] LIO state:   0.107005   0.346365 -0.0030821, yaw 0.552309, vel:   0.242248   0.441382 -0.0650168, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.200609  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.200651  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.5291, end: 1357847251.6291
+I0427 19:35:38.205400  9040 laser_mapping.cc:280] [ mapping ]: In num: 2504 down 940 Map grid num: 5436 effect num : 664, 813
+I0427 19:35:38.205436  9040 laser_mapping.cc:283] delta trans:   0.0389835   0.0490318 -0.00499075, ang: 0.585827
+I0427 19:35:38.205529  9040 laser_mapping.cc:327] LIO state:   0.0922683    0.341511 -0.00459892, yaw 0.99387, vel:   0.19192   0.37633 -0.035383, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.301294  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.301335  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.6414, end: 1357847251.7413
+I0427 19:35:38.307103  9040 laser_mapping.cc:280] [ mapping ]: In num: 3149 down 1377 Map grid num: 5436 effect num : 861, 1247
+I0427 19:35:38.307132  9040 laser_mapping.cc:283] delta trans: -0.0255057  -0.034423 -0.0126419, ang: 0.047456
+I0427 19:35:38.307193  9040 laser_mapping.cc:327] LIO state:   0.139311   0.418165 0.00407237, yaw 1.12884, vel:    0.2221  0.419326 0.0183641, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.400003  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.400043  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.7415, end: 1357847251.8415
+I0427 19:35:38.405158  9040 laser_mapping.cc:280] [ mapping ]: In num: 2484 down 1220 Map grid num: 5436 effect num : 691, 1061
+I0427 19:35:38.405189  9040 laser_mapping.cc:283] delta trans:   -0.0789421     0.105456 -0.000141087, ang: 0.0678575
+I0427 19:35:38.405277  9040 laser_mapping.cc:327] LIO state:   0.240491   0.354694 0.00605219, yaw 1.19694, vel:  0.388275  0.271834 0.0239836, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.500828  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.500865  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.8416, end: 1357847251.9415
+I0427 19:35:38.504251  9040 laser_mapping.cc:280] [ mapping ]: In num: 2817 down 1322 Map grid num: 5436 effect num : 813, 1180
+I0427 19:35:38.504277  9040 laser_mapping.cc:283] delta trans:    -0.01168  -0.0140796 -0.00357594, ang: 0.0698838
+I0427 19:35:38.504357  9040 laser_mapping.cc:327] LIO state:  0.291026  0.395977 0.0120282, yaw 1.26547, vel:  0.400102  0.285728 0.0402208, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.601061  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.601116  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847251.9417, end: 1357847252.0416
+I0427 19:35:38.605741  9040 laser_mapping.cc:280] [ mapping ]: In num: 2343 down 894 Map grid num: 5436 effect num : 647, 770
+I0427 19:35:38.605849  9040 laser_mapping.cc:283] delta trans:  0.0821476   0.101162 -0.0050043, ang: 0.607987
+I0427 19:35:38.605921  9040 laser_mapping.cc:327] LIO state:   0.24893  0.323417 0.0210587, yaw 0.84427, vel:  0.324071  0.185641 0.0795389, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.700402  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.700443  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.0417, end: 1357847252.1417
+I0427 19:35:38.705022  9040 laser_mapping.cc:280] [ mapping ]: In num: 2912 down 1275 Map grid num: 5436 effect num : 719, 1035
+I0427 19:35:38.705049  9040 laser_mapping.cc:283] delta trans:   0.00483853   0.00443875 -0.000738059, ang: 0.21367
+I0427 19:35:38.705135  9040 laser_mapping.cc:327] LIO state:  0.276525  0.337558 0.0297573, yaw 1.19603, vel:  0.318583  0.182339 0.0837064, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.800590  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.800631  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.1418, end: 1357847252.2418
+I0427 19:35:38.805966  9040 laser_mapping.cc:280] [ mapping ]: In num: 2406 down 1243 Map grid num: 5436 effect num : 645, 1050
+I0427 19:35:38.805998  9040 laser_mapping.cc:283] delta trans:   -0.25015  -0.106095 -0.0137655, ang: 0.922253
+I0427 19:35:38.806094  9040 laser_mapping.cc:327] LIO state:  0.558565  0.461905 0.0519017, yaw 2.2721, vel: 0.639763 0.185441 0.114835, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.900913  9040 laser_mapping.cc:217] =============================
+I0427 19:35:38.900952  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.2419, end: 1357847252.3419
+I0427 19:35:38.906260  9040 laser_mapping.cc:280] [ mapping ]: In num: 2779 down 1317 Map grid num: 5436 effect num : 734, 1126
+I0427 19:35:38.906288  9040 laser_mapping.cc:283] delta trans:  0.318303  0.415504 0.0498483, ang: 1.4921
+I0427 19:35:38.906323  9040 laser_mapping.cc:379] LIO: create kf 7, state:  0.304261  0.064952 0.0135411, kf opt pose:  0.304261  0.064952 0.0135411, lio pose:  0.304261  0.064952 0.0135411, time: 1357847252.3419
+I0427 19:35:38.907356  9040 laser_mapping.cc:327] LIO state:  0.304261  0.064952 0.0135411, yaw 1.60935, vel:  0.421265 -0.135079 -0.035835, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:38.907806  9041 lidar_loc.cc:448] current time: 1357847252.341894149780
+I0427 19:35:38.907886  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:38.907897  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:38.907919  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:38.907925  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:38.907936  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:38.907941  9041 lidar_loc.cc:525] record fp failed time: 1357847252.34, pose:  0.622588093865  0.480462926185 0.0633936041008
+I0427 19:35:39.000641  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.000691  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.342, end: 1357847252.442
+I0427 19:35:39.006147  9040 laser_mapping.cc:280] [ mapping ]: In num: 2686 down 1190 Map grid num: 5900 effect num : 700, 975
+I0427 19:35:39.006179  9040 laser_mapping.cc:283] delta trans: -0.0671969 -0.0837273 -0.0164047, ang: 0.131368
+I0427 19:35:39.006275  9040 laser_mapping.cc:327] LIO state: 0.413646 0.135152 0.026357, yaw 2.3629, vel:    0.47124 -0.0762756  0.0290789, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.099972  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.100006  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.4421, end: 1357847252.5421
+I0427 19:35:39.104254  9040 laser_mapping.cc:280] [ mapping ]: In num: 2560 down 1019 Map grid num: 5900 effect num : 690, 893
+I0427 19:35:39.104278  9040 laser_mapping.cc:283] delta trans: -0.0855039 -0.0720311 0.00835705, ang: 0.356277
+W0427 19:35:39.104328  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00918031
+I0427 19:35:39.104331  9040 laser_mapping.cc:327] LIO state: 0.546309  0.19955  0.02091, yaw 3.50104, vel:   0.558277 -0.0381498  -0.022274, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.201185  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.201233  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.5422, end: 1357847252.6422
+I0427 19:35:39.206764  9040 laser_mapping.cc:280] [ mapping ]: In num: 3029 down 1447 Map grid num: 5900 effect num : 778, 1213
+I0427 19:35:39.206790  9040 laser_mapping.cc:283] delta trans:  0.106515 0.0363937 0.0090087, ang: 0.306492
+I0427 19:35:39.206887  9040 laser_mapping.cc:327] LIO state:   0.495677   0.159337 0.00967166, yaw 4.49741, vel:   0.424457  0.0203151 -0.0513058, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.300498  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.300537  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.6423, end: 1357847252.7422
+I0427 19:35:39.306339  9040 laser_mapping.cc:280] [ mapping ]: In num: 2855 down 1460 Map grid num: 5900 effect num : 704, 1157
+I0427 19:35:39.306377  9040 laser_mapping.cc:283] delta trans:  0.0117613 -0.0111331 -0.0188423, ang: 0.339936
+I0427 19:35:39.306416  9040 laser_mapping.cc:379] LIO: create kf 8, state:  0.526393  0.172503 0.0233796, kf opt pose:  0.526393  0.172503 0.0233796, lio pose:  0.526393  0.172503 0.0233796, time: 1357847252.7422
+I0427 19:35:39.307586  9040 laser_mapping.cc:327] LIO state:  0.526393  0.172503 0.0233796, yaw 5.93213, vel:  0.388256 0.0589732 0.0372904, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.308238  9041 lidar_loc.cc:448] current time: 1357847252.742254495621
+I0427 19:35:39.308352  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:39.308367  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:39.308393  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:39.308398  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:39.308413  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:39.308418  9041 lidar_loc.cc:525] record fp failed time: 1357847252.74, pose:   0.538156206941   0.161370174251 0.00453708592077
+I0427 19:35:39.400177  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.400216  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.7424, end: 1357847252.8424
+I0427 19:35:39.406751  9040 laser_mapping.cc:280] [ mapping ]: In num: 3133 down 1574 Map grid num: 6458 effect num : 847, 1286
+I0427 19:35:39.406780  9040 laser_mapping.cc:283] delta trans: 0.00334929 -0.0473632 0.00903695, ang: 0.17458
+I0427 19:35:39.406895  9040 laser_mapping.cc:327] LIO state:  0.561908   0.22577 0.0180755, yaw 6.99191, vel:     0.33747    0.178882 -0.00925818, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.506577  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.506619  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.8425, end: 1357847252.9424
+I0427 19:35:39.510783  9040 laser_mapping.cc:280] [ mapping ]: In num: 2711 down 1059 Map grid num: 6458 effect num : 638, 733
+I0427 19:35:39.510835  9040 laser_mapping.cc:283] delta trans:   0.00572904   0.00625251 -0.000954027, ang: 0.314187
+I0427 19:35:39.510934  9040 laser_mapping.cc:327] LIO state:  0.589956  0.237421 0.0181029, yaw 8.10733, vel:     0.33255    0.173678 -0.00346943, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.605841  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.605885  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847252.9475, end: 1357847253.0475
+I0427 19:35:39.612298  9040 laser_mapping.cc:280] [ mapping ]: In num: 3519 down 1596 Map grid num: 6458 effect num : 886, 1316
+I0427 19:35:39.612334  9040 laser_mapping.cc:283] delta trans: 0.0857075 0.0762173 0.0104104, ang: 0.169004
+I0427 19:35:39.612445  9040 laser_mapping.cc:327] LIO state:   0.539194   0.179454 0.00732791, yaw 10.1573, vel:   0.235902   0.115432 -0.0361486, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.706064  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.706106  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.0476, end: 1357847253.1476
+I0427 19:35:39.711977  9040 laser_mapping.cc:280] [ mapping ]: In num: 2921 down 1478 Map grid num: 6458 effect num : 724, 1141
+I0427 19:35:39.712018  9040 laser_mapping.cc:283] delta trans: -0.0596751  -0.107793 -0.0165937, ang: 0.528036
+I0427 19:35:39.712049  9040 laser_mapping.cc:379] LIO: create kf 9, state:  0.622476  0.298799 0.0203041, kf opt pose:  0.622476  0.298799 0.0203041, lio pose:  0.622476  0.298799 0.0203041, time: 1357847253.1476
+I0427 19:35:39.713110  9040 laser_mapping.cc:327] LIO state:  0.622476  0.298799 0.0203041, yaw 12.0392, vel:  0.240194   0.23512 0.0251842, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.713618  9041 lidar_loc.cc:448] current time: 1357847253.147589445114
+I0427 19:35:39.713699  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:39.713712  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:39.713734  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:39.713742  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:39.713757  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:39.713763  9041 lidar_loc.cc:525] record fp failed time: 1357847253.15, pose:   0.562800027908    0.19100547703 0.00371056536075
+I0427 19:35:39.805502  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.805537  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.1477, end: 1357847253.2477
+I0427 19:35:39.810843  9040 laser_mapping.cc:280] [ mapping ]: In num: 2700 down 1422 Map grid num: 7053 effect num : 744, 1120
+I0427 19:35:39.810864  9040 laser_mapping.cc:283] delta trans:  0.128768  0.130745 0.0119012, ang: 0.419447
+I0427 19:35:39.810909  9040 laser_mapping.cc:327] LIO state:  0.517752   0.19159 0.0109239, yaw 13.4583, vel:   0.0702443    0.115525 -0.00209659, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:39.906652  9040 laser_mapping.cc:217] =============================
+I0427 19:35:39.906689  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.2478, end: 1357847253.3477
+I0427 19:35:39.911218  9040 laser_mapping.cc:280] [ mapping ]: In num: 2672 down 988 Map grid num: 7053 effect num : 627, 746
+I0427 19:35:39.911247  9040 laser_mapping.cc:283] delta trans: -0.0343005 -0.0632711 -0.0125357, ang: 0.550121
+I0427 19:35:39.911306  9040 laser_mapping.cc:327] LIO state:  0.559079  0.266417 0.0232499, yaw 14.8349, vel:  0.077231  0.186039 0.0473958, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.005972  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.006009  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.3479, end: 1357847253.4479
+I0427 19:35:40.011996  9040 laser_mapping.cc:280] [ mapping ]: In num: 3474 down 1417 Map grid num: 7053 effect num : 846, 1118
+I0427 19:35:40.012032  9040 laser_mapping.cc:283] delta trans:  0.106262  0.094193 0.0133288, ang: 0.39812
+I0427 19:35:40.012086  9040 laser_mapping.cc:379] LIO: create kf 10, state:  0.460551  0.190852 0.0146667, kf opt pose:  0.460551  0.190852 0.0146667, lio pose:  0.460551  0.190852 0.0146667, time: 1357847253.4479
+I0427 19:35:40.013581  9040 laser_mapping.cc:327] LIO state:  0.460551  0.190852 0.0146667, yaw 16.6006, vel:  -0.102631  0.0950668 0.00335051, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.014339  9041 lidar_loc.cc:448] current time: 1357847253.447852611542
+I0427 19:35:40.014394  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:40.014406  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:40.014415  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:40.014417  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:40.014422  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:40.014423  9041 lidar_loc.cc:525] record fp failed time: 1357847253.45, pose:  0.566812160912  0.285044563805 0.0279955307731
+I0427 19:35:40.104928  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.104965  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.448, end: 1357847253.5479
+I0427 19:35:40.110242  9040 laser_mapping.cc:280] [ mapping ]: In num: 2688 down 1194 Map grid num: 7548 effect num : 641, 941
+I0427 19:35:40.110276  9040 laser_mapping.cc:283] delta trans: -0.00731755   0.0289432  0.00053954, ang: 0.867506
+I0427 19:35:40.110365  9040 laser_mapping.cc:327] LIO state:  0.457597  0.171423 0.0144625, yaw 19.5545, vel: -0.0447641  0.0491947 0.00290757, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.205554  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.205591  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.5481, end: 1357847253.6481
+I0427 19:35:40.210850  9040 laser_mapping.cc:280] [ mapping ]: In num: 2300 down 1240 Map grid num: 7548 effect num : 647, 930
+I0427 19:35:40.210886  9040 laser_mapping.cc:283] delta trans: -0.0677808 -0.0451631 0.00851113, ang: 0.556097
+I0427 19:35:40.210999  9040 laser_mapping.cc:327] LIO state:   0.520896   0.221511 0.00624247, yaw 20.4616, vel:   0.119715   0.105092 -0.0448511, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.306056  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.306089  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.6481, end: 1357847253.7481
+I0427 19:35:40.310760  9040 laser_mapping.cc:280] [ mapping ]: In num: 2922 down 1103 Map grid num: 7548 effect num : 652, 817
+I0427 19:35:40.310791  9040 laser_mapping.cc:283] delta trans:  0.0368916   0.117117 0.00372653, ang: 0.337895
+I0427 19:35:40.310843  9040 laser_mapping.cc:379] LIO: create kf 11, state:    0.495979    0.114906 -0.00197041, kf opt pose:    0.495979    0.114906 -0.00197041, lio pose:    0.495979    0.114906 -0.00197041, time: 1357847253.7481
+I0427 19:35:40.311681  9040 laser_mapping.cc:327] LIO state:    0.495979    0.114906 -0.00197041, yaw 21.5687, vel:   0.134245 -0.0584813 -0.0519979, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.312289  9041 lidar_loc.cc:448] current time: 1357847253.748118400574
+I0427 19:35:40.312389  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:40.312402  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:40.312425  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:40.312431  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:40.312444  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:40.312449  9041 lidar_loc.cc:525] record fp failed time: 1357847253.75, pose:   0.532875444278   0.232027475126 0.00175433570582
+I0427 19:35:40.410653  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.410691  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.7482, end: 1357847253.8482
+I0427 19:35:40.416190  9040 laser_mapping.cc:280] [ mapping ]: In num: 3355 down 1172 Map grid num: 7978 effect num : 822, 991
+I0427 19:35:40.416222  9040 laser_mapping.cc:283] delta trans: 0.00207341 0.00281399 -0.0019719, ang: 0.333703
+I0427 19:35:40.416316  9040 laser_mapping.cc:327] LIO state:    0.507346    0.106237 -0.00520441, yaw 23.9237, vel:   0.130814 -0.0612793 -0.0427912, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.510774  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.510829  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.8494, end: 1357847253.9494
+I0427 19:35:40.516355  9040 laser_mapping.cc:280] [ mapping ]: In num: 3298 down 1237 Map grid num: 7978 effect num : 711, 983
+I0427 19:35:40.516384  9040 laser_mapping.cc:283] delta trans:   -0.107656   0.0759141 4.48371e-05, ang: 0.210116
+I0427 19:35:40.516448  9040 laser_mapping.cc:327] LIO state:     0.62824   0.0241217 -0.00957939, yaw 25.8109, vel:   0.445593  -0.218227 -0.0494354, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.609939  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.609978  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847253.9495, end: 1357847254.0495
+I0427 19:35:40.614841  9040 laser_mapping.cc:280] [ mapping ]: In num: 2208 down 1127 Map grid num: 7978 effect num : 624, 883
+I0427 19:35:40.614873  9040 laser_mapping.cc:283] delta trans: -0.124888 -0.136716  -0.01836, ang: 0.711865
+I0427 19:35:40.614908  9040 laser_mapping.cc:379] LIO: create kf 12, state:   0.797734   0.138992 0.00383181, kf opt pose:   0.797734   0.138992 0.00383181, lio pose:   0.797734   0.138992 0.00383181, time: 1357847254.0495
+I0427 19:35:40.615748  9040 laser_mapping.cc:327] LIO state:   0.797734   0.138992 0.00383181, yaw 27.8862, vel:   0.629875 -0.0848149  0.0103744, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.616371  9041 lidar_loc.cc:448] current time: 1357847254.049486160278
+I0427 19:35:40.616461  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:40.616474  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:40.616497  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:40.616503  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:40.616516  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:40.616523  9041 lidar_loc.cc:525] record fp failed time: 1357847254.05, pose:   0.672842480052 0.00227768070326 -0.0145277610138
+I0427 19:35:40.710143  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.710182  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.0496, end: 1357847254.1488
+I0427 19:35:40.715437  9040 laser_mapping.cc:280] [ mapping ]: In num: 2943 down 1120 Map grid num: 8396 effect num : 637, 906
+I0427 19:35:40.715469  9040 laser_mapping.cc:283] delta trans: 0.0252723  0.100037 0.0160429, ang: 0.486912
+I0427 19:35:40.715521  9040 laser_mapping.cc:327] LIO state:   0.834987   0.030536 -0.0111812, yaw 29.4424, vel:   0.657569  -0.221027 -0.0550943, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.810335  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.810370  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.1497, end: 1357847254.2497
+I0427 19:35:40.815487  9040 laser_mapping.cc:280] [ mapping ]: In num: 3193 down 1001 Map grid num: 8396 effect num : 722, 806
+I0427 19:35:40.815521  9040 laser_mapping.cc:283] delta trans: 0.00940454   0.015333 -0.0192221, ang: 1.09931
+I0427 19:35:40.815606  9040 laser_mapping.cc:327] LIO state:    0.891948 -0.00710407  0.00248055, yaw 30.5473, vel:  0.648284 -0.236674 0.0445145, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.910897  9040 laser_mapping.cc:217] =============================
+I0427 19:35:40.910934  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.2498, end: 1357847254.3498
+I0427 19:35:40.916553  9040 laser_mapping.cc:280] [ mapping ]: In num: 3129 down 1189 Map grid num: 8396 effect num : 767, 1031
+I0427 19:35:40.916580  9040 laser_mapping.cc:283] delta trans:  -0.0584567  -0.0560411 -0.00750274, ang: 1.3446
+I0427 19:35:40.916615  9040 laser_mapping.cc:379] LIO: create kf 13, state:   1.01528 0.0252538 0.0144377, kf opt pose:   1.01528 0.0252538 0.0144377, lio pose:   1.01528 0.0252538 0.0144377, time: 1357847254.3498
+I0427 19:35:40.917475  9040 laser_mapping.cc:327] LIO state:   1.01528 0.0252538 0.0144377, yaw 33.8104, vel:  0.738947 -0.204958 0.0738378, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:40.918094  9041 lidar_loc.cc:448] current time: 1357847254.349745273590
+I0427 19:35:40.918169  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:40.918181  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:40.918200  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:40.918205  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:40.918218  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:40.918223  9041 lidar_loc.cc:525] record fp failed time: 1357847254.35, pose:   0.956814424205 -0.0307854521161 0.00693462711722
+I0427 19:35:41.010079  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.010115  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.3499, end: 1357847254.4499
+I0427 19:35:41.015483  9040 laser_mapping.cc:280] [ mapping ]: In num: 2253 down 1066 Map grid num: 8736 effect num : 612, 863
+I0427 19:35:41.015515  9040 laser_mapping.cc:283] delta trans: -0.0253373 -0.0376493 -0.0078287, ang: 0.332968
+I0427 19:35:41.015609  9040 laser_mapping.cc:327] LIO state:   1.11458 0.0423868 0.0296576, yaw 34.6696, vel:  0.769192 -0.175209  0.105671, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.110080  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.110117  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.45, end: 1357847254.5499
+I0427 19:35:41.114961  9040 laser_mapping.cc:280] [ mapping ]: In num: 2521 down 1067 Map grid num: 8736 effect num : 595, 830
+I0427 19:35:41.115000  9040 laser_mapping.cc:283] delta trans: 0.0509716  0.168819 0.0128075, ang: 0.507522
+I0427 19:35:41.115088  9040 laser_mapping.cc:327] LIO state:    1.1406  -0.14397 0.0274271, yaw 34.3408, vel:  0.806563 -0.343716 0.0681405, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.211230  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.211266  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.55, end: 1357847254.65
+I0427 19:35:41.215327  9040 laser_mapping.cc:280] [ mapping ]: In num: 2980 down 958 Map grid num: 8736 effect num : 647, 721
+I0427 19:35:41.215358  9040 laser_mapping.cc:283] delta trans:  0.00953865   0.0220971 -0.00493374, ang: 0.406392
+I0427 19:35:41.215453  9040 laser_mapping.cc:327] LIO state:   1.21179 -0.200468 0.0391808, yaw 34.239, vel:  0.801742 -0.365927 0.0932219, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.310256  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.310290  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.6507, end: 1357847254.7507
+I0427 19:35:41.316232  9040 laser_mapping.cc:280] [ mapping ]: In num: 3064 down 1214 Map grid num: 8736 effect num : 778, 1046
+I0427 19:35:41.316263  9040 laser_mapping.cc:283] delta trans:  -0.030735 -0.0185386  0.0105024, ang: 0.325713
+I0427 19:35:41.316325  9040 laser_mapping.cc:327] LIO state:    1.3232 -0.218749 0.0380584, yaw 34.6583, vel:  0.868326 -0.358843 0.0443174, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.410472  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.410506  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.7508, end: 1357847254.8508
+I0427 19:35:41.415346  9040 laser_mapping.cc:280] [ mapping ]: In num: 2536 down 1079 Map grid num: 8736 effect num : 585, 837
+I0427 19:35:41.415378  9040 laser_mapping.cc:283] delta trans: -0.000356264   -0.0418371 -0.000828665, ang: 0.377803
+I0427 19:35:41.415494  9040 laser_mapping.cc:327] LIO state:   1.41047 -0.212832 0.0433232, yaw 34.4484, vel:  0.826956 -0.319452 0.0442966, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.510541  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.510577  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.8509, end: 1357847254.9508
+I0427 19:35:41.515868  9040 laser_mapping.cc:280] [ mapping ]: In num: 2517 down 1145 Map grid num: 8736 effect num : 620, 888
+I0427 19:35:41.515900  9040 laser_mapping.cc:283] delta trans: 0.0514977  0.143532 0.0212693, ang: 0.376952
+I0427 19:35:41.515955  9040 laser_mapping.cc:327] LIO state:   1.44175 -0.388341 0.0264879, yaw 33.8554, vel:   0.824509  -0.428733 -0.0345435, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.610095  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.610131  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847254.9509, end: 1357847255.0509
+I0427 19:35:41.615180  9040 laser_mapping.cc:280] [ mapping ]: In num: 3047 down 1106 Map grid num: 8736 effect num : 674, 833
+I0427 19:35:41.615211  9040 laser_mapping.cc:283] delta trans:  0.164743  0.408118 0.0118816, ang: 1.03563
+I0427 19:35:41.615306  9040 laser_mapping.cc:327] LIO state:   1.35949 -0.839347 0.0111507, yaw 32.5347, vel:   0.757293  -0.730587 -0.0420646, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.710304  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.710341  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.051, end: 1357847255.151
+I0427 19:35:41.715638  9040 laser_mapping.cc:280] [ mapping ]: In num: 3035 down 1085 Map grid num: 8736 effect num : 748, 923
+I0427 19:35:41.715668  9040 laser_mapping.cc:283] delta trans: 0.000508506  0.00103958 0.000183877, ang: 0.838507
+I0427 19:35:41.715764  9040 laser_mapping.cc:327] LIO state:     1.4348  -0.913535 0.00675526, yaw 33.6441, vel:   0.756266  -0.730634 -0.0428769, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.809827  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.809868  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.1511, end: 1357847255.2511
+I0427 19:35:41.814270  9040 laser_mapping.cc:280] [ mapping ]: In num: 2914 down 1132 Map grid num: 8736 effect num : 631, 917
+I0427 19:35:41.814299  9040 laser_mapping.cc:283] delta trans:  -0.0688613 -0.00597097 -0.00224431, ang: 0.235428
+I0427 19:35:41.814399  9040 laser_mapping.cc:327] LIO state:    1.57937  -0.980708 0.00470712, yaw 34.3108, vel:   0.915691  -0.792711 -0.0378296, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.910655  9040 laser_mapping.cc:217] =============================
+I0427 19:35:41.910691  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.2512, end: 1357847255.3512
+I0427 19:35:41.916177  9040 laser_mapping.cc:280] [ mapping ]: In num: 2894 down 1270 Map grid num: 8736 effect num : 679, 950
+I0427 19:35:41.916209  9040 laser_mapping.cc:283] delta trans: -0.0788334 -0.0994909 -0.0139701, ang: 0.232662
+I0427 19:35:41.916245  9040 laser_mapping.cc:379] LIO: create kf 14, state:   1.74985 -0.960557  0.014891, kf opt pose:   1.74985 -0.960557  0.014891, lio pose:   1.74985 -0.960557  0.014891, time: 1357847255.3512
+I0427 19:35:41.917306  9040 laser_mapping.cc:327] LIO state:   1.74985 -0.960557  0.014891, yaw 35.295, vel:   1.01963 -0.756839 0.0134255, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:41.917920  9041 lidar_loc.cc:448] current time: 1357847255.351189613342
+I0427 19:35:41.918004  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:41.918017  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:41.918040  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:41.918045  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:41.918059  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:41.918064  9041 lidar_loc.cc:525] record fp failed time: 1357847255.35, pose:     1.67100567102    -1.06003499228 0.000921502093855
+I0427 19:35:42.010407  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.010455  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.3513, end: 1357847255.4513
+I0427 19:35:42.015568  9040 laser_mapping.cc:280] [ mapping ]: In num: 3242 down 1304 Map grid num: 9243 effect num : 747, 1037
+I0427 19:35:42.015594  9040 laser_mapping.cc:283] delta trans:    0.090143    0.188048 0.000132815, ang: 0.597957
+I0427 19:35:42.015655  9040 laser_mapping.cc:327] LIO state:   1.76176  -1.22435 0.0161019, yaw 35.3043, vel:  0.968156 -0.898099   0.02437, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.110863  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.110905  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.4514, end: 1357847255.5514
+I0427 19:35:42.115705  9040 laser_mapping.cc:280] [ mapping ]: In num: 2983 down 1115 Map grid num: 9243 effect num : 726, 834
+I0427 19:35:42.115729  9040 laser_mapping.cc:283] delta trans:  0.0103294  0.0163715 0.00544208, ang: 0.466117
+I0427 19:35:42.115774  9040 laser_mapping.cc:327] LIO state:   1.84831  -1.33059 0.0130984, yaw 34.9822, vel:    0.960265   -0.907285 0.000215825, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.210762  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.210817  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.5515, end: 1357847255.6515
+I0427 19:35:42.216092  9040 laser_mapping.cc:280] [ mapping ]: In num: 2892 down 1140 Map grid num: 9243 effect num : 676, 957
+I0427 19:35:42.216121  9040 laser_mapping.cc:283] delta trans:   0.0194896   0.0204889 0.000248509, ang: 0.28767
+I0427 19:35:42.216216  9040 laser_mapping.cc:327] LIO state:   1.92496  -1.44191 0.0128715, yaw 35.6637, vel:   0.938041  -0.911004 0.00180689, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.310742  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.310773  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.6516, end: 1357847255.7515
+I0427 19:35:42.316250  9040 laser_mapping.cc:280] [ mapping ]: In num: 2846 down 1173 Map grid num: 9243 effect num : 676, 965
+I0427 19:35:42.316278  9040 laser_mapping.cc:283] delta trans:  0.0101569 0.00455371 0.00298903, ang: 0.332375
+I0427 19:35:42.316339  9040 laser_mapping.cc:327] LIO state:   2.00867  -1.53763 0.0100633, yaw 37.1646, vel:   0.918877  -0.904848 -0.0115237, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.410936  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.410979  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.7517, end: 1357847255.8516
+I0427 19:35:42.416778  9040 laser_mapping.cc:280] [ mapping ]: In num: 3226 down 1314 Map grid num: 9243 effect num : 726, 1023
+I0427 19:35:42.416823  9040 laser_mapping.cc:283] delta trans:    0.0365994    0.0834379 -0.000437603, ang: 0.220396
+I0427 19:35:42.416903  9040 laser_mapping.cc:327] LIO state:    2.06405   -1.71164 0.00934737, yaw 38.4822, vel:    0.906455   -0.985458 -0.00315027, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.509919  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.509958  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.8517, end: 1357847255.9517
+I0427 19:35:42.515326  9040 laser_mapping.cc:280] [ mapping ]: In num: 3072 down 1090 Map grid num: 9243 effect num : 646, 797
+I0427 19:35:42.515362  9040 laser_mapping.cc:283] delta trans: 0.00404355 0.00652621 0.00205716, ang: 0.95763
+I0427 19:35:42.515446  9040 laser_mapping.cc:327] LIO state:    2.15074   -1.81681 0.00697487, yaw 38.1431, vel:   0.903587  -0.989647 -0.0128672, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.610204  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.610245  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847255.9518, end: 1357847256.0518
+I0427 19:35:42.615461  9040 laser_mapping.cc:280] [ mapping ]: In num: 2880 down 1172 Map grid num: 9243 effect num : 676, 928
+I0427 19:35:42.615492  9040 laser_mapping.cc:283] delta trans:  0.00214563  0.00271833 -0.00127506, ang: 0.365185
+I0427 19:35:42.615586  9040 laser_mapping.cc:327] LIO state:    2.23903   -1.91858 0.00696218, yaw 38.3167, vel:    0.902254   -0.990281 -0.00630006, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.710354  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.710394  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.0519, end: 1357847256.1519
+I0427 19:35:42.715641  9040 laser_mapping.cc:280] [ mapping ]: In num: 2789 down 1166 Map grid num: 9243 effect num : 665, 947
+I0427 19:35:42.715672  9040 laser_mapping.cc:283] delta trans:   0.0144146   0.0101616 -0.00459278, ang: 0.234221
+I0427 19:35:42.715732  9040 laser_mapping.cc:327] LIO state:    2.3149  -2.02784 0.0109245, yaw 38.3188, vel:  0.877637 -0.991805 0.0171065, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.811161  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.811200  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.152, end: 1357847256.252
+I0427 19:35:42.816876  9040 laser_mapping.cc:280] [ mapping ]: In num: 3035 down 1206 Map grid num: 9243 effect num : 716, 982
+I0427 19:35:42.816906  9040 laser_mapping.cc:283] delta trans:  0.0146683  0.0294252 0.00607923, ang: 0.654978
+I0427 19:35:42.817008  9040 laser_mapping.cc:327] LIO state:    2.38806   -2.15651 0.00655698, yaw 39.5938, vel:    0.866903    -1.01678 -0.00875002, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:42.910575  9040 laser_mapping.cc:217] =============================
+I0427 19:35:42.910610  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.2521, end: 1357847256.3521
+I0427 19:35:42.915349  9040 laser_mapping.cc:280] [ mapping ]: In num: 2865 down 1017 Map grid num: 9243 effect num : 624, 750
+I0427 19:35:42.915377  9040 laser_mapping.cc:283] delta trans:  0.0634401   0.127537 -0.0100909, ang: 0.617145
+I0427 19:35:42.915470  9040 laser_mapping.cc:327] LIO state:   2.41142  -2.38586 0.0157717, yaw 39.4894, vel:  0.824287  -1.11591 0.0500101, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.011231  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.011272  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.3522, end: 1357847256.4522
+I0427 19:35:43.016991  9040 laser_mapping.cc:280] [ mapping ]: In num: 3056 down 1297 Map grid num: 9243 effect num : 793, 1049
+I0427 19:35:43.017020  9040 laser_mapping.cc:283] delta trans: 0.00147076 0.00264149 0.00438411, ang: 0.0680232
+I0427 19:35:43.017107  9040 laser_mapping.cc:327] LIO state:  2.49245 -2.50019 0.016393, yaw 38.846, vel:  0.823528  -1.11665 0.0304714, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.110875  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.110958  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.4523, end: 1357847256.5523
+I0427 19:35:43.115375  9040 laser_mapping.cc:280] [ mapping ]: In num: 2973 down 1202 Map grid num: 9243 effect num : 656, 905
+I0427 19:35:43.115520  9040 laser_mapping.cc:283] delta trans:    0.040101   0.0868975 -0.00539628, ang: 0.514278
+I0427 19:35:43.115576  9040 laser_mapping.cc:327] LIO state:  2.53477 -2.69885 0.024839, yaw 37.0711, vel:  0.801647   -1.1811 0.0665583, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.211247  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.211292  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.5524, end: 1357847256.6523
+I0427 19:35:43.216950  9040 laser_mapping.cc:280] [ mapping ]: In num: 2872 down 1163 Map grid num: 9243 effect num : 629, 898
+I0427 19:35:43.216986  9040 laser_mapping.cc:283] delta trans: 0.0939072  0.102236 0.0142098, ang: 0.262789
+I0427 19:35:43.217034  9040 laser_mapping.cc:379] LIO: create kf 15, state:  2.52109 -2.91928  0.01729, kf opt pose:  2.52109 -2.91928  0.01729, lio pose:  2.52109 -2.91928  0.01729, time: 1357847256.6523
+I0427 19:35:43.218024  9040 laser_mapping.cc:327] LIO state:  2.52109 -2.91928  0.01729, yaw 36.2729, vel:  0.703118  -1.23247 0.0159321, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.218478  9041 lidar_loc.cc:448] current time: 1357847256.652340173721
+I0427 19:35:43.218556  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:43.218568  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:43.218590  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:43.218595  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:43.218608  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:43.218614  9041 lidar_loc.cc:525] record fp failed time: 1357847256.65, pose:   2.61499962982  -2.81704618165 0.0314998740244
+I0427 19:35:43.310689  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.310726  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.6525, end: 1357847256.7524
+I0427 19:35:43.316280  9040 laser_mapping.cc:280] [ mapping ]: In num: 3030 down 1159 Map grid num: 9637 effect num : 713, 966
+I0427 19:35:43.316309  9040 laser_mapping.cc:283] delta trans:  -0.0110172  -0.0276473 -0.00772781, ang: 0.237843
+I0427 19:35:43.316394  9040 laser_mapping.cc:327] LIO state:    2.6025  -3.01501 0.0266127, yaw 35.7025, vel:  0.703379  -1.19557 0.0501386, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.409976  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.410012  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.7525, end: 1357847256.8525
+I0427 19:35:43.415654  9040 laser_mapping.cc:280] [ mapping ]: In num: 2842 down 1083 Map grid num: 9637 effect num : 709, 867
+I0427 19:35:43.415693  9040 laser_mapping.cc:283] delta trans:   -0.002785 -0.00358983  0.00310305, ang: 0.158569
+I0427 19:35:43.415849  9040 laser_mapping.cc:327] LIO state:   2.67564  -3.13102 0.0285253, yaw 35.2779, vel:  0.705724  -1.19296 0.0348816, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.510637  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.510676  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.8526, end: 1357847256.9526
+I0427 19:35:43.516225  9040 laser_mapping.cc:280] [ mapping ]: In num: 3091 down 1233 Map grid num: 9637 effect num : 722, 978
+I0427 19:35:43.516254  9040 laser_mapping.cc:283] delta trans:   0.0135553  -0.0421881 0.000751588, ang: 0.087289
+I0427 19:35:43.516341  9040 laser_mapping.cc:327] LIO state:  2.73275 -3.20827 0.031266, yaw 33.9018, vel:  0.654451  -1.08927 0.0312481, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.610867  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.610904  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847256.9527, end: 1357847257.0527
+I0427 19:35:43.616115  9040 laser_mapping.cc:280] [ mapping ]: In num: 2788 down 1187 Map grid num: 9637 effect num : 692, 966
+I0427 19:35:43.616144  9040 laser_mapping.cc:283] delta trans:  -0.0128348  -0.0168494 -0.00688154, ang: 0.377963
+I0427 19:35:43.616236  9040 laser_mapping.cc:327] LIO state:   2.81109  -3.30047 0.0412757, yaw 31.8121, vel: 0.669444 -1.07163 0.061208, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.710938  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.710971  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.0528, end: 1357847257.1528
+I0427 19:35:43.716933  9040 laser_mapping.cc:280] [ mapping ]: In num: 3154 down 1264 Map grid num: 9637 effect num : 780, 1050
+I0427 19:35:43.716965  9040 laser_mapping.cc:283] delta trans: -0.0308194 -0.0600649  0.0142322, ang: 0.468204
+I0427 19:35:43.717000  9040 laser_mapping.cc:379] LIO: create kf 16, state:    2.9089  -3.34763 0.0331682, kf opt pose:    2.9089  -3.34763 0.0331682, lio pose:    2.9089  -3.34763 0.0331682, time: 1357847257.1528
+I0427 19:35:43.717952  9040 laser_mapping.cc:327] LIO state:    2.9089  -3.34763 0.0331682, yaw 31.0757, vel:   0.684502   -1.00716 -0.0101059, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.718586  9041 lidar_loc.cc:448] current time: 1357847257.152775764465
+I0427 19:35:43.718680  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:43.718693  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:43.718714  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:43.718720  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:43.718732  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:43.718739  9041 lidar_loc.cc:525] record fp failed time: 1357847257.15, pose:   2.87808495886  -3.40770226194 0.0474006541535
+I0427 19:35:43.810710  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.810748  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.1529, end: 1357847257.2528
+I0427 19:35:43.816071  9040 laser_mapping.cc:280] [ mapping ]: In num: 2817 down 1063 Map grid num: 10022 effect num : 731, 885
+I0427 19:35:43.816102  9040 laser_mapping.cc:283] delta trans:   0.0320889   0.0397084 -0.00621459, ang: 0.324691
+I0427 19:35:43.816198  9040 laser_mapping.cc:327] LIO state:   2.94532  -3.48813 0.0383715, yaw 31.1508, vel:  0.655005  -1.03756 0.0262219, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:43.910072  9040 laser_mapping.cc:217] =============================
+I0427 19:35:43.910109  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.253, end: 1357847257.353
+I0427 19:35:43.915863  9040 laser_mapping.cc:280] [ mapping ]: In num: 3011 down 1143 Map grid num: 10022 effect num : 693, 975
+I0427 19:35:43.915899  9040 laser_mapping.cc:283] delta trans: -0.0164638 -0.0330173 0.00859966, ang: 0.578583
+I0427 19:35:43.915956  9040 laser_mapping.cc:327] LIO state:   3.02735  -3.55899 0.0323969, yaw 32.0143, vel:   0.658848   -1.00087 -0.0214954, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.010118  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.010155  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.3531, end: 1357847257.453
+I0427 19:35:44.015087  9040 laser_mapping.cc:280] [ mapping ]: In num: 2773 down 1205 Map grid num: 10022 effect num : 756, 1036
+I0427 19:35:44.015117  9040 laser_mapping.cc:283] delta trans:  -0.0086857   -0.013436 -0.00306164, ang: 0.154733
+I0427 19:35:44.015214  9040 laser_mapping.cc:327] LIO state:   3.10198  -3.64573 0.0333072, yaw 32.1708, vel:    0.664016   -0.989442 -0.00803332, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.110386  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.110422  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.4532, end: 1357847257.5531
+I0427 19:35:44.115828  9040 laser_mapping.cc:280] [ mapping ]: In num: 2889 down 1130 Map grid num: 10022 effect num : 680, 957
+I0427 19:35:44.115861  9040 laser_mapping.cc:283] delta trans:  0.0210963  0.0462368 0.00283402, ang: 0.354335
+I0427 19:35:44.115955  9040 laser_mapping.cc:327] LIO state:  3.14735   -3.791 0.029669, yaw 31.8641, vel:   0.665108    -1.0336 -0.0163195, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.211161  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.211196  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.5533, end: 1357847257.6532
+I0427 19:35:44.216388  9040 laser_mapping.cc:280] [ mapping ]: In num: 3011 down 1036 Map grid num: 10022 effect num : 717, 852
+I0427 19:35:44.216419  9040 laser_mapping.cc:283] delta trans: -0.0117405 -0.0159309 0.00418335, ang: 0.198406
+I0427 19:35:44.216516  9040 laser_mapping.cc:327] LIO state:   3.22566  -3.87853 0.0238522, yaw 32.1299, vel:   0.676142   -1.02003 -0.0382004, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.310949  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.310985  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.6533, end: 1357847257.7533
+I0427 19:35:44.316154  9040 laser_mapping.cc:280] [ mapping ]: In num: 2852 down 1019 Map grid num: 10022 effect num : 671, 894
+I0427 19:35:44.316187  9040 laser_mapping.cc:283] delta trans:    0.121155    0.140035 -0.00315123, ang: 0.517983
+I0427 19:35:44.316248  9040 laser_mapping.cc:327] LIO state:   3.17217  -4.12064 0.0231805, yaw 32.5489, vel:      0.55299     -1.11312 -0.000669226, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.410442  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.410480  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.7534, end: 1357847257.8534
+I0427 19:35:44.415557  9040 laser_mapping.cc:280] [ mapping ]: In num: 2493 down 1000 Map grid num: 10022 effect num : 662, 885
+I0427 19:35:44.415587  9040 laser_mapping.cc:283] delta trans: -0.000167514  -0.00670883    0.0100521, ang: 0.382061
+I0427 19:35:44.415681  9040 laser_mapping.cc:327] LIO state:    3.2277  -4.22538 0.0130614, yaw 34.0398, vel:   0.545513   -1.10365 -0.0482338, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.510962  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.511003  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.8535, end: 1357847257.9535
+I0427 19:35:44.513669  9040 laser_mapping.cc:280] [ mapping ]: In num: 2679 down 1023 Map grid num: 10022 effect num : 652, 856
+I0427 19:35:44.513706  9040 laser_mapping.cc:283] delta trans: 0.00243985 0.00306327  -0.002125, ang: 0.101898
+I0427 19:35:44.513779  9040 laser_mapping.cc:327] LIO state:   3.27985  -4.33888 0.0103597, yaw 34.9173, vel:  0.542122  -1.10629 -0.037976, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.616370  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.616407  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847257.9536, end: 1357847258.0536
+I0427 19:35:44.620816  9040 laser_mapping.cc:280] [ mapping ]: In num: 2903 down 927 Map grid num: 10022 effect num : 601, 717
+I0427 19:35:44.620859  9040 laser_mapping.cc:283] delta trans: -0.00102994 -0.00162293 -0.00178138, ang: 0.278698
+I0427 19:35:44.620985  9040 laser_mapping.cc:327] LIO state:  3.33515 -4.44799  0.00834, yaw 35.1765, vel:   0.543454   -1.10257 -0.0291189, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:44.628834  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00218248
+I0427 19:35:44.715260  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.715292  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.0553, end: 1357847258.1553
+I0427 19:35:44.720819  9040 laser_mapping.cc:280] [ mapping ]: In num: 3014 down 1135 Map grid num: 10022 effect num : 753, 999
+I0427 19:35:44.720852  9040 laser_mapping.cc:283] delta trans:   -0.067759  -0.0103382 -0.00546935, ang: 0.215241
+I0427 19:35:44.720920  9040 laser_mapping.cc:327] LIO state:    3.4582  -4.54983 0.0108467, yaw 35.0114, vel:   0.671737    -1.1309 -0.0106176, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.815533  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.815565  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.1554, end: 1357847258.2554
+I0427 19:35:44.820317  9040 laser_mapping.cc:280] [ mapping ]: In num: 2562 down 909 Map grid num: 10022 effect num : 579, 790
+I0427 19:35:44.820349  9040 laser_mapping.cc:283] delta trans:  -0.0892532  -0.0420002 -0.00545076, ang: 0.196997
+I0427 19:35:44.820457  9040 laser_mapping.cc:327] LIO state:  3.61467   -4.621 0.015235, yaw 35.4133, vel:   0.838063    -1.1379 0.00240857, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:44.822976  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.000504971
+I0427 19:35:44.915081  9040 laser_mapping.cc:217] =============================
+I0427 19:35:44.915114  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.2555, end: 1357847258.3555
+I0427 19:35:44.917266  9040 laser_mapping.cc:280] [ mapping ]: In num: 2489 down 990 Map grid num: 10022 effect num : 638, 846
+I0427 19:35:44.917292  9040 laser_mapping.cc:283] delta trans:  0.00281905  0.00440138 -0.00110447, ang: 0.132213
+I0427 19:35:44.917325  9040 laser_mapping.cc:379] LIO: create kf 17, state:   3.69575  -4.73932 0.0165806, kf opt pose:   3.69575  -4.73932 0.0165806, lio pose:   3.69575  -4.73932 0.0165806, time: 1357847258.3555
+I0427 19:35:44.918624  9040 laser_mapping.cc:327] LIO state:   3.69575  -4.73932 0.0165806, yaw 36.1952, vel:   0.834871   -1.14319 0.00829925, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:44.919191  9041 lidar_loc.cc:448] current time: 1357847258.355500936508
+I0427 19:35:44.919255  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:44.919267  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:44.919296  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:44.919301  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:44.919317  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:44.919323  9041 lidar_loc.cc:525] record fp failed time: 1357847258.36, pose:   3.69855992971  -4.73490096749 0.0154761165013
+I0427 19:35:45.014788  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.014834  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.3556, end: 1357847258.4556
+I0427 19:35:45.019383  9040 laser_mapping.cc:280] [ mapping ]: In num: 2873 down 1017 Map grid num: 10287 effect num : 720, 879
+I0427 19:35:45.019408  9040 laser_mapping.cc:283] delta trans:  -0.0362194    -0.14818 -0.00949984, ang: 0.0960001
+I0427 19:35:45.019486  9040 laser_mapping.cc:327] LIO state:   3.81553  -4.70555 0.0269111, yaw 36.5754, vel:  0.786033 -0.959328 0.0432576, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.115499  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.115528  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.4557, end: 1357847258.5557
+I0427 19:35:45.118507  9040 laser_mapping.cc:280] [ mapping ]: In num: 2852 down 968 Map grid num: 10287 effect num : 714, 858
+I0427 19:35:45.118538  9040 laser_mapping.cc:283] delta trans: -0.0213875  -0.030358 0.00340661, ang: 0.130198
+I0427 19:35:45.118628  9040 laser_mapping.cc:327] LIO state:    3.9156  -4.77122 0.0278344, yaw 36.5606, vel:  0.806966 -0.933584 0.0242993, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.215437  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.215469  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.5558, end: 1357847258.6558
+I0427 19:35:45.219666  9040 laser_mapping.cc:280] [ mapping ]: In num: 2735 down 971 Map grid num: 10287 effect num : 622, 814
+I0427 19:35:45.219693  9040 laser_mapping.cc:283] delta trans:   0.0610199    0.109217 -0.00594498, ang: 0.334204
+I0427 19:35:45.219784  9040 laser_mapping.cc:327] LIO state:   3.93535  -4.97389 0.0362117, yaw 35.7971, vel:   0.76967  -1.03685 0.0646235, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.315382  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.315413  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.6559, end: 1357847258.7559
+I0427 19:35:45.319837  9040 laser_mapping.cc:280] [ mapping ]: In num: 2340 down 981 Map grid num: 10287 effect num : 643, 872
+I0427 19:35:45.319866  9040 laser_mapping.cc:283] delta trans:  0.0113844  0.0133477 0.00705214, ang: 0.119228
+I0427 19:35:45.319934  9040 laser_mapping.cc:327] LIO state:     4.001    -5.091 0.0356273, yaw 35.486, vel:  0.760716  -1.04362 0.0343667, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.415697  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.415731  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.756, end: 1357847258.856
+I0427 19:35:45.420004  9040 laser_mapping.cc:280] [ mapping ]: In num: 2808 down 972 Map grid num: 10287 effect num : 661, 837
+I0427 19:35:45.420028  9040 laser_mapping.cc:283] delta trans: 0.0945341  0.101633 0.0138314, ang: 0.215881
+I0427 19:35:45.420113  9040 laser_mapping.cc:327] LIO state:    3.9826  -5.29709 0.0252356, yaw 35.5713, vel:    0.67236   -1.10286 -0.0134851, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:45.423382  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.0112889
+W0427 19:35:45.433759  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00101686
+I0427 19:35:45.514897  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.514931  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.8561, end: 1357847258.956
+I0427 19:35:45.517827  9040 laser_mapping.cc:280] [ mapping ]: In num: 2855 down 943 Map grid num: 10287 effect num : 678, 819
+I0427 19:35:45.517853  9040 laser_mapping.cc:283] delta trans:  -0.0042015  -0.0053511 0.000621433, ang: 0.0792178
+I0427 19:35:45.517953  9040 laser_mapping.cc:327] LIO state:    4.0541  -5.40212 0.0232645, yaw 35.7331, vel:   0.675683   -1.09938 -0.0171885, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.615522  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.615554  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847258.9562, end: 1357847259.0561
+I0427 19:35:45.619939  9040 laser_mapping.cc:280] [ mapping ]: In num: 2869 down 1000 Map grid num: 10287 effect num : 631, 847
+I0427 19:35:45.619964  9040 laser_mapping.cc:283] delta trans:  -0.136811  -0.121723 0.00246888, ang: 0.100984
+I0427 19:35:45.620042  9040 laser_mapping.cc:327] LIO state:   4.25853  -5.39043 0.0190753, yaw 35.9028, vel:   0.817613   -1.05601 -0.0531084, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.714967  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.715001  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.0562, end: 1357847259.1562
+I0427 19:35:45.718972  9040 laser_mapping.cc:280] [ mapping ]: In num: 2501 down 994 Map grid num: 10287 effect num : 631, 842
+I0427 19:35:45.718998  9040 laser_mapping.cc:283] delta trans:  -0.106148  -0.150127 -0.0222768, ang: 0.60234
+I0427 19:35:45.719089  9040 laser_mapping.cc:327] LIO state:   4.44651  -5.34599 0.0360369, yaw 36.275, vel:  0.884839 -0.941513 0.0259148, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.815011  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.815040  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.1563, end: 1357847259.2562
+I0427 19:35:45.819555  9040 laser_mapping.cc:280] [ mapping ]: In num: 2833 down 1053 Map grid num: 10287 effect num : 685, 886
+I0427 19:35:45.819581  9040 laser_mapping.cc:283] delta trans:  -0.0740671  -0.0706141 -0.00089031, ang: 0.290237
+I0427 19:35:45.819670  9040 laser_mapping.cc:327] LIO state:  4.60907 -5.36953 0.039519, yaw 36.3647, vel:  0.964304 -0.909493 0.0182492, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:45.915037  9040 laser_mapping.cc:217] =============================
+I0427 19:35:45.915076  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.2564, end: 1357847259.3564
+I0427 19:35:45.918394  9040 laser_mapping.cc:280] [ mapping ]: In num: 3012 down 1011 Map grid num: 10287 effect num : 678, 809
+I0427 19:35:45.918411  9040 laser_mapping.cc:283] delta trans: -0.00265431 -0.00396926 -0.00168036, ang: 0.355421
+I0427 19:35:45.918439  9040 laser_mapping.cc:327] LIO state:   4.70832  -5.45667 0.0430273, yaw 36.4204, vel:  0.965625 -0.906685 0.0254802, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.015643  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.015672  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.3565, end: 1357847259.4565
+I0427 19:35:46.019744  9040 laser_mapping.cc:280] [ mapping ]: In num: 2837 down 991 Map grid num: 10287 effect num : 620, 806
+I0427 19:35:46.019769  9040 laser_mapping.cc:283] delta trans:   0.037491   0.099034 0.00092311, ang: 0.278175
+I0427 19:35:46.019874  9040 laser_mapping.cc:327] LIO state:   4.76747  -5.64645 0.0446545, yaw 37.0119, vel:   0.98576 -0.990441 0.0299032, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.115438  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.115469  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.4566, end: 1357847259.5566
+I0427 19:35:46.119241  9040 laser_mapping.cc:280] [ mapping ]: In num: 2637 down 1085 Map grid num: 10287 effect num : 657, 873
+I0427 19:35:46.119261  9040 laser_mapping.cc:283] delta trans:  0.0461989  0.0703698 0.00767201, ang: 0.185792
+I0427 19:35:46.119295  9040 laser_mapping.cc:327] LIO state:   4.81993  -5.81595 0.0399754, yaw 37.227, vel:   0.958638   -1.03543 0.00306211, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.214926  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.214967  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.5567, end: 1357847259.6567
+I0427 19:35:46.219455  9040 laser_mapping.cc:280] [ mapping ]: In num: 2716 down 1103 Map grid num: 10287 effect num : 681, 872
+I0427 19:35:46.219480  9040 laser_mapping.cc:283] delta trans:   0.0510248   0.0767172 -0.00808384, ang: 0.33601
+I0427 19:35:46.219569  9040 laser_mapping.cc:327] LIO state:   4.86486  -5.99631 0.0483657, yaw 36.995, vel:  0.929028  -1.08052 0.0513545, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:46.223448  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.00143051
+I0427 19:35:46.315088  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.315120  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.6568, end: 1357847259.7567
+I0427 19:35:46.318957  9040 laser_mapping.cc:280] [ mapping ]: In num: 2809 down 964 Map grid num: 10287 effect num : 626, 755
+I0427 19:35:46.318975  9040 laser_mapping.cc:283] delta trans: 0.000118932 0.000448898 0.000350398, ang: 0.149925
+I0427 19:35:46.319015  9040 laser_mapping.cc:327] LIO state:  4.95772 -6.10489 0.053155, yaw 37.0469, vel:  0.930137  -1.08093 0.0496778, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.414911  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.414940  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.7574, end: 1357847259.8574
+I0427 19:35:46.419279  9040 laser_mapping.cc:280] [ mapping ]: In num: 3071 down 1124 Map grid num: 10287 effect num : 698, 913
+I0427 19:35:46.419301  9040 laser_mapping.cc:283] delta trans: -0.0212169  -0.034948 0.00213612, ang: 0.156288
+I0427 19:35:46.419353  9040 laser_mapping.cc:327] LIO state:   5.07255  -6.17874 0.0560187, yaw 37.5568, vel:  0.939864  -1.06068 0.0366587, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.515877  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.515908  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.8575, end: 1357847259.9575
+I0427 19:35:46.520316  9040 laser_mapping.cc:280] [ mapping ]: In num: 2634 down 976 Map grid num: 10287 effect num : 621, 789
+I0427 19:35:46.520344  9040 laser_mapping.cc:283] delta trans:  0.161209  0.266599 0.0166838, ang: 0.550991
+I0427 19:35:46.520373  9040 laser_mapping.cc:379] LIO: create kf 18, state:  5.00541  -6.5515 0.043004, kf opt pose:  5.00541  -6.5515 0.043004, lio pose:  5.00541  -6.5515 0.043004, time: 1357847259.9575
+I0427 19:35:46.521008  9040 laser_mapping.cc:327] LIO state:  5.00541  -6.5515 0.043004, yaw 37.8345, vel:   0.867781   -1.21284 -0.0167302, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.521453  9041 lidar_loc.cc:448] current time: 1357847259.957473039627
+I0427 19:35:46.521517  9041 lidar_loc.cc:481] initing lidarloc
+I0427 19:35:46.521528  9041 lidar_loc.cc:827] loc from: 0 0 0
+I0427 19:35:46.521548  9041 lidar_loc.cc:830] lidar loc target is null, skip
+I0427 19:35:46.521553  9041 lidar_loc.cc:329] init failed, score: -2.47313e-266
+I0427 19:35:46.521567  9041 lidar_loc.cc:523] FP init failed.
+I0427 19:35:46.521572  9041 lidar_loc.cc:525] record fp failed time: 1357847259.96, pose:   5.16662116433  -6.28489732395 0.0596877687992
+I0427 19:35:46.615109  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.615144  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847259.9576, end: 1357847260.0576
+I0427 19:35:46.619897  9040 laser_mapping.cc:280] [ mapping ]: In num: 2560 down 1016 Map grid num: 10587 effect num : 658, 857
+I0427 19:35:46.619928  9040 laser_mapping.cc:283] delta trans:  0.00605232  0.00771637 -0.00505138, ang: 0.137529
+I0427 19:35:46.620009  9040 laser_mapping.cc:327] LIO state:   5.08623  -6.68063 0.0463805, yaw 38.7406, vel:   0.863172   -1.21608 0.00741219, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.715025  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.715056  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847260.0577, end: 1357847260.1576
+I0427 19:35:46.719579  9040 laser_mapping.cc:280] [ mapping ]: In num: 2834 down 1011 Map grid num: 10587 effect num : 645, 816
+I0427 19:35:46.719609  9040 laser_mapping.cc:283] delta trans:  0.076357 0.0544505 0.0133229, ang: 0.397439
+I0427 19:35:46.719689  9040 laser_mapping.cc:327] LIO state:   5.09623  -6.85674 0.0337992, yaw 38.7525, vel:   0.797375   -1.20302 -0.0441528, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.816007  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.816053  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847260.1578, end: 1357847260.2577
+I0427 19:35:46.821012  9040 laser_mapping.cc:280] [ mapping ]: In num: 2939 down 1044 Map grid num: 10587 effect num : 708, 845
+I0427 19:35:46.821041  9040 laser_mapping.cc:283] delta trans:  0.00261353  0.00313324 -0.00353314, ang: 0.263577
+I0427 19:35:46.821107  9040 laser_mapping.cc:327] LIO state:   5.17339  -6.98024 0.0329149, yaw 39.1473, vel:   0.796049    -1.2032 -0.0272187, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+W0427 19:35:46.823658  8998 pgo.cc:151] 当前DR定位的结果的时间戳应当比上一个时间戳数值大，实际相减得-0.000742912
+I0427 19:35:46.915547  9040 laser_mapping.cc:217] =============================
+I0427 19:35:46.915585  9040 laser_mapping.cc:218] LIO get cloud at beg: 1357847260.2578, end: 1357847260.3578
+E0427 19:35:46.919356  9040 eskf.cc:272] Reject ESKF iter update, dtrans: 0.836577, drot_deg: 1.63315, dvel: 0.484709
+I0427 19:35:46.919399  9040 laser_mapping.cc:280] [ mapping ]: In num: 2690 down 934 Map grid num: 10587 effect num : 546, 749
+I0427 19:35:46.919409  9040 laser_mapping.cc:283] delta trans: 0 0 0, ang: 0
+I0427 19:35:46.919458  9040 laser_mapping.cc:327] LIO state:   5.25313  -7.10075 0.0301887, yaw 39.4623, vel:   0.796049    -1.2032 -0.0272187, grav:   0.133617 0.00135603   -9.80909, grav norm: 9.81
+I0427 19:35:46.964531  8998 lidar_loc.cc:985] saving maps
+I0427 19:35:46.972440  8998 tiled_map.cc:41] map is saved to ./data/new_map/, sz: 0
+I0427 19:35:46.972471  8998 lidar_loc.cc:993] dynamic maps saved
+run_loc_online_for_dora: ../src/dispatch_common.c:872: epoxy_get_proc_address: Assertion `0 && "Couldn't find current GLX or EGL context.\n"' failed.

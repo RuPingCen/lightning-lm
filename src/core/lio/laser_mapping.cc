@@ -2,6 +2,8 @@
 #include <yaml-cpp/yaml.h>
 #include <fstream>
 
+#include <pcl/io/pcd_io.h>
+
 #include "common/options.h"
 #include "core/lightning_math.hpp"
 #include "laser_mapping.h"
@@ -53,11 +55,11 @@ bool LaserMapping::LoadParamsFromYAML(const std::string &yaml_file) {
         acc_cov = yaml["fasterlio"]["acc_cov"].as<float>();
         b_gyr_cov = yaml["fasterlio"]["b_gyr_cov"].as<float>();
         b_acc_cov = yaml["fasterlio"]["b_acc_cov"].as<float>();
-        preprocess_->Blind() = yaml["fasterlio"]["blind"].as<double>();
-        preprocess_->TimeScale() = yaml["fasterlio"]["time_scale"].as<double>();
+        // preprocess_->Blind() = yaml["fasterlio"]["blind"].as<double>();
+        // preprocess_->TimeScale() = yaml["fasterlio"]["time_scale"].as<double>();
         lidar_type = yaml["fasterlio"]["lidar_type"].as<int>();
-        preprocess_->NumScans() = yaml["fasterlio"]["scan_line"].as<int>();
-        preprocess_->PointFilterNum() = yaml["fasterlio"]["point_filter_num"].as<int>();
+        // preprocess_->NumScans() = yaml["fasterlio"]["scan_line"].as<int>();
+        // preprocess_->PointFilterNum() = yaml["fasterlio"]["point_filter_num"].as<int>();
 
         extrinT_ = yaml["fasterlio"]["extrinsic_T"].as<std::vector<double>>();
         extrinR_ = yaml["fasterlio"]["extrinsic_R"].as<std::vector<double>>();
@@ -72,7 +74,7 @@ bool LaserMapping::LoadParamsFromYAML(const std::string &yaml_file) {
         float height_max = yaml["roi"]["height_max"].as<float>();
         float height_min = yaml["roi"]["height_min"].as<float>();
 
-        preprocess_->SetHeightROI(height_max, height_min);
+        // preprocess_->SetHeightROI(height_max, height_min);
 
         options_.kf_dis_th_ = yaml["fasterlio"]["kf_dis_th"].as<double>();
         options_.kf_angle_th_ = yaml["fasterlio"]["kf_angle_th"].as<double>() * M_PI / 180.0;
@@ -90,22 +92,22 @@ bool LaserMapping::LoadParamsFromYAML(const std::string &yaml_file) {
     }
 
     LOG(INFO) << "lidar_type " << lidar_type;
-    if (lidar_type == 1) {
-        preprocess_->SetLidarType(LidarType::AVIA);
-        LOG(INFO) << "Using AVIA Lidar";
-    } else if (lidar_type == 2) {
-        preprocess_->SetLidarType(LidarType::VELO32);
-        LOG(INFO) << "Using Velodyne 32 Lidar";
-    } else if (lidar_type == 3) {
-        preprocess_->SetLidarType(LidarType::OUST64);
-        LOG(INFO) << "Using OUST 64 Lidar";
-    } else if (lidar_type == 4) {
-        preprocess_->SetLidarType(LidarType::ROBOSENSE);
-        LOG(INFO) << "Using RoboSense Lidar";
-    } else {
-        LOG(WARNING) << "unknown lidar_type";
-        return false;
-    }
+    // if (lidar_type == 1) {
+    //     preprocess_->SetLidarType(LidarType::AVIA);
+    //     LOG(INFO) << "Using AVIA Lidar";
+    // } else if (lidar_type == 2) {
+    //     preprocess_->SetLidarType(LidarType::VELO32);
+    //     LOG(INFO) << "Using Velodyne 32 Lidar";
+    // } else if (lidar_type == 3) {
+    //     preprocess_->SetLidarType(LidarType::OUST64);
+    //     LOG(INFO) << "Using OUST 64 Lidar";
+    // } else if (lidar_type == 4) {
+    //     preprocess_->SetLidarType(LidarType::ROBOSENSE);
+    //     LOG(INFO) << "Using RoboSense Lidar";
+    // } else {
+    //     LOG(WARNING) << "unknown lidar_type";
+    //     return false;
+    // }
 
     if (ivox_nearby_type == 0) {
         ivox_options_.nearby_type_ = IVoxType::NearbyType::CENTER;
@@ -134,7 +136,7 @@ bool LaserMapping::LoadParamsFromYAML(const std::string &yaml_file) {
 }
 
 LaserMapping::LaserMapping(Options options) : options_(options) {
-    preprocess_.reset(new PointCloudPreprocess());
+    // preprocess_.reset(new PointCloudPreprocess());
     p_imu_.reset(new ImuProcess());
 }
 
@@ -409,53 +411,53 @@ void LaserMapping::MakeKF() {
     // }
 }
 
-void LaserMapping::ProcessPointCloud2(const sensor_msgs::msg::PointCloud2::SharedPtr &msg) {
-    UL lock(mtx_buffer_);
-    Timer::Evaluate(
-        [&, this]() {
-            scan_count_++;
-            double timestamp = ToSec(msg->header.stamp);
-            if (timestamp < last_timestamp_lidar_) {
-                LOG(ERROR) << "lidar loop back, dt: " << timestamp - last_timestamp_lidar_;
-                return;
-            }
+// void LaserMapping::ProcessPointCloud2(const sensor_msgs::msg::PointCloud2::SharedPtr &msg) {
+//     UL lock(mtx_buffer_);
+//     Timer::Evaluate(
+//         [&, this]() {
+//             scan_count_++;
+//             double timestamp = ToSec(msg->header.stamp);
+//             if (timestamp < last_timestamp_lidar_) {
+//                 LOG(ERROR) << "lidar loop back, dt: " << timestamp - last_timestamp_lidar_;
+//                 return;
+//             }
 
-            LOG(INFO) << "get cloud at " << std::setprecision(14) << timestamp
-                      << ", latest imu: " << last_timestamp_imu_;
+//             LOG(INFO) << "get cloud at " << std::setprecision(14) << timestamp
+//                       << ", latest imu: " << last_timestamp_imu_;
 
-            CloudPtr cloud(new PointCloudType());
-            preprocess_->Process(msg, cloud);
+//             CloudPtr cloud(new PointCloudType());
+//             preprocess_->Process(msg, cloud);
 
-            lidar_buffer_.push_back(cloud);
-            time_buffer_.push_back(timestamp);
-            last_timestamp_lidar_ = timestamp;
-        },
-        "Preprocess (Standard)");
-}
+//             lidar_buffer_.push_back(cloud);
+//             time_buffer_.push_back(timestamp);
+//             last_timestamp_lidar_ = timestamp;
+//         },
+//         "Preprocess (Standard)");
+// }
 
-void LaserMapping::ProcessPointCloud2(const livox_ros_driver2::msg::CustomMsg::SharedPtr &msg) {
-    UL lock(mtx_buffer_);
-    Timer::Evaluate(
-        [&, this]() {
-            scan_count_++;
-            double timestamp = ToSec(msg->header.stamp);
-            if (timestamp < last_timestamp_lidar_) {
-                LOG(ERROR) << "lidar loop back, clear buffer";
-                lidar_buffer_.clear();
-            }
+// void LaserMapping::ProcessPointCloud2(const livox_ros_driver2::msg::CustomMsg::SharedPtr &msg) {
+//     UL lock(mtx_buffer_);
+//     Timer::Evaluate(
+//         [&, this]() {
+//             scan_count_++;
+//             double timestamp = ToSec(msg->header.stamp);
+//             if (timestamp < last_timestamp_lidar_) {
+//                 LOG(ERROR) << "lidar loop back, clear buffer";
+//                 lidar_buffer_.clear();
+//             }
 
-            // LOG(INFO) << "get cloud at " << std::setprecision(14) << timestamp
-            //           << ", latest imu: " << last_timestamp_imu_;
+//             // LOG(INFO) << "get cloud at " << std::setprecision(14) << timestamp
+//             //           << ", latest imu: " << last_timestamp_imu_;
 
-            CloudPtr cloud(new PointCloudType());
-            preprocess_->Process(msg, cloud);
+//             CloudPtr cloud(new PointCloudType());
+//             preprocess_->Process(msg, cloud);
 
-            lidar_buffer_.push_back(cloud);
-            time_buffer_.push_back(timestamp);
-            last_timestamp_lidar_ = timestamp;
-        },
-        "Preprocess (Standard)");
-}
+//             lidar_buffer_.push_back(cloud);
+//             time_buffer_.push_back(timestamp);
+//             last_timestamp_lidar_ = timestamp;
+//         },
+//         "Preprocess (Standard)");
+// }
 
 void LaserMapping::ProcessPointCloud2(CloudPtr cloud) {
     UL lock(mtx_buffer_);

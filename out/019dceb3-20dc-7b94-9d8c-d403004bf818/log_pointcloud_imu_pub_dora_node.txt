@@ -1,0 +1,17 @@
+
+============================== Rosbag Summary ==============================
+  Path:          /home/mickrobot/dataset/lightning-LM-dataset/NCLT/20130110
+  Storage ID:    sqlite3
+  Start Time:    2013-01-11 03:47:17.249
+  Duration:      1025.89s
+  Total Msgs:    116818
+  Topics Details:
+    - points_raw                | Type: sensor_msgs/msg/PointCloud2    | Count: 10212
+    - imu_raw                   | Type: sensor_msgs/msg/Imu            | Count: 96629
+    - gps_rtk_fix               | Type: sensor_msgs/msg/NavSatFix      | Count: 2791
+    - gps_fix                   | Type: sensor_msgs/msg/NavSatFix      | Count: 7186
+
+  Extracted Target Messages: 106841 (IMU & PointCloud)
+============================================================================
+
+{"timestamp":"2026-04-27T11:29:28.856309Z","level":"INFO","fields":{"message":"","name":"MeterProvider.GlobalSet","message":"Global meter provider is set. Meters can now be created using global::meter() or global::meter_with_scope()."},"target":"opentelemetry"}

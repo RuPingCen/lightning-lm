@@ -1,17 +1,20 @@
 //
 // Created by xiang on 25-5-6.
 //
-
 #include "core/system/slam.h"
+#include <pcl/io/pcd_io.h>
 #include "core/g2p5/g2p5.h"
+#include "core/g2p5/g2p5_map.h"
 #include "core/lio/laser_mapping.h"
 #include "core/loop_closing/loop_closing.h"
 #include "core/maps/tiled_map.h"
 #include "ui/pangolin_window.h"
-#include "wrapper/ros_utils.h"
+// #include "wrapper/ros_utils.h"
 
+#include <signal.h>
 #include <yaml-cpp/yaml.h>
 #include <filesystem>
+#include <iostream>
 #include <opencv2/opencv.hpp>
 
 namespace lightning {

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(BUILD_FRAMEWORK "ROS2" CACHE STRING "Choose middleware framework: ROS2 or DORA")
+set(BUILD_FRAMEWORK "DORA" CACHE STRING "Choose middleware framework: ROS2 or DORA")
 message(STATUS "Current build framework is: ${BUILD_FRAMEWORK}")
 
 project(lightning)

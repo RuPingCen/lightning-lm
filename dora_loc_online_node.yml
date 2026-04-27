@@ -9,14 +9,14 @@ nodes:
     env:
       BAG_PATH: /home/mickrobot/dataset/lightning-LM-dataset/NCLT/20130110   #ros2 bag path
   
-  # lightning_lm slam
-  - id: lightning_lm
-    path: bin/run_slam_online_for_dora
+  # lightning_lm localization
+  - id: lightning_loc
+    path: bin/run_loc_online_for_dora
     inputs:
       pointcloud: pointcloud_imu_pub_dora_node/pointcloud
       imu: pointcloud_imu_pub_dora_node/imu
     env:
-      FLAGS_config: ./config/default.yaml
+      FLAGS_config: ./config/default_nclt_dora.yaml
    # outputs:
    #   - pointcloud_rs
  
