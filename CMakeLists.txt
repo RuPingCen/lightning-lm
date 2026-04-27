@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
+set(BUILD_FRAMEWORK "ROS2" CACHE STRING "Choose middleware framework: ROS2 or DORA")
+message(STATUS "Current build framework is: ${BUILD_FRAMEWORK}")
+
 project(lightning)
 
 # Default to C++17
@@ -31,32 +34,42 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(cmake/packages.cmake)
 
-# msg 和 srv
-set(MY_SRV_FILES "")
-set(SRC_DIR ${PROJECT_SOURCE_DIR}/srv)
-file(GLOB_RECURSE SRC_FILES ${SRC_DIR}/*.srv)
-foreach (SRC_FILE ${SRC_FILES})
-    file(RELATIVE_PATH REL_PATH ${SRC_DIR} ${SRC_FILE})
-    list(APPEND MY_SRV_FILES ${PROJECT_SOURCE_DIR}:srv/${REL_PATH})
-endforeach ()
 
-rosidl_generate_interfaces(${PROJECT_NAME}
-        ${MY_SRV_FILES}
-        ${MY_MSG_FILES}
-        ${MY_ACTION_FILES}
-        DEPENDENCIES std_msgs geometry_msgs sensor_msgs nav_msgs
-)
+if(BUILD_FRAMEWORK STREQUAL "DORA")
 
-include_directories(
-        ${CMAKE_CURRENT_BINARY_DIR}/rosidl_generator_cpp
-)
+	 
+    add_subdirectory(src)
 
-install(DIRECTORY config
-        DESTINATION lib/${PROJECT_NAME}/
-)
+elseif(BUILD_FRAMEWORK STREQUAL "ROS2")
 
-add_subdirectory(thirdparty/livox_ros_driver)
 
-add_subdirectory(src)
+    # msg 和 srv
+    set(MY_SRV_FILES "")
+    set(SRC_DIR ${PROJECT_SOURCE_DIR}/srv)
+    file(GLOB_RECURSE SRC_FILES ${SRC_DIR}/*.srv)
+    foreach (SRC_FILE ${SRC_FILES})
+        file(RELATIVE_PATH REL_PATH ${SRC_DIR} ${SRC_FILE})
+        list(APPEND MY_SRV_FILES ${PROJECT_SOURCE_DIR}:srv/${REL_PATH})
+    endforeach ()
 
-ament_package()
+    rosidl_generate_interfaces(${PROJECT_NAME}
+            ${MY_SRV_FILES}
+            ${MY_MSG_FILES}
+            ${MY_ACTION_FILES}
+            DEPENDENCIES std_msgs geometry_msgs sensor_msgs nav_msgs
+    )
+
+    include_directories(
+            ${CMAKE_CURRENT_BINARY_DIR}/rosidl_generator_cpp
+    )
+
+    install(DIRECTORY config
+            DESTINATION lib/${PROJECT_NAME}/
+    )
+
+    add_subdirectory(thirdparty/livox_ros_driver)
+
+    add_subdirectory(src)
+
+    ament_package()
+endif()

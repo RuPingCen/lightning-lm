@@ -1,5 +1,6 @@
 #include <pcl/common/transforms.h>
-#include <pcl_conversions/pcl_conversions.h>
+// #include <pcl_conversions/pcl_conversions.h>
+#include <iostream>
 
 #include "core/localization/lidar_loc/lidar_loc.h"
 #include "core/localization/localization.h"
@@ -96,7 +97,8 @@ bool Localization::Init(const std::string& yaml_path, const std::string& global_
         loc_result_ = res;
 
         if (tf_callback_ && loc_result_.valid_) {
-            tf_callback_(loc_result_.ToGeoMsg());
+            // tf_callback_(loc_result_.ToGeoMsg());
+            tf_callback_(loc_result_.pose_, loc_result_.timestamp_);
         }
 
         if (ui_) {
@@ -106,72 +108,84 @@ bool Localization::Init(const std::string& yaml_path, const std::string& global_
     });
 
     /// 预处理器
-    preprocess_.reset(new PointCloudPreprocess());
-    preprocess_->Blind() = yaml.GetValue<double>("fasterlio", "blind");
-    preprocess_->TimeScale() = yaml.GetValue<double>("fasterlio", "time_scale");
-    int lidar_type = yaml.GetValue<int>("fasterlio", "lidar_type");
-    preprocess_->NumScans() = yaml.GetValue<int>("fasterlio", "scan_line");
-    preprocess_->PointFilterNum() = yaml.GetValue<int>("fasterlio", "point_filter_num");
-    float height_max = yaml.GetValue<float>("roi", "height_max");
-    float height_min = yaml.GetValue<float>("roi", "height_min");
+    // preprocess_.reset(new PointCloudPreprocess());
+    // preprocess_->Blind() = yaml.GetValue<double>("fasterlio", "blind");
+    // preprocess_->TimeScale() = yaml.GetValue<double>("fasterlio", "time_scale");
+    // int lidar_type = yaml.GetValue<int>("fasterlio", "lidar_type");
+    // preprocess_->NumScans() = yaml.GetValue<int>("fasterlio", "scan_line");
+    // preprocess_->PointFilterNum() = yaml.GetValue<int>("fasterlio", "point_filter_num");
+    // float height_max = yaml.GetValue<float>("roi", "height_max");
+    // float height_min = yaml.GetValue<float>("roi", "height_min");
 
-    preprocess_->SetHeightROI(height_max, height_min);
+    // preprocess_->SetHeightROI(height_max, height_min);
 
-    LOG(INFO) << "lidar_type " << lidar_type;
-    if (lidar_type == 1) {
-        preprocess_->SetLidarType(LidarType::AVIA);
-        LOG(INFO) << "Using AVIA Lidar";
-    } else if (lidar_type == 2) {
-        preprocess_->SetLidarType(LidarType::VELO32);
-        LOG(INFO) << "Using Velodyne 32 Lidar";
-    } else if (lidar_type == 3) {
-        preprocess_->SetLidarType(LidarType::OUST64);
-        LOG(INFO) << "Using OUST 64 Lidar";
-    } else if (lidar_type == 4) {
-        preprocess_->SetLidarType(LidarType::ROBOSENSE);
-        LOG(INFO) << "Using OUST 64 Lidar";
-    } else {
-        LOG(WARNING) << "unknown lidar_type";
-    }
+    // LOG(INFO) << "lidar_type " << lidar_type;
+    // if (lidar_type == 1) {
+    //     preprocess_->SetLidarType(LidarType::AVIA);
+    //     LOG(INFO) << "Using AVIA Lidar";
+    // } else if (lidar_type == 2) {
+    //     preprocess_->SetLidarType(LidarType::VELO32);
+    //     LOG(INFO) << "Using Velodyne 32 Lidar";
+    // } else if (lidar_type == 3) {
+    //     preprocess_->SetLidarType(LidarType::OUST64);
+    //     LOG(INFO) << "Using OUST 64 Lidar";
+    // } else if (lidar_type == 4) {
+    //     preprocess_->SetLidarType(LidarType::ROBOSENSE);
+    //     LOG(INFO) << "Using OUST 64 Lidar";
+    // } else {
+    //     LOG(WARNING) << "unknown lidar_type";
+    // }
 
     return true;
 }
 
-void Localization::ProcessLidarMsg(const sensor_msgs::msg::PointCloud2::SharedPtr cloud) {
-    UL lock(global_mutex_);
+void Localization::ProcessLidarMsg(CloudPtr cloud) {
+    std::unique_lock<std::mutex> lock(global_mutex_);
     if (lidar_loc_ == nullptr || lio_ == nullptr || pgo_ == nullptr) {
         return;
     }
 
-    // 串行模式
-    CloudPtr laser_cloud(new PointCloudType);
-    preprocess_->Process(cloud, laser_cloud);
-    laser_cloud->header.stamp = cloud->header.stamp.sec * 1e9 + cloud->header.stamp.nanosec;
-
     if (options_.online_mode_) {
-        lidar_odom_proc_cloud_.AddMessage(laser_cloud);
+        lidar_odom_proc_cloud_.AddMessage(cloud);
     } else {
-        LidarOdomProcCloud(laser_cloud);
+        LidarOdomProcCloud(cloud);
     }
 }
+// void Localization::ProcessLidarMsg(const sensor_msgs::msg::PointCloud2::SharedPtr cloud) {
+//     UL lock(global_mutex_);
+//     if (lidar_loc_ == nullptr || lio_ == nullptr || pgo_ == nullptr) {
+//         return;
+//     }
 
-void Localization::ProcessLivoxLidarMsg(const livox_ros_driver2::msg::CustomMsg::SharedPtr cloud) {
-    UL lock(global_mutex_);
-    if (lidar_loc_ == nullptr || lio_ == nullptr || pgo_ == nullptr) {
-        return;
-    }
+//     // 串行模式
+//     CloudPtr laser_cloud(new PointCloudType);
+//     preprocess_->Process(cloud, laser_cloud);
+//     laser_cloud->header.stamp = cloud->header.stamp.sec * 1e9 + cloud->header.stamp.nanosec;
 
-    // 串行模式
-    CloudPtr laser_cloud(new PointCloudType);
-    preprocess_->Process(cloud, laser_cloud);
-    laser_cloud->header.stamp = cloud->header.stamp.sec * 1e9 + cloud->header.stamp.nanosec;
+//     if (options_.online_mode_) {
+//         lidar_odom_proc_cloud_.AddMessage(laser_cloud);
+//     } else {
+//         LidarOdomProcCloud(laser_cloud);
+//     }
+// }
 
-    if (options_.online_mode_) {
-        lidar_odom_proc_cloud_.AddMessage(laser_cloud);
-    } else {
-        LidarOdomProcCloud(laser_cloud);
-    }
-}
+// void Localization::ProcessLivoxLidarMsg(const livox_ros_driver2::msg::CustomMsg::SharedPtr cloud) {
+//     UL lock(global_mutex_);
+//     if (lidar_loc_ == nullptr || lio_ == nullptr || pgo_ == nullptr) {
+//         return;
+//     }
+
+//     // 串行模式
+//     CloudPtr laser_cloud(new PointCloudType);
+//     preprocess_->Process(cloud, laser_cloud);
+//     laser_cloud->header.stamp = cloud->header.stamp.sec * 1e9 + cloud->header.stamp.nanosec;
+
+//     if (options_.online_mode_) {
+//         lidar_odom_proc_cloud_.AddMessage(laser_cloud);
+//     } else {
+//         LidarOdomProcCloud(laser_cloud);
+//     }
+// }
 
 void Localization::LidarOdomProcCloud(CloudPtr cloud) {
     if (lio_ == nullptr) {
@@ -242,11 +256,15 @@ void Localization::LidarLocProcCloud(CloudPtr scan_undist) {
         ui_->UpdateScan(scan_undist, res.pose_);
     }
 
+    // if (loc_state_callback_) {
+    //     auto loc_state = std::make_shared<std_msgs::msg::Int32>();
+    //     loc_state->data = static_cast<int>(res.status_);
+    //     LOG(INFO) << "loc_state: " << loc_state->data;
+    //     loc_state_callback_(*loc_state);
+    // }
     if (loc_state_callback_) {
-        auto loc_state = std::make_shared<std_msgs::msg::Int32>();
-        loc_state->data = static_cast<int>(res.status_);
-        LOG(INFO) << "loc_state: " << loc_state->data;
-        loc_state_callback_(*loc_state);
+        std::cout << "loc_state: " << static_cast<int>(res.status_) << std::endl;
+        loc_state_callback_(static_cast<int>(res.status_));
     }
 
     // cv::Mat img(100, 100, CV_8UC3, cv::Scalar(255, 255, 255));

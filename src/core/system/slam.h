@@ -5,17 +5,14 @@
 #ifndef LIGHTNING_SLAM_H
 #define LIGHTNING_SLAM_H
 
-#include <rclcpp/rclcpp.hpp>
-#include <sensor_msgs/msg/imu.hpp>
-#include <sensor_msgs/msg/point_cloud2.hpp>
+#include <atomic>
+#include <memory>
 #include <string>
-
-#include "lightning/srv/save_map.hpp"
-#include "livox_ros_driver2/msg/custom_msg.hpp"
 
 #include "common/eigen_types.h"
 #include "common/imu.h"
 #include "common/keyframe.h"
+#include "common/point_def.h"
 
 namespace lightning {
 
@@ -28,7 +25,9 @@ class PangolinWindow;
 
 namespace g2p5 {
 class G2P5;
-}
+class G2P5Map;
+using G2P5MapPtr = std::shared_ptr<G2P5Map>;
+}  // namespace g2p5
 
 /**
  * SLAM 系统调用接口
@@ -49,8 +48,6 @@ class SlamSystem {
         bool step_on_kf_ = true;  // 是否在关键帧处暂停p
     };
 
-    using SaveMapService = srv::SaveMap;
-
     SlamSystem(Options options);
     ~SlamSystem();
 
@@ -68,20 +65,14 @@ class SlamSystem {
     void ProcessIMU(const lightning::IMUPtr& imu);
 
     /// 处理点云
-    void ProcessLidar(const sensor_msgs::msg::PointCloud2::SharedPtr& cloud);
-    void ProcessLidar(const livox_ros_driver2::msg::CustomMsg::SharedPtr& cloud);
+    void ProcessLidar(CloudPtr cloud);
 
-    /// 实时模式下的spin
-    void Spin();
+    /// 获取G2P5地图
+    std::shared_ptr<g2p5::G2P5> GetG2P5() { return g2p5_; }
 
    private:
-    /// ros端保存地图的实现
-    void SaveMap(const SaveMapService::Request::SharedPtr request, SaveMapService::Response::SharedPtr response);
-
     Options options_;
     std::atomic_bool running_ = false;
-
-    rclcpp::Service<SaveMapService>::SharedPtr savemap_service_ = nullptr;
 
     std::string map_name_;  // 地图名
 
@@ -91,16 +82,6 @@ class SlamSystem {
     std::shared_ptr<g2p5::G2P5> g2p5_ = nullptr;        // 栅格地图
 
     Keyframe::Ptr cur_kf_ = nullptr;
-
-    /// 实时模式下的ros2 node, subscribers
-    rclcpp::Node::SharedPtr node_;
-    std::string imu_topic_;
-    std::string cloud_topic_;
-    std::string livox_topic_;
-
-    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_ = nullptr;
-    rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_sub_ = nullptr;
-    rclcpp::Subscription<livox_ros_driver2::msg::CustomMsg>::SharedPtr livox_sub_ = nullptr;
 };
 }  // namespace lightning
 
