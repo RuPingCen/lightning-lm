@@ -7,7 +7,7 @@ if(BUILD_FRAMEWORK STREQUAL "DORA")
                 ${PROJECT_NAME}.libs
                 ${third_party_libs}
                 ${YAML_CPP_LIBRARIES}
-                $ENV{HOME}/dora/target/release/libdora_node_api_c.a
+                ${DORA_ROOT}/target/release/libdora_node_api_c.a
         )
 
         add_executable(run_loc_online_for_dora
@@ -18,7 +18,7 @@ if(BUILD_FRAMEWORK STREQUAL "DORA")
                 ${PROJECT_NAME}.libs
                 ${third_party_libs}
                 ${YAML_CPP_LIBRARIES}
-                $ENV{HOME}/dora/target/release/libdora_node_api_c.a
+                ${DORA_ROOT}/target/release/libdora_node_api_c.a
         )
 
 elseif(BUILD_FRAMEWORK STREQUAL "ROS2")

@@ -1,0 +1,26 @@
+nodes:
+  - id: pointcloud_imu_pub_dora_node
+    path: ./src/pointcloud_imu_pub_dora_node.py
+    inputs:
+      tick: dora/timer/millis/5   # 200Hz
+    outputs:
+      - pointcloud
+      - imu
+    env:
+      BAG_PATH: /home/mickrobot/dataset/rosbag2_2024_11_02-15_26_53   #ros2 bag path
+  
+  
+  - id: lidar2rerun
+    path: ./visualization/lidar2rerun.py
+    inputs:
+      pointcloud: 
+        source: pointcloud_imu_pub_dora_node/pointcloud
+      imu:
+        source: pointcloud_imu_pub_dora_node/imu
+
+  # - id: visualizer
+  #   path: ./bag_visualizer.py
+  #   inputs:
+  #     pointcloud: pointcloud_imu_pub_dora_node/pointcloud
+  #     imu: pointcloud_imu_pub_dora_node/imu
+  #     gps: pointcloud_imu_pub_dora_node/gps

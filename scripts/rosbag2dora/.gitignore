@@ -1,0 +1,9 @@
+out/
+.env/
+build/
+dist/
+out/
+bin/
+*.log
+*.tmp
+.DS_Store

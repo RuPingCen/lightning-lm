@@ -1,6 +1,6 @@
 nodes:
   - id: pointcloud_imu_pub_dora_node
-    path: /home/mickrobot/dora_project/dora_tutorial/rosbag2dora/src/pointcloud_imu_pub_dora_node.py
+    path: ./scripts/rosbag2dora/src/pointcloud_imu_pub_dora_node.py
     inputs:
       tick: dora/timer/millis/5   # 5ms   200Hz
     outputs:
